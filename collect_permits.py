@@ -34,12 +34,49 @@ def get(op, **params):
     return []
 
 
+def load_sigungu_api():
+    """행정안전부_행정표준코드_법정동코드 API(StanReginCd)에서 시군구 목록. 공공데이터포털 활용신청 필요."""
+    out, seen, page = [], set(), 1
+    while True:
+        q = dict(ServiceKey=DATA_GO_KR_KEY, pageNo=page, numOfRows=1000, type="json", flag="Y")
+        url = "https://apis.data.go.kr/1741000/StanReginCd/getStanReginCdList?" + urllib.parse.urlencode(q)
+        try:
+            with urllib.request.urlopen(url, timeout=60) as r:
+                body = json.loads(r.read().decode("utf-8"))
+        except Exception as e:
+            print("법정동코드 API 실패", page, e, file=sys.stderr)
+            break
+        blocks = body.get("StanReginCd") or []
+        rows = next((b["row"] for b in blocks if isinstance(b, dict) and "row" in b), [])
+        if not rows:
+            break
+        for it in rows:
+            code = str(it.get("region_cd", ""))
+            if len(code) == 10 and code[5:] == "00000" and code[2:5] != "000":
+                sgg = code[:5]
+                if sgg in seen:
+                    continue
+                seen.add(sgg)
+                parts = (it.get("locatadd_nm") or "").split()
+                out.append((sgg, parts[0] if parts else "", " ".join(parts[1:])))
+        page += 1
+        if page > 60:
+            break
+    cache = CACHE / "sigungu.json"
+    if out:
+        json.dump(out, open(cache, "w", encoding="utf-8"), ensure_ascii=False)
+    elif cache.exists():
+        out = [tuple(x) for x in json.load(open(cache, encoding="utf-8"))]
+    return out
+
+
 def load_sigungu():
-    """법정동코드 파일에서 (시군구코드, 시도명, 시군구명) 목록."""
+    """법정동코드 파일에서 (시군구코드, 시도명, 시군구명) 목록. 파일이 없으면 API 로 대체."""
     path = DATA / "bjdong_codes.txt"
     if not path.exists():
-        print("data/bjdong_codes.txt 없음 — 법정동코드 전체자료를 내려받아 두세요", file=sys.stderr)
-        return []
+        out = load_sigungu_api()
+        print("법정동코드 API 시군구", len(out), file=sys.stderr)
+        return out
     out, seen = [], set()
     for line in open(path, encoding="cp949", errors="ignore"):
         code, name, *rest = line.rstrip("\n").split("\t")
