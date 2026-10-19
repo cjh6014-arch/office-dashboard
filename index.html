@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>오피스 개발 현황 대시보드</title>
+<meta name="description" content="전국 건축 인허가에서 주용도가 업무시설인 건의 허가 · 착공 · 준공 추이와 위치, 권역별 오피스 공실률 · 임대료, 제도 · 일정. 매일 자동 갱신">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<style>
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+
+/* 레이아웃: 1120px 단일 열. 요약 타일 → 차트·지도 2단(모바일 1단) → 표. 차트는 전부 SVG 직접 그림. */
+:root{
+  --bg:#f6f7f9; --panel:#ffffff; --fg:#161b22; --fg2:#4c5663; --muted:#7c8794;
+  --line:#e2e6ec; --grid:#e8ebf0; --accent:#1f5f8b; --accent-soft:#e3eef6;
+  --st1:#86b6ef; --st2:#2a78d6; --st3:#104281;         /* 착공 전 · 공사 중 · 준공 (순서형) */
+  --z1:#2a78d6; --z2:#eb6834; --z3:#1baf7a; --z4:#eda100; --z5:#7c8794;  /* CBD GBD YBD BBD 전국 */
+  --good:#0ca30c; --warn:#fab219; --serious:#ec835a; --crit:#d03b3b;
+  --font:"IBM Plex Sans KR",system-ui,-apple-system,"Segoe UI","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0f1317; --panel:#171c22; --fg:#eceff3; --fg2:#b7bfc9; --muted:#8a94a0;
+  --line:#2a313a; --grid:#232a33; --accent:#6aaee0; --accent-soft:#1c2a37;
+  --st1:#5a93d6; --st2:#3987e5; --st3:#9ec5f4;
+  --z1:#3987e5; --z2:#d95926; --z3:#199e70; --z4:#c98500; --z5:#8a94a0;
+  color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#0f1317; --panel:#171c22; --fg:#eceff3; --fg2:#b7bfc9; --muted:#8a94a0;
+  --line:#2a313a; --grid:#232a33; --accent:#6aaee0; --accent-soft:#1c2a37;
+  --st1:#5a93d6; --st2:#3987e5; --st3:#9ec5f4;
+  --z1:#3987e5; --z2:#d95926; --z3:#199e70; --z4:#c98500; --z5:#8a94a0;
+  color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--font);font-size:14px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 48px}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1120px;margin:0 auto}
+header{padding-block:28px 12px;border-bottom:1px solid var(--line)}
+h1{font-size:26px;line-height:1.25;margin:0 0 8px;font-weight:700;letter-spacing:-.01em;text-wrap:balance}
+.lead{color:var(--fg2);max-width:72ch;margin:0 0 10px}
+.meta{display:flex;flex-wrap:wrap;gap:8px 18px;color:var(--muted);font-size:12.5px}
+.banner{margin:14px 0 0;padding:10px 14px;border:1px solid var(--warn);border-left-width:4px;border-radius:4px;background:var(--panel);font-size:13px}
+nav.toc{display:flex;flex-wrap:wrap;gap:6px;padding-block:14px}
+nav.toc a{padding:4px 10px;border:1px solid var(--line);border-radius:999px;font-size:12.5px;color:var(--fg2);background:var(--panel)}
+section{padding-block:28px 6px}
+h2{font-size:18px;margin:0 0 4px;font-weight:600}
+h3{font-size:14.5px;margin:18px 0 6px;font-weight:600}
+.sub{color:var(--muted);font-size:12.5px;margin:0 0 12px;max-width:80ch}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.tile{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:12px 14px;min-width:0}
+.tile .k{font-size:12px;color:var(--muted);letter-spacing:.02em}
+.tile .v{font-size:22px;font-weight:600;line-height:1.2;margin-top:4px}
+.tile .v small{font-size:12px;font-weight:500;color:var(--fg2);margin-left:3px}
+.tile .d{font-size:12px;color:var(--fg2);margin-top:2px}
+.up{color:var(--crit)}.dn{color:var(--good)}
+.row{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin:8px 0 10px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--panel)}
+.seg button{border:0;background:transparent;color:var(--fg2);padding:5px 11px;font:inherit;font-size:12.5px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1px solid var(--line);background:var(--panel);color:var(--fg2);border-radius:999px;padding:3px 10px;font:inherit;font-size:12.5px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.chip[aria-pressed="true"]{border-color:var(--accent);color:var(--fg);background:var(--accent-soft)}
+.chip .sw{width:10px;height:10px;border-radius:2px;display:inline-block}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;color:var(--fg2);margin:6px 0}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:10px;height:10px;border-radius:2px;display:inline-block}
+.legend i.c{border-radius:50%}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:12px 14px;min-width:0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:760px){.two{grid-template-columns:1fr}}
+svg{display:block;max-width:100%;height:auto;font-family:var(--font)}
+svg text{fill:var(--fg2);font-size:11px}
+svg .grid line{stroke:var(--grid)}
+svg .axis line,svg .axis path{stroke:var(--line)}
+svg .lbl{fill:var(--muted);font-size:10.5px}
+.tip{position:fixed;z-index:9;pointer-events:none;background:var(--panel);color:var(--fg);border:1px solid var(--line);border-radius:5px;padding:7px 10px;font-size:12px;box-shadow:0 4px 14px rgba(0,0,0,.12);max-width:260px}
+.tip b{font-weight:600}
+input[type=search],select{font:inherit;font-size:13px;padding:5px 9px;border:1px solid var(--line);border-radius:6px;background:var(--panel);color:var(--fg)}
+button.btn{font:inherit;font-size:12.5px;padding:5px 11px;border:1px solid var(--line);border-radius:6px;background:var(--panel);color:var(--fg);cursor:pointer}
+button.btn:hover{border-color:var(--accent)}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:12.5px;min-width:900px}
+th,td{padding:7px 9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;white-space:nowrap}
+th{background:var(--bg);color:var(--fg2);font-weight:500;font-size:12px;position:sticky;top:0;cursor:pointer;user-select:none}
+th .s{color:var(--muted);font-size:10px;margin-left:3px}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+td .nm{font-weight:500;white-space:normal;min-width:180px;display:block}
+td .kd{font-size:11px;color:var(--muted)}
+.pill{display:inline-block;padding:1px 8px;border-radius:999px;font-size:11.5px;font-weight:500;color:#fff}
+.pill.s1{background:var(--st1);color:#0b1b33}.pill.s2{background:var(--st2)}.pill.s3{background:var(--st3)}
+.pill.p-done{background:var(--good)}.pill.p-going{background:var(--z1)}.pill.p-pend{background:var(--warn);color:#2a2000}.pill.p-plan{background:var(--z5)}
+tbody tr:hover td{background:var(--accent-soft)}
+.count{color:var(--muted);font-size:12px}
+.news li,.pol li{padding:7px 0;border-bottom:1px solid var(--line)}
+.news ul,.pol ul{list-style:none;padding:0;margin:0}
+.news .dt{color:var(--muted);font-size:12px;margin-right:8px;font-variant-numeric:tabular-nums}
+dl.terms{display:grid;grid-template-columns:max-content 1fr;gap:6px 14px;margin:0}
+dl.terms dt{font-weight:600;white-space:nowrap}
+dl.terms dd{margin:0;color:var(--fg2);max-width:80ch}
+@media (max-width:600px){dl.terms{grid-template-columns:1fr}dl.terms dd{margin-bottom:6px}}
+footer{margin-top:36px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
+footer p{max-width:90ch}
+.small{font-size:12px;color:var(--muted)}
+.map{width:100%;aspect-ratio:1/1.05;max-height:620px}
+.map.seoul{aspect-ratio:1/.72}
+.map path{fill:var(--bg);stroke:var(--line);stroke-width:.6}
+.map path.hl{fill:var(--accent-soft)}
+.map circle{stroke:var(--panel);stroke-width:1.2;cursor:pointer;opacity:.9}
+.map text.zone{fill:var(--fg2);font-size:11px;font-weight:600;paint-order:stroke;stroke:var(--panel);stroke-width:3px}
+.empty{color:var(--muted);padding:18px;text-align:center}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (prefers-reduced-motion:no-preference){.chip,.seg button{transition:background .15s}}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+<header>
+  <h1>오피스 개발 현황 대시보드</h1>
+  <p class="lead">국토교통부 건축 인허가 대장에서 주용도가 '업무시설'인 건을 모아 허가 → 착공 → 준공 흐름과 위치를 보여 주고, 한국부동산원 권역별 오피스 공실률 · 임대료, 거래 규모, 제도 · 일정과 기사를 함께 모았습니다.</p>
+  <div class="meta"><span id="updated">데이터 불러오는 중…</span><span>매일 오전 08:00 자동 갱신 · 기사 · 제도는 매주 재검색</span></div>
+  <div class="banner" id="banner" hidden>지금 보이는 숫자는 <b>샘플 데이터</b>입니다. 공공데이터포털 · 한국부동산원 API 키를 연결하면 실제 인허가 · 공실률 값으로 바뀝니다 (README 참고).</div>
+  <nav class="toc">
+    <a href="#summary">요약</a><a href="#trend">허가 · 착공 · 준공 추이</a><a href="#map">사업장 위치</a><a href="#list">인허가 목록</a><a href="#market">공실률 · 임대료</a><a href="#deals">거래</a><a href="#news">최근 기사</a><a href="#policy">제도 · 일정</a><a href="#terms">용어 · 기준</a>
+  </nav>
+</header>
+
+<section id="summary">
+  <h2>요약</h2>
+  <p class="sub">최근 12개월 기준 · 연면적은 건물 전체 연면적(업무시설 외 층 포함)</p>
+  <div class="tiles" id="tiles"><div class="tile"><div class="k">요약 불러오는 중…</div></div></div>
+</section>
+
+<section id="trend">
+  <h2>업무시설 건축 허가 · 착공 · 준공 추이</h2>
+  <p class="sub">연도별 · 허가일 · 실제착공일 · 사용승인일 기준</p>
+  <div class="row">
+    <div class="seg" id="trendMeasure"><button aria-pressed="true" data-v="gfa">연면적</button><button data-v="count">건수</button></div>
+    <div class="seg" id="trendRegion"><button aria-pressed="true" data-v="all">전국</button><button data-v="seoul">서울</button><button data-v="metro">수도권</button><button data-v="local">지방</button></div>
+  </div>
+  <div class="panel">
+    <div class="legend"><span><i style="background:var(--st1)"></i>허가</span><span><i style="background:var(--st2)"></i>착공</span><span><i style="background:var(--st3)"></i>준공(사용승인)</span></div>
+    <div id="trendChart"></div>
+  </div>
+</section>
+
+<section id="map">
+  <h2>사업장 위치</h2>
+  <p class="sub">원 크기 = 연면적 · 색 = 단계 · 원을 누르면 아래 목록이 그 사업장으로 좁혀집니다 · 위치는 시군구 대표점 기준(샘플) / 실데이터는 법정동 대표점</p>
+  <div class="row">
+    <div class="seg" id="mapView"><button aria-pressed="true" data-v="seoul">서울 · 권역</button><button data-v="all">전국</button></div>
+    <div class="chips" id="mapStages">
+      <button class="chip" aria-pressed="true" data-v="착공 전"><i class="sw" style="background:var(--st1)"></i>착공 전</button>
+      <button class="chip" aria-pressed="true" data-v="공사 중"><i class="sw" style="background:var(--st2)"></i>공사 중</button>
+      <button class="chip" aria-pressed="true" data-v="준공"><i class="sw" style="background:var(--st3)"></i>준공</button>
+    </div>
+  </div>
+  <div class="panel"><div id="mapChart"></div></div>
+</section>
+
+<section id="list">
+  <h2>업무시설 인허가 목록</h2>
+  <p class="sub">주용도 '업무시설' 허가 대장 · 업무시설 비중은 층별 용도 중 업무시설 바닥면적 비율 · 관련 기사는 건물명 · 지역이 맞는 것만 자동 연결(매주 재검색)</p>
+  <div class="row">
+    <div class="seg" id="stageFilter"><button aria-pressed="true" data-v="">전체</button><button data-v="착공 전">착공 전</button><button data-v="공사 중">공사 중</button><button data-v="준공">준공</button></div>
+    <select id="zoneFilter"><option value="">권역 전체</option><option>CBD</option><option>GBD</option><option>YBD</option><option>BBD</option><option>서울 기타</option><option>수도권</option><option>지방</option></select>
+    <input type="search" id="q" placeholder="건물명 · 시군구 검색" aria-label="검색">
+    <button class="btn" id="xls">엑셀 다운로드</button>
+    <span class="count" id="count"></span>
+  </div>
+  <div class="tablewrap"><table id="tbl"><thead><tr>
+    <th data-k="name">건물명 · 구분<span class="s">↕</span></th><th data-k="sigungu">위치<span class="s">↕</span></th><th data-k="zone">권역<span class="s">↕</span></th>
+    <th class="n" data-k="gfa">연면적(㎡)<span class="s">↕</span></th><th class="n" data-k="office_ratio">업무시설 비중<span class="s">↕</span></th><th data-k="floors">층수</th>
+    <th data-k="permit">허가<span class="s">↕</span></th><th data-k="start">착공<span class="s">↕</span></th><th data-k="complete">준공<span class="s">↕</span></th><th data-k="stage">단계<span class="s">↕</span></th><th>관련 기사</th>
+  </tr></thead><tbody></tbody></table></div>
+</section>
+
+<section id="market">
+  <h2>오피스 공실률 · 임대료</h2>
+  <p class="sub">한국부동산원 상업용부동산 임대동향조사 · 분기 · 임대료는 ㎡당 월 임대료(천원) · 권역은 부동산원 서울 권역 구분(CBD 도심 · GBD 강남 · YBD 여의도마포) · BBD는 판교 · 분당</p>
+  <div class="row"><div class="chips" id="mkSeries"></div></div>
+  <div class="two">
+    <div class="panel"><h3 style="margin-top:0">공실률(%)</h3><div id="vacChart"></div></div>
+    <div class="panel"><h3 style="margin-top:0">임대료(천원/㎡ · 월)</h3><div id="rentChart"></div></div>
+  </div>
+  <div class="tablewrap" style="margin-top:12px"><table id="mkTbl" style="min-width:560px"><thead></thead><tbody></tbody></table></div>
+</section>
+
+<section id="deals">
+  <h2>오피스 거래 규모</h2>
+  <p class="sub">연간 업무시설 거래액(조원) · 국토교통부 상업 · 업무용 실거래가 중 업무시설 집계(샘플 기준) · 당해 연도는 집계 시점까지</p>
+  <div class="panel"><div id="dealChart"></div></div>
+</section>
+
+<section id="news">
+  <h2>최근 기사</h2>
+  <p class="sub">구글 뉴스에서 '오피스 · 업무시설' 공급 · 공실 · 거래 관련 기사 중 제목에 지역 · 사업명이 드러난 것</p>
+  <div class="panel news"><ul id="newsList"></ul></div>
+</section>
+
+<section id="policy">
+  <h2>제도 · 일정</h2>
+  <p class="sub">정부 · 국회 · 지자체 발표와 보도를 매주 다시 검색해 진행 상황(완료 · 진행 중 · 계류 · 예정)과 새 항목을 반영합니다. 정확한 내용은 출처 원문에서 확인하세요.</p>
+  <div class="row"><div class="chips" id="polFields"></div></div>
+  <div class="tablewrap"><table id="polTbl" style="min-width:700px"><thead><tr><th>시기</th><th>분야</th><th>항목</th><th>상태</th><th>비고</th><th>출처</th></tr></thead><tbody></tbody></table></div>
+</section>
+
+<section id="terms">
+  <h2>용어 · 기준</h2>
+  <dl class="terms">
+    <dt>업무시설 인허가</dt><dd>건축 인허가 대장에서 주용도가 '업무시설'(일반업무시설 · 공공업무시설 · 오피스텔 제외)인 건입니다. 판매 · 숙박 등 다른 주용도 건물 안의 일부 사무층은 잡히지 않고, 오피스텔은 대장상 업무시설이지만 주거 성격이 강해 기본 집계에서 뺍니다(구분 칸에 표시).</dd>
+    <dt>허가 · 착공 · 준공</dt><dd>대장의 건축허가일 · 실제착공일 · 사용승인일입니다. 착공일이 비어 있으면 '착공 전', 사용승인일이 있으면 '준공'으로 분류합니다.</dd>
+    <dt>연면적 · 업무시설 비중</dt><dd>연면적은 건물 전체이고, 업무시설 비중은 층별 개요에서 용도가 업무시설인 바닥면적의 비율입니다. 복합개발(판매 · 숙박 · 공동주택 포함)은 비중을 보고 오피스 공급량을 가늠하세요.</dd>
+    <dt>권역</dt><dd>한국부동산원 서울 오피스 권역을 따릅니다. CBD(도심 · 종로 · 중구), GBD(강남 · 서초), YBD(여의도 · 마포 · 영등포), 그 밖의 서울은 '서울 기타', BBD는 판교 · 분당, 나머지 경기 · 인천은 '수도권', 그 외는 '지방'입니다.</dd>
+    <dt>공실률</dt><dd>조사 대상 오피스의 임대 가능 면적 중 비어 있는 면적의 비율(분기 말)입니다. 표본 교체 · 기준 변경 시 전 분기와 바로 비교하기 어려울 수 있습니다.</dd>
+    <dt>임대료</dt><dd>㎡당 월 임대료(천원)이며 관리비 · 렌트프리를 반영하지 않은 명목 임대료입니다. 실질 임대료(NOC)는 렌트프리 · 무상 인테리어를 빼야 합니다.</dd>
+    <dt>거래 규모</dt><dd>실거래가 공개시스템의 상업 · 업무용 거래 중 건물 용도가 업무시설인 건의 금액 합계입니다. 지분 · 부분 거래가 섞여 있어 통상 시장 보고서의 '오피스 거래액'보다 작게 나올 수 있습니다.</dd>
+    <dt>사업장 위치</dt><dd>인허가 대장의 법정동 · 리 대표점에 표시합니다(샘플 데이터는 시군구 대표점). 정확한 대지 위치는 세움터 건축물대장으로 확인하세요.</dd>
+    <dt>관련 기사</dt><dd>건물명에 드러난 사업자 · 브랜드와 시 · 군 · 동 이름으로 구글 뉴스를 매주 다시 검색해, 제목에 오피스 · 업무시설과 이름 · 지역이 함께 나오는 기사만 붙입니다. 확신이 없으면 비워 둡니다.</dd>
+  </dl>
+</section>
+
+<footer>
+  <p>출처: 국토교통부 건축HUB 건축인허가정보(공공데이터포털), 행정안전부 법정동코드, 한국부동산원 R-ONE 상업용부동산 임대동향조사(오피스 공실률 · 임대료), 국토교통부 실거래가 공개시스템(상업 · 업무용), 정부 · 국회 · 지자체 발표와 언론 보도(제도 · 일정 — 매주 확인), Google 뉴스. 지도: 통계청 행정구역 경계(southkorea/southkorea-maps 가공). 이 화면은 공개된 자료를 자동으로 모아 정리한 개인 참고용 자료이며, 정리 과정에서 지연 · 누락 · 오기가 생길 수 있고 원문과 다를 수 있습니다.</p>
+  <p>이 화면의 어떤 내용도 투자 권유나 여신 · 의사결정의 근거가 아니며, 이를 이용해 생긴 결과에 대해 작성자는 책임지지 않습니다. 정확한 내용은 세움터 건축물대장과 각 기관 원문에서 확인하시기 바랍니다.</p>
+  <p id="owner">기획 · 운영: (이름 · 소속 · 연락처를 README 의 OWNER 항목에 적으면 여기 표시됩니다)</p>
+</footer>
+</div>
+<div class="tip" id="tip" hidden></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script>
+(function(){
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const fmt=n=>n==null?'–':Math.round(n).toLocaleString('ko-KR');
+const fmt1=n=>n==null?'–':(Math.round(n*10)/10).toLocaleString('ko-KR',{minimumFractionDigits:1});
+const STC={'착공 전':'var(--st1)','공사 중':'var(--st2)','준공':'var(--st3)'};
+const STCLS={'착공 전':'s1','공사 중':'s2','준공':'s3'};
+const ZC={CBD:'var(--z1)',GBD:'var(--z2)',YBD:'var(--z3)',BBD:'var(--z4)',서울:'var(--accent)',전국:'var(--z5)'};
+const SEOUL=new Set(['서울']), METRO=new Set(['서울','경기','인천']);
+let D=null, MAP=null, state={measure:'gfa',region:'all',mapView:'seoul',mapStages:new Set(['착공 전','공사 중','준공']),stage:'',zone:'',q:'',sortK:'permit',sortD:-1,mk:new Set(['서울','CBD','GBD','YBD']),pol:'',pick:null};
+
+/* ---------- tooltip ---------- */
+const tip=$('#tip');
+function showTip(e,html){tip.innerHTML=html;tip.hidden=false;moveTip(e)}
+function moveTip(e){const x=e.clientX,y=e.clientY,w=tip.offsetWidth,h=tip.offsetHeight;tip.style.left=Math.min(x+14,innerWidth-w-8)+'px';tip.style.top=(y+14+h>innerHeight?y-h-10:y+14)+'px'}
+function hideTip(){tip.hidden=true}
+function bindTips(root){root.querySelectorAll('[data-tip]').forEach(el=>{el.addEventListener('pointerenter',e=>showTip(e,el.dataset.tip));el.addEventListener('pointermove',moveTip);el.addEventListener('pointerleave',hideTip)})}
+
+/* ---------- helpers ---------- */
+const svgEl=(w,h,cls)=>`<svg viewBox="0 0 ${w} ${h}" class="${cls||''}" role="img">`;
+function inRegion(r){return state.region==='all'||(state.region==='seoul'&&SEOUL.has(r.sido))||(state.region==='metro'&&METRO.has(r.sido))||(state.region==='local'&&!METRO.has(r.sido))}
+function yr(s){return s?+s.slice(0,4):null}
+function seg(id,key,cb){$$(`#${id} button`).forEach(b=>b.addEventListener('click',()=>{$$(`#${id} button`).forEach(x=>x.setAttribute('aria-pressed',x===b));state[key]=b.dataset.v;cb()}))}
+
+/* ---------- 요약 ---------- */
+function renderTiles(){
+  const now=new Date(D.updated.slice(0,10)), ago=new Date(now);ago.setFullYear(ago.getFullYear()-1);
+  const last=(k)=>D.permits.filter(r=>r[k]&&new Date(r[k])>ago&&new Date(r[k])<=now);
+  const sum=a=>a.reduce((s,r)=>s+r.gfa,0);
+  const p=last('permit'),s=last('start'),c=last('complete');
+  const going=D.permits.filter(r=>r.stage==='공사 중'), pend=D.permits.filter(r=>r.stage==='착공 전');
+  const v=D.vacancy, vl=v[v.length-1], vp=v[v.length-2];
+  const dlt=(k)=>{const d=vl[k]-vp[k];return `<span class="${d>0?'up':'dn'}">${d>0?'▲':'▼'}${fmt1(Math.abs(d))}%p</span> 전분기 대비`};
+  const t=[
+    ['최근 12개월 허가',`${fmt(sum(p)/1000)}<small>천㎡</small>`,`${p.length}건`],
+    ['최근 12개월 착공',`${fmt(sum(s)/1000)}<small>천㎡</small>`,`${s.length}건`],
+    ['최근 12개월 준공',`${fmt(sum(c)/1000)}<small>천㎡</small>`,`${c.length}건`],
+    ['공사 중(전체)',`${fmt(sum(going)/1000)}<small>천㎡</small>`,`${going.length}건 · 착공 전 ${pend.length}건`],
+    [`서울 공실률 ${vl.quarter}`,`${fmt1(vl['서울'])}<small>%</small>`,dlt('서울')],
+    [`CBD · GBD · YBD`,`${fmt1(vl.CBD)} · ${fmt1(vl.GBD)} · ${fmt1(vl.YBD)}<small>%</small>`,`전국 ${fmt1(vl['전국'])}%`],
+  ];
+  $('#tiles').innerHTML=t.map(([k,v,d])=>`<div class="tile"><div class="k">${k}</div><div class="v">${v}</div><div class="d">${d}</div></div>`).join('');
+}
+
+/* ---------- 추이(그룹 막대) ---------- */
+function renderTrend(){
+  const rows=D.permits.filter(inRegion), years=[];
+  const y0=Math.min(...rows.map(r=>yr(r.permit))), y1=yr(D.updated);
+  for(let y=y0;y<=y1;y++)years.push(y);
+  const agg=k=>years.map(y=>{const a=rows.filter(r=>yr(r[k])===y);return state.measure==='gfa'?a.reduce((s,r)=>s+r.gfa,0)/1000:a.length});
+  const S=[['허가',agg('permit'),'var(--st1)'],['착공',agg('start'),'var(--st2)'],['준공',agg('complete'),'var(--st3)']];
+  const W=720,H=260,L=46,R=10,T=14,B=30,pw=W-L-R,ph=H-T-B;
+  const max=Math.max(1,...S.flatMap(s=>s[1]))*1.1, gw=pw/years.length, bw=(gw-10)/3;
+  let g=svgEl(W,H)+`<g class="grid">`;
+  const ticks=5; for(let i=0;i<=ticks;i++){const v=max*i/ticks,y=T+ph-v/max*ph;g+=`<line x1="${L}" x2="${W-R}" y1="${y}" y2="${y}"/><text x="${L-6}" y="${y+4}" text-anchor="end" class="lbl">${fmt(v)}</text>`}
+  g+=`</g><g class="axis"><line x1="${L}" x2="${W-R}" y1="${T+ph}" y2="${T+ph}"/></g>`;
+  years.forEach((y,i)=>{g+=`<text x="${L+gw*i+gw/2}" y="${H-10}" text-anchor="middle">${y}${y===y1?'*':''}</text>`;
+    S.forEach((s,j)=>{const v=s[1][i],h=v/max*ph,x=L+gw*i+5+bw*j,yy=T+ph-h;
+      g+=`<rect x="${x}" y="${yy}" width="${bw-2}" height="${h}" rx="2" fill="${s[2]}" data-tip="<b>${y}년 ${s[0]}</b><br>${state.measure==='gfa'?fmt(v)+'천㎡':v+'건'}"/>`})});
+  g+=`<text x="${L}" y="${T-3}" class="lbl">${state.measure==='gfa'?'천㎡':'건'} · *집계 시점까지</text></svg>`;
+  $('#trendChart').innerHTML=g; bindTips($('#trendChart'));
+}
+
+/* ---------- 지도 ---------- */
+function proj(view){
+  const b=view==='seoul'?{x0:126.75,x1:127.20,y0:37.42,y1:37.72}:{x0:125.8,x1:129.7,y0:33.1,y1:38.65};
+  const W=640,H=view==='seoul'?460:672,cos=Math.cos((b.y0+b.y1)/2*Math.PI/180);
+  const sx=W/((b.x1-b.x0)*cos), sy=H/(b.y1-b.y0), s=Math.min(sx,sy);
+  const ox=(W-(b.x1-b.x0)*cos*s)/2, oy=(H-(b.y1-b.y0)*s)/2;
+  return {W,H,b,p:(lng,lat)=>[ox+(lng-b.x0)*cos*s, oy+(b.y1-lat)*s]};
+}
+function renderMap(){
+  const v=state.mapView, P=proj(v), feats=MAP.features.filter(f=>v==='all'||f.properties.code.startsWith('11'));
+  let g=svgEl(P.W,P.H,'map '+(v==='seoul'?'seoul':''));
+  const ring=r=>r.map(c=>P.p(c[0],c[1]).map(n=>n.toFixed(1)).join(',')).join(' ');
+  for(const f of feats){const geo=f.geometry,polys=geo.type==='Polygon'?[geo.coordinates]:geo.coordinates;
+    const d=polys.map(pg=>pg.map(r=>'M'+ring(r)+'Z').join('')).join('');
+    g+=`<path d="${d}" class="${f.properties.code==='11010'||f.properties.code==='11020'||f.properties.code==='11230'||f.properties.code==='11220'||f.properties.code==='11190'?'hl':''}"><title>${f.properties.name}</title></path>`}
+  if(v==='seoul'){[['CBD',126.985,37.572],['GBD',127.045,37.498],['YBD',126.92,37.526],['마곡',126.835,37.56],['성수',127.055,37.545]].forEach(([n,x,y])=>{const [px,py]=P.p(x,y);g+=`<text class="zone" x="${px}" y="${py}" text-anchor="middle">${n}</text>`})}
+  const rows=D.permits.filter(r=>state.mapStages.has(r.stage)&&(v==='all'||r.sido==='서울')).sort((a,b)=>b.gfa-a.gfa);
+  const rad=gfa=>Math.max(3.5,Math.sqrt(gfa/1000)*(v==='seoul'?1.6:1.0));
+  for(const r of rows){const [x,y]=P.p(r.lng,r.lat); if(x<0||y<0||x>P.W||y>P.H)continue;
+    g+=`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${rad(r.gfa).toFixed(1)}" fill="${STC[r.stage]}" data-id="${r.id}" data-tip="<b>${r.name}</b><br>${r.sido} ${r.sigungu} · ${r.zone}<br>연면적 ${fmt(r.gfa)}㎡ · ${r.stage}<br>허가 ${r.permit}${r.start?' · 착공 '+r.start:''}${r.complete?' · 준공 '+r.complete:''}"/>`}
+  g+='</svg>';
+  $('#mapChart').innerHTML=g+`<div class="legend"><span><i class="c" style="background:var(--st1)"></i>착공 전</span><span><i class="c" style="background:var(--st2)"></i>공사 중</span><span><i class="c" style="background:var(--st3)"></i>준공</span><span class="small">${rows.length}건 표시${v==='seoul'?' · 음영 = CBD · GBD · YBD 해당 구':''}</span></div>`;
+  bindTips($('#mapChart'));
+  $$('#mapChart circle').forEach(c=>c.addEventListener('click',()=>{state.pick=c.dataset.id;state.q='';$('#q').value='';renderTable();location.hash='list'}));
+}
+
+/* ---------- 표 ---------- */
+function filtered(){
+  let rows=D.permits.filter(r=>(!state.stage||r.stage===state.stage)&&(!state.zone||r.zone===state.zone));
+  if(state.pick)rows=rows.filter(r=>r.id===state.pick);
+  if(state.q){const q=state.q.toLowerCase();rows=rows.filter(r=>(r.name+r.sido+r.sigungu+r.dong).toLowerCase().includes(q))}
+  const k=state.sortK,d=state.sortD;
+  return rows.sort((a,b)=>{const x=a[k]??'',y=b[k]??'';return (x>y?1:x<y?-1:0)*d});
+}
+function renderTable(){
+  const rows=filtered();
+  $('#tbl tbody').innerHTML=rows.length?rows.map(r=>`<tr>
+    <td><span class="nm">${r.name}</span><span class="kd">${r.kind}${r.dong?' · '+r.dong:''}</span></td><td>${r.sido} ${r.sigungu}</td><td>${r.zone}</td>
+    <td class="n">${fmt(r.gfa)}</td><td class="n">${Math.round(r.office_ratio*100)}%</td><td>${r.floors||'–'}</td>
+    <td>${r.permit||'–'}</td><td>${r.start||'–'}</td><td>${r.complete||'–'}</td><td><span class="pill ${STCLS[r.stage]}">${r.stage}</span></td>
+    <td>${r.articles&&r.articles.length?r.articles.map(a=>`<a href="${a.url}" target="_blank" rel="noopener" title="${a.title}">${a.date?a.date.slice(0,7)+' · ':''}${a.title.length>28?a.title.slice(0,28)+'…':a.title}</a>`).join('<br>'):'<span class="small">–</span>'}</td></tr>`).join('')
+    :`<tr><td colspan="11" class="empty">조건에 맞는 인허가 건이 없습니다</td></tr>`;
+  $('#count').innerHTML=`${rows.length}건 · 연면적 합계 ${fmt(rows.reduce((s,r)=>s+r.gfa,0)/1000)}천㎡${state.pick?' · <a href="#list" id="unpick">선택 해제</a>':''}`;
+  const u=$('#unpick'); if(u)u.addEventListener('click',e=>{e.preventDefault();state.pick=null;renderTable()});
+}
+function exportXlsx(){
+  const rows=filtered().map(r=>({'건물명':r.name,'구분':r.kind,'시도':r.sido,'시군구':r.sigungu,'법정동':r.dong,'권역':r.zone,'연면적(㎡)':r.gfa,'업무시설 비중':r.office_ratio,'층수':r.floors,'허가일':r.permit,'실제착공일':r.start,'사용승인일':r.complete,'단계':r.stage,'관련기사':(r.articles||[]).map(a=>a.title+' '+a.url).join(' | ')}));
+  if(!window.XLSX){alert_('엑셀 라이브러리를 불러오지 못했습니다');return}
+  const wb=XLSX.utils.book_new();XLSX.utils.book_append_sheet(wb,XLSX.utils.json_to_sheet(rows),'인허가');
+  try{XLSX.writeFile(wb,`오피스_인허가_${D.updated.slice(0,10)}.xlsx`)}catch(e){alert_('이 화면에서는 다운로드가 막혀 있습니다. 배포된 사이트에서 받아 주세요')}
+}
+function alert_(m){$('#count').innerHTML=`<span class="up">${m}</span>`}
+
+/* ---------- 공실률 · 임대료(선) ---------- */
+function lineChart(el,data,keys,unit,dec){
+  const W=540,H=240,L=38,R=46,T=12,B=28,pw=W-L-R,ph=H-T-B;
+  const vals=keys.flatMap(k=>data.map(d=>d[k])).filter(v=>v!=null);
+  let lo=Math.min(...vals),hi=Math.max(...vals);const pad=(hi-lo)*.12||1;lo=Math.max(0,lo-pad);hi+=pad;
+  const X=i=>L+pw*i/(data.length-1), Y=v=>T+ph-(v-lo)/(hi-lo)*ph;
+  let g=svgEl(W,H)+'<g class="grid">';
+  for(let i=0;i<=4;i++){const v=lo+(hi-lo)*i/4,y=Y(v);g+=`<line x1="${L}" x2="${W-R}" y1="${y}" y2="${y}"/><text x="${L-6}" y="${y+4}" text-anchor="end" class="lbl">${fmt1(v)}</text>`}
+  g+='</g>';
+  data.forEach((d,i)=>{if(d.quarter.endsWith('Q1')&&(+d.quarter.slice(0,4))%1===0)g+=`<text x="${X(i)}" y="${H-8}" text-anchor="middle" class="lbl">${d.quarter.slice(0,4)}</text>`});
+  keys.forEach(k=>{const col=ZC[k]||'var(--z5)';const pts=data.map((d,i)=>[X(i),Y(d[k])]);
+    g+=`<path d="M${pts.map(p=>p.map(n=>n.toFixed(1)).join(',')).join('L')}" fill="none" stroke="${col}" stroke-width="2" stroke-linejoin="round"/>`;
+    const [lx,ly]=pts[pts.length-1];g+=`<circle cx="${lx}" cy="${ly}" r="3.5" fill="${col}" stroke="var(--panel)" stroke-width="1.5"/><text x="${lx+7}" y="${ly+4}" style="font-size:11px;font-weight:600">${k} ${fmt1(data[data.length-1][k])}</text>`});
+  // hover columns
+  data.forEach((d,i)=>{const x0=i?(X(i-1)+X(i))/2:L,x1=i<data.length-1?(X(i)+X(i+1))/2:W-R;
+    g+=`<rect x="${x0}" y="${T}" width="${x1-x0}" height="${ph}" fill="transparent" data-tip="<b>${d.quarter}</b><br>${keys.map(k=>`<span style='color:${ZC[k]||'var(--z5)'}'>●</span> ${k} ${fmt1(d[k])}${unit}`).join('<br>')}"/>`});
+  g+='</svg>';el.innerHTML=g;bindTips(el);
+}
+function renderMarket(){
+  const keys=['서울','CBD','GBD','YBD','BBD','전국'].filter(k=>state.mk.has(k));
+  $('#mkSeries').innerHTML=['서울','CBD','GBD','YBD','BBD','전국'].map(k=>`<button class="chip" aria-pressed="${state.mk.has(k)}" data-v="${k}"><i class="sw" style="background:${ZC[k]||'var(--z5)'}"></i>${k}</button>`).join('');
+  $$('#mkSeries .chip').forEach(b=>b.addEventListener('click',()=>{const k=b.dataset.v;if(state.mk.has(k)){if(state.mk.size>1)state.mk.delete(k)}else if(state.mk.size<4)state.mk.add(k);renderMarket()}));
+  if(!keys.length)return;
+  lineChart($('#vacChart'),D.vacancy,keys,'%');lineChart($('#rentChart'),D.rent,keys,'천원');
+  const last=D.vacancy.slice(-5).reverse(), rl=Object.fromEntries(D.rent.map(r=>[r.quarter,r]));
+  $('#mkTbl thead').innerHTML=`<tr><th>분기</th>${keys.map(k=>`<th class="n">${k} 공실률</th>`).join('')}${keys.map(k=>`<th class="n">${k} 임대료</th>`).join('')}</tr>`;
+  $('#mkTbl tbody').innerHTML=last.map(v=>`<tr><td>${v.quarter}</td>${keys.map(k=>`<td class="n">${fmt1(v[k])}%</td>`).join('')}${keys.map(k=>`<td class="n">${fmt1(rl[v.quarter]?.[k])}</td>`).join('')}</tr>`).join('');
+}
+
+/* ---------- 거래 ---------- */
+function renderDeals(){
+  const d=D.deals;const W=720,H=200,L=40,R=10,T=14,B=28,pw=W-L-R,ph=H-T-B,max=Math.max(...d.map(x=>x.amount))*1.15,gw=pw/d.length;
+  let g=svgEl(W,H)+'<g class="grid">';for(let i=0;i<=4;i++){const v=max*i/4,y=T+ph-v/max*ph;g+=`<line x1="${L}" x2="${W-R}" y1="${y}" y2="${y}"/><text x="${L-6}" y="${y+4}" text-anchor="end" class="lbl">${fmt1(v)}</text>`}
+  g+='</g>';d.forEach((x,i)=>{const h=x.amount/max*ph,bx=L+gw*i+gw*.2,bw=gw*.6,y=T+ph-h,lastYr=i===d.length-1;
+    g+=`<rect x="${bx}" y="${y}" width="${bw}" height="${h}" rx="2" fill="${lastYr?'var(--st1)':'var(--st2)'}" data-tip="<b>${x.year}년</b><br>거래액 ${fmt1(x.amount)}조원 · ${x.count}건"/><text x="${bx+bw/2}" y="${y-4}" text-anchor="middle" class="lbl">${fmt1(x.amount)}</text><text x="${bx+bw/2}" y="${H-8}" text-anchor="middle">${x.year}${lastYr?'*':''}</text>`});
+  g+=`<text x="${L}" y="${T-3}" class="lbl">조원 · *집계 시점까지</text></svg>`;$('#dealChart').innerHTML=g;bindTips($('#dealChart'));
+}
+
+/* ---------- 기사 · 제도 ---------- */
+function renderNews(){$('#newsList').innerHTML=D.news.length?D.news.map(n=>`<li><span class="dt">${n.date}</span><a href="${n.url}" target="_blank" rel="noopener">${n.title}</a>${n.source?` <span class="small">· ${n.source}</span>`:''}</li>`).join(''):'<li class="empty">연결된 기사가 없습니다</li>'}
+function renderPolicy(){
+  const fields=[...new Set(D.policies.map(p=>p.field))];
+  $('#polFields').innerHTML=`<button class="chip" aria-pressed="${!state.pol}" data-v="">전체</button>`+fields.map(f=>`<button class="chip" aria-pressed="${state.pol===f}" data-v="${f}">${f}</button>`).join('');
+  $$('#polFields .chip').forEach(b=>b.addEventListener('click',()=>{state.pol=b.dataset.v;renderPolicy()}));
+  const cls={'완료':'p-done','진행 중':'p-going','계류':'p-pend','예정':'p-plan'};
+  const rows=D.policies.filter(p=>!state.pol||p.field===state.pol).sort((a,b)=>b.date>a.date?1:-1);
+  $('#polTbl tbody').innerHTML=rows.map(p=>`<tr><td>${p.date}</td><td>${p.field}</td><td style="white-space:normal;min-width:240px">${p.title}</td><td><span class="pill ${cls[p.status]||'p-plan'}">${p.status}</span></td><td style="white-space:normal;min-width:180px">${p.note||''}</td><td>${p.source?`<a href="${p.source}" target="_blank" rel="noopener">원문</a>`:''}</td></tr>`).join('');
+}
+
+/* ---------- 초기화 ---------- */
+function wire(){
+  seg('trendMeasure','measure',renderTrend);seg('trendRegion','region',renderTrend);
+  seg('mapView','mapView',renderMap);
+  $$('#mapStages .chip').forEach(b=>b.addEventListener('click',()=>{const k=b.dataset.v;state.mapStages.has(k)?state.mapStages.delete(k):state.mapStages.add(k);b.setAttribute('aria-pressed',state.mapStages.has(k));renderMap()}));
+  seg('stageFilter','stage',()=>{state.pick=null;renderTable()});
+  $('#zoneFilter').addEventListener('change',e=>{state.zone=e.target.value;state.pick=null;renderTable()});
+  $('#q').addEventListener('input',e=>{state.q=e.target.value.trim();state.pick=null;renderTable()});
+  $('#xls').addEventListener('click',exportXlsx);
+  $$('#tbl th[data-k]').forEach(th=>th.addEventListener('click',()=>{const k=th.dataset.k;state.sortD=state.sortK===k?-state.sortD:(k==='name'||k==='sigungu'||k==='zone'||k==='stage'?1:-1);state.sortK=k;renderTable()}));
+}
+async function load(){
+  try{[D,MAP]=await Promise.all([fetch('data/data.json').then(r=>r.json()),fetch('data/map.json').then(r=>r.json())])}
+  catch(e){$('#updated').textContent='데이터를 불러오지 못했습니다 (data/data.json · data/map.json 확인)';return}
+  $('#updated').textContent='갱신 '+D.updated; if(D.sample)$('#banner').hidden=false; if(D.owner)$('#owner').textContent='기획 · 운영: '+D.owner;
+  wire();renderTiles();renderTrend();renderMap();renderTable();renderMarket();renderDeals();renderNews();renderPolicy();
+}
+load();
+})();
+</script>
+
+</body>
+</html>
