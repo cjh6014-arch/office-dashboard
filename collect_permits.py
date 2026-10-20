@@ -203,6 +203,8 @@ def office_ratio(sgg, bjd, plat_gb, bun, ji):
     def is_office(f):   # 주용도코드 14xxx = 업무시설 계열(일반 · 공공 · 금융업소 등), 이름에 업무 · 사무 포함
         code, nm = str(f.get("mainPurpsCd") or ""), (f.get("mainPurpsCdNm") or "") + (f.get("etcPurps") or "")
         return code.startswith("14") or "업무" in nm or "사무" in nm
+    if len(flr) < 2:                               # 층 기록이 1건뿐이면 비중으로 보기 어려워 보류(다음 실행에 재시도)
+        return None
     tot = sum(area(f) for f in flr)
     off = sum(area(f) for f in flr if is_office(f))
     return round(off / tot, 2) if tot else None
@@ -269,7 +271,7 @@ def main():
                 c = centroid(short_sido(sido), sigungu)
                 if c:
                     lat, lng = c["lat"], c["lng"]
-            ratio = old.get("office_ratio")
+            ratio = old.get("office_ratio") if old.get("ratio_n") else None   # 층 1건으로 계산된 옛 값은 다시 계산
             if ratio is None and n_calls < MAX_CALLS * 2:
                 ratio = office_ratio(sgg, bjd, it.get("platGbCd"), it.get("bun"), it.get("ji"))
                 n_calls += 1
@@ -279,7 +281,7 @@ def main():
                 "sido": short_sido(sido),
                 "sigungu": sigungu, "sgg_code": sgg, "dong": dong, "zone": zone_of(sido, sigungu, dong),
                 "lat": lat, "lng": lng,
-                "gfa": int(float(it.get("totArea") or 0)), "office_ratio": ratio,
+                "gfa": int(float(it.get("totArea") or 0)), "office_ratio": ratio, "ratio_n": 2 if ratio is not None else 0,
                 "floors": floors_of(it),
                 "bjd": bjd, "plat_gb": it.get("platGbCd"), "bun": it.get("bun"), "ji": it.get("ji"),
                 "addr": addr, "public": public, "geocoded": old.get("geocoded", False),
@@ -308,8 +310,9 @@ def main():
     for r in rows.values():
         if budget <= 0:
             break
-        if r.get("office_ratio") is None and r.get("bjd") and not r.get("exclude"):
+        if (r.get("office_ratio") is None or not r.get("ratio_n")) and r.get("bjd") and not r.get("exclude"):
             r["office_ratio"] = office_ratio(r["sgg_code"], r["bjd"], r.get("plat_gb"), r.get("bun"), r.get("ji"))
+            r["ratio_n"] = 2 if r["office_ratio"] is not None else 0
             budget -= 1
     scanned = sum(1 for b in BJDONG if state.get(f"{b[0]}{b[1]}"))
     print("DEBUG calls", n_calls, "items", n_items, "purposes", sorted(seen_purps.items(), key=lambda x: -x[1])[:15], file=sys.stderr)
