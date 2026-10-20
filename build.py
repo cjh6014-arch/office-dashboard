@@ -1,4 +1,4 @@
-"""캐시(원천 수집 결과)를 합쳌 data/data.json 을 만듭니다.
+"""캐시(원천 수집 결과)를 합쳐 data/data.json 을 만듭니다.
 
 어느 한 원천이 비어 있으면 그 부분만 이전 data.json 값을 유지합니다.
 모든 원천이 비어 있으면(키 미설정 등) sample_data.py 결과를 그대로 둡니다.
@@ -20,7 +20,13 @@ def load(name, default):
 
 def main():
     prev = json.load(open(OUT, encoding="utf-8")) if OUT.exists() else {}
-    permits = [r for r in load("permits.json", []) if not r.get("exclude")]
+    permits, seen = [], set()
+    for r in load("permits.json", []):            # 같은 자리 · 같은 연면적의 반복 허가(용도변경 재신청 등)는 최신 1건만
+        key = (r.get("addr") or r.get("name"), r.get("gfa"), r.get("kind"))
+        if r.get("exclude") or key in seen:
+            continue
+        seen.add(key)
+        permits.append(r)
     market = load("market.json", {})
     news = load("news.json", [])
     policies = load("policies.json", [])
