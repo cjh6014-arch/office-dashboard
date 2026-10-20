@@ -56,7 +56,7 @@ def get(op, **params):
                 first = (items.get("item") if isinstance(items, dict) else None) or []
                 first = first[0] if isinstance(first, list) and first else first
                 print("DEBUG", op, params.get("sigunguCd"), "header=", head, "totalCount=", bod.get("totalCount"),
-                      "firstItem=", json.dumps(first, ensure_ascii=False)[:400] if first else None, file=sys.stderr)
+                      "firstItem=", json.dumps(first, ensure_ascii=False)[:1500] if first else None, file=sys.stderr)
             if not items or not isinstance(items, dict):
                 return []
             it = items.get("item", [])
@@ -151,9 +151,14 @@ def office_ratio(sgg, bjd, plat_gb, bun, ji):
     if FLR_DEBUG > 0:
         FLR_DEBUG -= 1
         print("DEBUG flr", sgg, bjd, bun, ji, "n=", len(flr), json.dumps(flr[:2], ensure_ascii=False)[:500], file=sys.stderr)
-    tot = sum(float(f.get("area") or 0) for f in flr)
-    off = sum(float(f.get("area") or 0) for f in flr if (f.get("mainPurpsCdNm") or "") in OFFICE_PURPOSES
-              or "업무" in (f.get("etcPurps") or ""))
+    def area(f):
+        return float(f.get("flrArea") or f.get("area") or 0)
+
+    def is_office(f):   # 주용도코드 14xxx = 업무시설 계열(일반 · 공공 · 금융업소 등), 이름에 업무 · 사무 포함
+        code, nm = str(f.get("mainPurpsCd") or ""), (f.get("mainPurpsCdNm") or "") + (f.get("etcPurps") or "")
+        return code.startswith("14") or "업무" in nm or "사무" in nm
+    tot = sum(area(f) for f in flr)
+    off = sum(area(f) for f in flr if is_office(f))
     return round(off / tot, 2) if tot else None
 
 
@@ -165,6 +170,14 @@ SIDO_SHORT = {"서울특별시": "서울", "부산광역시": "부산", "대구�
 
 def short_sido(s):
     return SIDO_SHORT.get(s, s[:2])
+
+
+def floors_of(it):
+    try:
+        u, g = int(float(it.get("ugrndFlrCnt") or 0)), int(float(it.get("grndFlrCnt") or 0))
+    except ValueError:
+        return ""
+    return f"지하{u}/지상{g}" if (u or g) else ""
 
 
 def fmt_day(s):
@@ -218,7 +231,8 @@ def main():
                 "sigungu": sigungu, "sgg_code": sgg, "dong": dong, "zone": zone_of(sido, sigungu, dong),
                 "lat": lat, "lng": lng,
                 "gfa": int(float(it.get("totArea") or 0)), "office_ratio": ratio,
-                "floors": f"지하{it.get('ugrndFlrCnt','0')}/지상{it.get('grndFlrCnt','0')}",
+                "floors": floors_of(it),
+                "bjd": bjd, "plat_gb": it.get("platGbCd"), "bun": it.get("bun"), "ji": it.get("ji"),
                 "permit": fmt_day(it.get("archPmsDay")), "start": start, "complete": comp,
                 "stage": "준공" if comp else ("공사 중" if start else "착공 전"),
                 "exclude": is_otel, "articles": old.get("articles", []),
@@ -231,6 +245,13 @@ def main():
             c = centroid(r.get("sido", ""), r.get("sigungu", ""))
             if c:
                 r["lat"], r["lng"] = c["lat"], c["lng"]
+    budget = 300                                  # 비중이 비어 있는 기존 건 보충(하루 300건)
+    for r in rows.values():
+        if budget <= 0:
+            break
+        if r.get("office_ratio") is None and r.get("bjd") and not r.get("exclude"):
+            r["office_ratio"] = office_ratio(r["sgg_code"], r["bjd"], r.get("plat_gb"), r.get("bun"), r.get("ji"))
+            budget -= 1
     scanned = sum(1 for b in BJDONG if state.get(f"{b[0]}{b[1]}"))
     print("DEBUG calls", n_calls, "items", n_items, "purposes", sorted(seen_purps.items(), key=lambda x: -x[1])[:15], file=sys.stderr)
     print(f"읍면동 {scanned}/{len(BJDONG)} 수집됨", file=sys.stderr)
