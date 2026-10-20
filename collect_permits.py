@@ -131,6 +131,11 @@ def load_sigungu_api():
         if page > 60:
             break
     cache, bcache = CACHE / "sigungu.json", CACHE / "bjdong.json"
+    if bcache.exists():                       # API 가 중간에 끊겨 짧게 오면 이전(더 긴) 목록을 쓴다
+        old = json.load(open(bcache, encoding="utf-8"))
+        if len(old) > len(BJDONG):
+            print("읍면동 목록이 이전보다 짧음", len(BJDONG), "<", len(old), "— 이전 목록 사용", file=sys.stderr)
+            BJDONG[:] = old
     if out:
         json.dump(out, open(cache, "w", encoding="utf-8"), ensure_ascii=False)
         json.dump(BJDONG, open(bcache, "w", encoding="utf-8"), ensure_ascii=False)
