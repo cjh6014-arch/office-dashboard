@@ -16,15 +16,34 @@ CENT = json.load(open(ROOT / "scripts" / "centroids.json", encoding="utf-8"))
 CENT_BY_NAME = {v["name"]: v for v in CENT.values()}
 
 
+DEBUG_LEFT = 3
+
+
 def get(op, **params):
+    global DEBUG_LEFT
     params.update(serviceKey=DATA_GO_KR_KEY, _type="json", numOfRows=1000)
     url = f"{BASE}/{op}?" + urllib.parse.urlencode(params)
     for attempt in range(3):
         try:
             with urllib.request.urlopen(url, timeout=60) as r:
-                body = json.loads(r.read().decode("utf-8"))
-            items = body.get("response", {}).get("body", {}).get("items", {})
-            if not items:
+                text = r.read().decode("utf-8", "replace")
+            try:
+                body = json.loads(text)
+            except ValueError:
+                if DEBUG_LEFT > 0:
+                    DEBUG_LEFT -= 1
+                    print("DEBUG non-json", op, params.get("sigunguCd"), text[:300].replace("\n", " "), file=sys.stderr)
+                return []
+            head = body.get("response", {}).get("header", {})
+            bod = body.get("response", {}).get("body", {})
+            items = bod.get("items", {})
+            if DEBUG_LEFT > 0:
+                DEBUG_LEFT -= 1
+                first = (items.get("item") if isinstance(items, dict) else None) or []
+                first = first[0] if isinstance(first, list) and first else first
+                print("DEBUG", op, params.get("sigunguCd"), "header=", head, "totalCount=", bod.get("totalCount"),
+                      "firstItem=", json.dumps(first, ensure_ascii=False)[:400] if first else None, file=sys.stderr)
+            if not items or not isinstance(items, dict):
                 return []
             it = items.get("item", [])
             return it if isinstance(it, list) else [it]
@@ -127,11 +146,14 @@ def main():
     if cache.exists():
         prev = {r["id"]: r for r in json.load(open(cache, encoding="utf-8"))}
     rows = {}
+    seen_purps, n_items = {}, 0
     end = datetime.date.today().strftime("%Y%m%d")
     for sgg, sido, sigungu in load_sigungu():
         items = get("getApBasisOulnInfo", sigunguCd=sgg, bjdongCd="", startDate=PERMIT_SINCE, endDate=end)
+        n_items += len(items)
         for it in items:
             purps = (it.get("mainPurpsCdNm") or "").strip()
+            seen_purps[purps] = seen_purps.get(purps, 0) + 1
             name = (it.get("bldNm") or "").strip() or f"{it.get('platPlc','')} 업무시설"
             if purps not in OFFICE_PURPOSES:
                 continue
@@ -162,6 +184,7 @@ def main():
                 "articles_checked": old.get("articles_checked"),
             }
         time.sleep(0.2)
+    print("DEBUG items total", n_items, "purposes", sorted(seen_purps.items(), key=lambda x: -x[1])[:20], file=sys.stderr)
     if not rows and prev:
         print("수집 결과 없음 — 이전 캐시 유지", file=sys.stderr)
         rows = prev
