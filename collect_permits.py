@@ -62,6 +62,8 @@ LAST_TOTAL = {}
 HTTP_CALLS = 0          # 이번 실행의 실제 호출 수
 MAX_HTTP = 6000         # 하루 호출 상한(공공데이터포털 일일 한도 안쪽)
 MAX_PAGES = 30          # 한 페이지 100건(API 상한)이라 큰 동은 여러 쪽
+TIME_BUDGET = int(os.environ.get("PERMIT_MINUTES", "75")) * 60   # 인허가 수집에 쓸 최대 시간(초)
+T0 = time.time()
 LAST_OK = {}            # op → 마지막 호출이 정상 응답(resultCode 00)이었는지
 
 
@@ -77,7 +79,7 @@ def get(op, **params):
         for attempt in range(3):
             try:
                 HTTP_CALLS += 1
-                with urllib.request.urlopen(url, timeout=60) as r:
+                with urllib.request.urlopen(url, timeout=40) as r:
                     text = r.read().decode("utf-8", "replace")
                 try:
                     body = json.loads(text)
@@ -87,9 +89,9 @@ def get(op, **params):
                         print("DEBUG non-json", op, params.get("sigunguCd"), text[:300].replace("\n", " "), file=sys.stderr)
                     body = {}
                 break
-            except Exception as e:  # 네트워크 · 쿼터 초과 등
+            except Exception as e:  # 네트워크 · 과부하(503) 등
                 print("retry", op, params.get("sigunguCd"), e, file=sys.stderr)
-                time.sleep(2 * (attempt + 1))
+                time.sleep(5 * (attempt + 1) if "503" in str(e) else 2 * (attempt + 1))
         if not body:
             break
         head = body.get("response", {}).get("header", {})
@@ -113,6 +115,7 @@ def get(op, **params):
         if not it or len(out) >= total:
             break
         page += 1
+        time.sleep(0.2)
     else:
         print("쪽수 상한 — 일부만 수집", op, params.get("sigunguCd"), params.get("bjdongCd"), total, file=sys.stderr)
     LAST_TOTAL[op] = total
@@ -271,6 +274,9 @@ def main():
         if HTTP_CALLS >= MAX_HTTP:
             print("호출 상한 도달 — 나머지 동은 다음 실행에", file=sys.stderr)
             break
+        if time.time() - T0 > TIME_BUDGET:
+            print("시간 상한 도달 — 나머지 동은 다음 실행에", file=sys.stderr)
+            break
         # startDate/endDate 는 허가일이 아니라 대장 생성일 기준이라, 허가일은 아래에서 직접 거릅니다
         items = get("getApBasisOulnInfo", sigunguCd=sgg, bjdongCd=bjd, startDate=PERMIT_SINCE, endDate=end)
         n_calls += 1
@@ -339,7 +345,7 @@ def main():
     print("지오코딩", sum(1 for r in rows.values() if r.get("geocoded")), "/", len(rows), file=sys.stderr)
     budget = 300                                  # 비중이 비어 있는 기존 건 보충(하루 300건)
     for r in rows.values():
-        if budget <= 0:
+        if budget <= 0 or time.time() - T0 > TIME_BUDGET + 600:
             break
         if (r.get("office_ratio") is None or not r.get("ratio_n")) and r.get("bjd") and not r.get("exclude"):
             r["office_ratio"] = office_ratio(r["sgg_code"], r["bjd"], r.get("plat_gb"), r.get("bun"), r.get("ji"))
