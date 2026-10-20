@@ -101,6 +101,11 @@ dl.terms dd{margin:0;color:var(--fg2);max-width:80ch}
 footer{margin-top:36px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
 footer p{max-width:90ch}
 .small{font-size:12px;color:var(--muted)}
+.pager{display:flex;flex-wrap:wrap;align-items:center;gap:4px;margin-top:10px;font-size:13px}
+.pager button{border:1px solid var(--border);background:var(--panel);color:var(--ink);border-radius:6px;min-width:32px;padding:4px 8px;cursor:pointer}
+.pager button[disabled]{opacity:.4;cursor:default}
+.pager button.cur{background:var(--accent);color:#fff;border-color:var(--accent)}
+.pager .pinfo{margin-left:8px;color:var(--muted)}
 .map{width:100%;aspect-ratio:1/1.05;max-height:620px}
 .map.seoul{aspect-ratio:1/.72}
 .map path{fill:var(--bg);stroke:var(--line);stroke-width:.6}
@@ -161,7 +166,7 @@ footer p{max-width:90ch}
 
 <section id="list">
   <h2>업무시설 인허가 목록</h2>
-  <p class="sub">주용도 '업무시설' 허가 대장 · 업무시설 비중은 층별 용도 중 업무시설 바닥면적 비율 · 관련 기사는 건물명 · 지역이 맞는 것만 자동 연결(매일 재검색) · "공공"은 관공서 · 공공기관 청사</p>
+  <p class="sub">주용도 '업무시설' 허가 대장 · 업무시설 비중은 층별 용도 중 업무시설 바닥면적 비율(연면적 3,000㎡ 이상만 조회 · 오피스텔 층 제외) · 같은 자리의 반복 허가는 최신 1건만 · 관련 기사는 건물명 · 지역이 맞는 것만 자동 연결(매일 재검색) · "공공"은 관공서 · 공공기관 청사</p>
   <div class="row">
     <div class="seg" id="stageFilter"><button aria-pressed="true" data-v="">전체</button><button data-v="착공 전">착공 전</button><button data-v="공사 중">공사 중</button><button data-v="준공">준공</button></div>
     <select id="zoneFilter"><option value="">권역 전체</option><option>CBD</option><option>GBD</option><option>YBD</option><option>BBD</option><option>서울 기타</option><option>수도권</option><option>지방</option></select>
@@ -175,6 +180,7 @@ footer p{max-width:90ch}
     <th class="n" data-k="gfa">연면적(㎡)<span class="s">↕</span></th><th class="n" data-k="office_ratio">업무시설 비중<span class="s">↕</span></th><th data-k="floors">층수</th>
     <th data-k="permit">허가<span class="s">↕</span></th><th data-k="start">착공<span class="s">↕</span></th><th data-k="complete">준공<span class="s">↕</span></th><th data-k="stage">단계<span class="s">↕</span></th><th>관련 기사</th>
   </tr></thead><tbody></tbody></table></div>
+  <div class="pager" id="pager"></div>
 </section>
 
 <section id="market">
@@ -240,7 +246,7 @@ const STC={'착공 전':'var(--st1)','공사 중':'var(--st2)','준공':'var(--s
 const STCLS={'착공 전':'s1','공사 중':'s2','준공':'s3'};
 const ZC={CBD:'var(--z1)',GBD:'var(--z2)',YBD:'var(--z3)',BBD:'var(--z4)',서울:'var(--accent)',전국:'var(--z5)'};
 const SEOUL=new Set(['서울']), METRO=new Set(['서울','경기','인천']);
-let D=null, MAP=null, state={measure:'gfa',region:'all',mapView:'seoul',mapStages:new Set(['착공 전','공사 중','준공']),stage:'',zone:'',q:'',sortK:'permit',sortD:-1,mk:new Set(['서울','CBD','GBD','YBD']),pol:'',pick:null,pubx:false};
+let D=null, MAP=null, state={measure:'gfa',region:'all',mapView:'seoul',mapStages:new Set(['착공 전','공사 중','준공']),stage:'',zone:'',q:'',sortK:'permit',sortD:-1,mk:new Set(['서울','CBD','GBD','YBD']),pol:'',pick:null,pubx:false,page:1};
 
 /* ---------- tooltip ---------- */
 const tip=$('#tip');
@@ -317,27 +323,41 @@ function renderMap(){
   g+='</svg>';
   $('#mapChart').innerHTML=g+`<div class="legend"><span><i class="c" style="background:var(--st1)"></i>착공 전</span><span><i class="c" style="background:var(--st2)"></i>공사 중</span><span><i class="c" style="background:var(--st3)"></i>준공</span><span class="small">${rows.length}건 표시${v==='seoul'?' · 음영 = CBD · GBD · YBD 해당 구':''}</span></div>`;
   bindTips($('#mapChart'));
-  $$('#mapChart circle').forEach(c=>c.addEventListener('click',()=>{state.pick=c.dataset.id;state.q='';$('#q').value='';renderTable();location.hash='list'}));
+  $$('#mapChart circle').forEach(c=>c.addEventListener('click',()=>{state.pick=c.dataset.id;state.q='';$('#q').value='';state.page=1;renderTable();location.hash='list'}));
 }
 
 /* ---------- 표 ---------- */
 function filtered(){
   let rows=D.permits.filter(r=>(!state.stage||r.stage===state.stage)&&(!state.zone||r.zone===state.zone)&&!(state.pubx&&r.public));
   if(state.pick)rows=rows.filter(r=>r.id===state.pick);
-  if(state.q){const q=state.q.toLowerCase();rows=rows.filter(r=>(r.name+r.sido+r.sigungu+r.dong).toLowerCase().includes(q))}
+  if(state.q){const qs=state.q.toLowerCase().split(/\s+/).filter(Boolean);rows=rows.filter(r=>{const h=`${r.name} ${r.sido} ${r.sigungu} ${r.dong||''} ${r.addr||''}`.toLowerCase();return qs.every(q=>h.includes(q))})}
   const k=state.sortK,d=state.sortD;
   return rows.sort((a,b)=>{const x=a[k]??'',y=b[k]??'';return (x>y?1:x<y?-1:0)*d});
 }
+const PAGE=10;
 function renderTable(){
   const rows=filtered();
-  $('#tbl tbody').innerHTML=rows.length?rows.map(r=>`<tr>
+  const pages=Math.max(1,Math.ceil(rows.length/PAGE));
+  if(state.page>pages)state.page=pages; if(state.page<1)state.page=1;
+  const view=rows.slice((state.page-1)*PAGE,state.page*PAGE);
+  $('#tbl tbody').innerHTML=view.length?view.map(r=>`<tr>
     <td><span class="nm">${r.name}</span><span class="kd">${r.kind}${r.public?' · 공공':''}${r.dong?' · '+r.dong:''}</span></td><td>${r.sido} ${r.sigungu}</td><td>${r.zone}</td>
     <td class="n">${fmt(r.gfa)}</td><td class="n">${r.office_ratio==null?'–':Math.round(r.office_ratio*100)+'%'}</td><td>${r.floors||'–'}</td>
     <td>${r.permit||'–'}</td><td>${r.start||'–'}</td><td>${r.complete||'–'}</td><td><span class="pill ${STCLS[r.stage]}">${r.stage}</span></td>
     <td>${r.articles&&r.articles.length?r.articles.map(a=>`<a href="${a.url}" target="_blank" rel="noopener" title="${a.title}">${a.date?a.date.slice(0,7)+' · ':''}${a.title.length>28?a.title.slice(0,28)+'…':a.title}</a>`).join('<br>'):'<span class="small">–</span>'}</td></tr>`).join('')
     :`<tr><td colspan="11" class="empty">조건에 맞는 인허가 건이 없습니다</td></tr>`;
   $('#count').innerHTML=`${rows.length}건 · 연면적 합계 ${fmt(rows.reduce((s,r)=>s+r.gfa,0)/1000)}천㎡${state.pick?' · <a href="#list" id="unpick">선택 해제</a>':''}`;
-  const u=$('#unpick'); if(u)u.addEventListener('click',e=>{e.preventDefault();state.pick=null;renderTable()});
+  const u=$('#unpick'); if(u)u.addEventListener('click',e=>{e.preventDefault();state.pick=null;state.page=1;renderTable()});
+  renderPager(rows.length,pages);
+}
+function renderPager(n,pages){
+  const el=$('#pager'); if(!el)return;
+  if(pages<=1){el.innerHTML='';return;}
+  const p=state.page, nums=[];
+  for(let i=Math.max(1,p-2);i<=Math.min(pages,p+2);i++)nums.push(i);
+  if(nums[0]>1){if(nums[0]>2)nums.unshift('…');nums.unshift(1);} if(nums[nums.length-1]<pages){if(nums[nums.length-1]<pages-1)nums.push('…');nums.push(pages);}
+  el.innerHTML=`<button data-p="${p-1}" ${p<=1?'disabled':''}>‹</button>`+nums.map(x=>x==='…'?'<span>…</span>':`<button data-p="${x}" class="${x===p?'cur':''}">${x}</button>`).join('')+`<button data-p="${p+1}" ${p>=pages?'disabled':''}>›</button><span class="pinfo">${(p-1)*PAGE+1}–${Math.min(n,p*PAGE)} / ${n}건 · 10건씩</span>`;
+  $$('#pager button[data-p]').forEach(b=>b.addEventListener('click',()=>{state.page=+b.dataset.p;renderTable();$('#list').scrollIntoView({behavior:'smooth',block:'start'})}));
 }
 function exportXlsx(){
   const rows=filtered().map(r=>({'건물명':r.name,'구분':r.kind,'시도':r.sido,'시군구':r.sigungu,'법정동':r.dong,'권역':r.zone,'연면적(㎡)':r.gfa,'업무시설 비중':r.office_ratio,'층수':r.floors,'허가일':r.permit,'실제착공일':r.start,'사용승인일':r.complete,'단계':r.stage,'관련기사':(r.articles||[]).map(a=>a.title+' '+a.url).join(' | ')}));
@@ -401,12 +421,12 @@ function wire(){
   seg('trendMeasure','measure',renderTrend);seg('trendRegion','region',renderTrend);
   seg('mapView','mapView',renderMap);
   $$('#mapStages .chip').forEach(b=>b.addEventListener('click',()=>{const k=b.dataset.v;state.mapStages.has(k)?state.mapStages.delete(k):state.mapStages.add(k);b.setAttribute('aria-pressed',state.mapStages.has(k));renderMap()}));
-  seg('stageFilter','stage',()=>{state.pick=null;renderTable()});
-  $('#zoneFilter').addEventListener('change',e=>{state.zone=e.target.value;state.pick=null;renderTable()});
-  $('#q').addEventListener('input',e=>{state.q=e.target.value.trim();state.pick=null;renderTable()});
-  $('#pubx').addEventListener('change',e=>{state.pubx=e.target.checked;state.pick=null;renderTable()});
+  seg('stageFilter','stage',()=>{state.pick=null;state.page=1;renderTable()});
+  $('#zoneFilter').addEventListener('change',e=>{state.zone=e.target.value;state.pick=null;state.page=1;renderTable()});
+  $('#q').addEventListener('input',e=>{state.q=e.target.value.trim();state.pick=null;state.page=1;renderTable()});
+  $('#pubx').addEventListener('change',e=>{state.pubx=e.target.checked;state.pick=null;state.page=1;renderTable()});
   $('#xls').addEventListener('click',exportXlsx);
-  $$('#tbl th[data-k]').forEach(th=>th.addEventListener('click',()=>{const k=th.dataset.k;state.sortD=state.sortK===k?-state.sortD:(k==='name'||k==='sigungu'||k==='zone'||k==='stage'?1:-1);state.sortK=k;renderTable()}));
+  $$('#tbl th[data-k]').forEach(th=>th.addEventListener('click',()=>{const k=th.dataset.k;state.sortD=state.sortK===k?-state.sortD:(k==='name'||k==='sigungu'||k==='zone'||k==='stage'?1:-1);state.sortK=k;state.page=1;renderTable()}));
 }
 async function load(){
   try{[D,MAP]=await Promise.all([fetch('data/data.json').then(r=>r.json()),fetch('data/map.json').then(r=>r.json())])}
