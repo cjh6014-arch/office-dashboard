@@ -15,7 +15,19 @@ MAX_CALLS = int(os.environ.get("MAX_CALLS", "1500"))   # 하루 읍면동 호출
 
 BASE = "https://apis.data.go.kr/1613000/ArchPmsHubService"
 CENT = json.load(open(ROOT / "scripts" / "centroids.json", encoding="utf-8"))
-CENT_BY_NAME = {v["name"]: v for v in CENT.values()}
+KOSTAT_SIDO = {"11": "서울", "21": "부산", "22": "대구", "23": "인천", "24": "광주", "25": "대전", "26": "울산", "29": "세종",
+               "31": "경기", "32": "강원", "33": "충북", "34": "충남", "35": "전북", "36": "전남", "37": "경북", "38": "경남", "39": "제주"}
+CENT_BY_KEY = {}   # (시도 약칭, 시군구명 공백제거) → 대표점
+for code, v in CENT.items():
+    CENT_BY_KEY[(KOSTAT_SIDO.get(code[:2], ""), v["name"].replace(" ", ""))] = v
+    CENT_BY_KEY.setdefault((KOSTAT_SIDO.get(code[:2], ""), v["name"].replace(" ", "")[:3]), v)
+
+
+def centroid(sido_short, sigungu):
+    key = sigungu.replace(" ", "")
+    return CENT_BY_KEY.get((sido_short, key)) or CENT_BY_KEY.get((sido_short, key[:3])) \
+        or CENT_BY_KEY.get((sido_short, sigungu.split()[0] if sigungu else "")) \
+        or CENT_BY_KEY.get((sido_short, sido_short + "시"))
 
 
 DEBUG_LEFT = 3
@@ -130,8 +142,15 @@ def zone_of(sido, sigungu, dong):
     return "수도권" if sido in METRO_SIDO else "지방"
 
 
+FLR_DEBUG = 3
+
+
 def office_ratio(sgg, bjd, plat_gb, bun, ji):
+    global FLR_DEBUG
     flr = get("getApFlrOulnInfo", sigunguCd=sgg, bjdongCd=bjd, platGbCd=plat_gb, bun=bun, ji=ji)
+    if FLR_DEBUG > 0:
+        FLR_DEBUG -= 1
+        print("DEBUG flr", sgg, bjd, bun, ji, "n=", len(flr), json.dumps(flr[:2], ensure_ascii=False)[:500], file=sys.stderr)
     tot = sum(float(f.get("area") or 0) for f in flr)
     off = sum(float(f.get("area") or 0) for f in flr if (f.get("mainPurpsCdNm") or "") in OFFICE_PURPOSES
               or "업무" in (f.get("etcPurps") or ""))
@@ -183,9 +202,9 @@ def main():
             is_otel = any(t in name for t in EXCLUDE_NAME_TOKENS)
             pk = it.get("mgmPmsrgstPk") or f"{sgg}-{bjd}-{it.get('bun')}-{it.get('ji')}-{it.get('archPmsDay')}"
             old = prev.get(pk, {})
-            lat, lng = old.get("lat"), old.get("lng")
+            lat, lng = (old.get("lat"), old.get("lng")) if old.get("geocoded") else (None, None)
             if lat is None:  # 좌표: (1) Kakao 지오코딩 (2) 시군구 대표점
-                c = CENT_BY_NAME.get(sigungu.split()[0]) or CENT_BY_NAME.get(sigungu.replace(" ", ""))
+                c = centroid(short_sido(sido), sigungu)
                 if c:
                     lat, lng = c["lat"], c["lng"]
             ratio = old.get("office_ratio")
@@ -207,6 +226,11 @@ def main():
             }
         time.sleep(0.1)
     json.dump(state, open(state_p, "w", encoding="utf-8"))
+    for r in rows.values():                      # 지오코딩 전인 건은 시군구 대표점으로 좌표 재계산
+        if not r.get("geocoded"):
+            c = centroid(r.get("sido", ""), r.get("sigungu", ""))
+            if c:
+                r["lat"], r["lng"] = c["lat"], c["lng"]
     scanned = sum(1 for b in BJDONG if state.get(f"{b[0]}{b[1]}"))
     print("DEBUG calls", n_calls, "items", n_items, "purposes", sorted(seen_purps.items(), key=lambda x: -x[1])[:15], file=sys.stderr)
     print(f"읍면동 {scanned}/{len(BJDONG)} 수집됨", file=sys.stderr)
