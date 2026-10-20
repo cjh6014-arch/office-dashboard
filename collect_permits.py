@@ -65,6 +65,7 @@ MAX_PAGES = 30          # 한 페이지 100건(API 상한)이라 큰 동은 여�
 TIME_BUDGET = int(os.environ.get("PERMIT_MINUTES", "75")) * 60   # 인허가 수집에 쓸 최대 시간(초)
 T0 = time.time()
 LAST_OK = {}            # op → 마지막 호출이 정상 응답(resultCode 00)이었는지
+RATIO_MIN_GFA = 3000    # 업무시설 비중(층별 조회)은 연면적 3,000㎡ 이상만
 
 
 def get(op, **params):
@@ -79,6 +80,7 @@ def get(op, **params):
         for attempt in range(3):
             try:
                 HTTP_CALLS += 1
+                time.sleep(0.25)                      # 호출 간격(과부하 503 줄이기)
                 with urllib.request.urlopen(url, timeout=40) as r:
                     text = r.read().decode("utf-8", "replace")
                 try:
@@ -91,7 +93,7 @@ def get(op, **params):
                 break
             except Exception as e:  # 네트워크 · 과부하(503) 등
                 print("retry", op, params.get("sigunguCd"), e, file=sys.stderr)
-                time.sleep(5 * (attempt + 1) if "503" in str(e) else 2 * (attempt + 1))
+                time.sleep(3 * (attempt + 1))
         if not body:
             break
         head = body.get("response", {}).get("header", {})
@@ -115,7 +117,6 @@ def get(op, **params):
         if not it or len(out) >= total:
             break
         page += 1
-        time.sleep(0.2)
     else:
         print("쪽수 상한 — 일부만 수집", op, params.get("sigunguCd"), params.get("bjdongCd"), total, file=sys.stderr)
     LAST_TOTAL[op] = total
@@ -309,7 +310,8 @@ def main():
                 if c:
                     lat, lng = c["lat"], c["lng"]
             ratio = old.get("office_ratio") if old.get("ratio_n") else None   # 층 1건으로 계산된 옛 값은 다시 계산
-            if ratio is None and HTTP_CALLS < MAX_HTTP:
+            gfa = int(float(it.get("totArea") or 0))
+            if ratio is None and HTTP_CALLS < MAX_HTTP and gfa >= RATIO_MIN_GFA:   # 작은 건은 층별 조회 생략(호출 절약)
                 ratio = office_ratio(sgg, bjd, it.get("platGbCd"), it.get("bun"), it.get("ji"))
                 n_calls += 1
             start, comp = fmt_day(it.get("realStcnsDay")), fmt_day(it.get("useAprDay"))
@@ -347,7 +349,7 @@ def main():
     for r in rows.values():
         if budget <= 0 or time.time() - T0 > TIME_BUDGET + 600:
             break
-        if (r.get("office_ratio") is None or not r.get("ratio_n")) and r.get("bjd") and not r.get("exclude"):
+        if (r.get("office_ratio") is None or not r.get("ratio_n")) and r.get("bjd") and not r.get("exclude") and (r.get("gfa") or 0) >= RATIO_MIN_GFA:
             r["office_ratio"] = office_ratio(r["sgg_code"], r["bjd"], r.get("plat_gb"), r.get("bun"), r.get("ji"))
             r["ratio_n"] = 2 if r["office_ratio"] is not None else 0
             budget -= 1
