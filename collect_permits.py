@@ -8,7 +8,7 @@
 입력: data/bjdong_codes.txt  (행정안전부 법정동코드 전체자료, 탭 구분 — 포털에서 내려받아 넣음)
 출력: data/cache/permits.json
 """
-import json, os, time, sys, re, datetime, urllib.parse, urllib.request
+import json, os, time, sys, re, zlib, datetime, urllib.parse, urllib.request
 from config import *
 
 MAX_CALLS = int(os.environ.get("MAX_CALLS", "1500"))   # 하루 읍면동 호출 수 (트래픽 한도에 맞춰 조정)
@@ -28,6 +28,33 @@ def centroid(sido_short, sigungu):
     return CENT_BY_KEY.get((sido_short, key)) or CENT_BY_KEY.get((sido_short, key[:3])) \
         or CENT_BY_KEY.get((sido_short, sigungu.split()[0] if sigungu else "")) \
         or CENT_BY_KEY.get((sido_short, sido_short + "시"))
+
+
+def jitter(pk, lat, lng):
+    """같은 시군구 대표점에 여러 건이 겹치지 않게 ID 기반으로 ±0.008도 안에서 살짝 흩뿌림."""
+    h = zlib.crc32(str(pk).encode())
+    return round(lat + ((h % 1000) / 1000 - 0.5) * 0.016, 5), round(lng + (((h // 1000) % 1000) / 1000 - 0.5) * 0.02, 5)
+
+
+GEO_BUDGET = int(os.environ.get("GEO_BUDGET", "500"))   # 하루 Kakao 지오코딩 건수
+
+
+def geocode(addr):
+    """Kakao 주소 검색 → (lat, lng). 키 없거나 실패하면 None."""
+    if not KAKAO_KEY or not addr:
+        return None
+    q = addr.replace("번지", "").strip()
+    url = "https://dapi.kakao.com/v2/local/search/address.json?" + urllib.parse.urlencode({"query": q, "size": 1})
+    req = urllib.request.Request(url, headers={"Authorization": f"KakaoAK {KAKAO_KEY}"})
+    try:
+        with urllib.request.urlopen(req, timeout=20) as r:
+            docs = json.loads(r.read().decode("utf-8")).get("documents") or []
+    except Exception as e:
+        print("kakao 실패", q, e, file=sys.stderr)
+        return None
+    if not docs:
+        return None
+    return float(docs[0]["y"]), float(docs[0]["x"])
 
 
 DEBUG_LEFT = 3
@@ -213,6 +240,9 @@ def main():
                 continue
             name = (it.get("bldNm") or "").strip() or f"{sigungu} {dong} 업무시설"
             is_otel = any(t in name for t in EXCLUDE_NAME_TOKENS)
+            addr = (it.get("platPlc") or "").strip()
+            public = str(it.get("mainPurpsCd") or "").startswith("141") or any(
+                k in name for k in ("경찰서", "검찰청", "법원", "청사", "구청", "시청", "군청", "도청", "세무서", "우체국", "소방서", "주민센터", "행정복지센터", "공단", "공사"))
             pk = it.get("mgmPmsrgstPk") or f"{sgg}-{bjd}-{it.get('bun')}-{it.get('ji')}-{it.get('archPmsDay')}"
             old = prev.get(pk, {})
             lat, lng = (old.get("lat"), old.get("lng")) if old.get("geocoded") else (None, None)
@@ -233,6 +263,7 @@ def main():
                 "gfa": int(float(it.get("totArea") or 0)), "office_ratio": ratio,
                 "floors": floors_of(it),
                 "bjd": bjd, "plat_gb": it.get("platGbCd"), "bun": it.get("bun"), "ji": it.get("ji"),
+                "addr": addr, "public": public, "geocoded": old.get("geocoded", False),
                 "permit": fmt_day(it.get("archPmsDay")), "start": start, "complete": comp,
                 "stage": "준공" if comp else ("공사 중" if start else "착공 전"),
                 "exclude": is_otel, "articles": old.get("articles", []),
@@ -240,11 +271,20 @@ def main():
             }
         time.sleep(0.1)
     json.dump(state, open(state_p, "w", encoding="utf-8"))
-    for r in rows.values():                      # 지오코딩 전인 건은 시군구 대표점으로 좌표 재계산
-        if not r.get("geocoded"):
-            c = centroid(r.get("sido", ""), r.get("sigungu", ""))
-            if c:
-                r["lat"], r["lng"] = c["lat"], c["lng"]
+    geo = GEO_BUDGET
+    for r in sorted(rows.values(), key=lambda r: r.get("permit") or "", reverse=True):
+        if r.get("geocoded"):
+            continue
+        if geo > 0 and r.get("addr") and not r.get("exclude"):   # Kakao 지오코딩 (최근 허가부터)
+            geo -= 1
+            ll = geocode(r["addr"])
+            if ll:
+                r["lat"], r["lng"], r["geocoded"] = ll[0], ll[1], True
+                continue
+        c = centroid(r.get("sido", ""), r.get("sigungu", ""))        # 없으면 시군구 대표점 + 흩뿌림
+        if c:
+            r["lat"], r["lng"] = jitter(r["id"], c["lat"], c["lng"])
+    print("지오코딩", sum(1 for r in rows.values() if r.get("geocoded")), "/", len(rows), file=sys.stderr)
     budget = 300                                  # 비중이 비어 있는 기존 건 보충(하루 300건)
     for r in rows.values():
         if budget <= 0:
