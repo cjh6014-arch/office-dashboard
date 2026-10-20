@@ -209,7 +209,7 @@ footer p{max-width:90ch}
 <section id="terms">
   <h2>용어 · 기준</h2>
   <dl class="terms">
-    <dt>업무시설 인허가</dt><dd>건축 인허가 대장에서 주용도가 '업무시설'(일반업무시설 · 공공업무시설 · 오피스텔 제외)인 건입니다. 판매 · 숙박 등 다른 주용도 건물 안의 일부 사무층은 잡히지 않고, 오피스텔은 대장상 업무시설이지만 주거 성격이 강해 기본 집계에서 뺍니다(구분 칸에 표시).</dd>
+    <dt>업무시설 인허가</dt><dd>건축 인허가 대장에서 주용도가 '업무시설'(일반업무시설 · 공공업무시설 · 오피스텔 제외)인 건입니다. 판매 · 숙박 등 다른 주용도 건물 안의 일부 사무층은 잡히지 않고, 오피스텔은 대장상 업무시설이지만 주거 성격이 강해 기본 집계에서 뻕니다(구분 칸에 표시).</dd>
     <dt>허가 · 착공 · 준공</dt><dd>대장의 건축허가일 · 실제착공일 · 사용승인일입니다. 착공일이 비어 있으면 '착공 전', 사용승인일이 있으면 '준공'으로 분류합니다.</dd>
     <dt>연면적 · 업무시설 비중</dt><dd>연면적은 건물 전체이고, 업무시설 비중은 층별 개요에서 용도가 업무시설인 바닥면적의 비율입니다. 복합개발(판매 · 숙박 · 공동주택 포함)은 비중을 보고 오피스 공급량을 가늠하세요.</dd>
     <dt>권역</dt><dd>한국부동산원 서울 오피스 권역을 따릅니다. CBD(도심 · 종로 · 중구), GBD(강남 · 서초), YBD(여의도 · 마포 · 영등포), 그 밖의 서울은 '서울 기타', BBD는 판교 · 분당, 나머지 경기 · 인천은 '수도권', 그 외는 '지방'입니다.</dd>
@@ -277,7 +277,7 @@ function renderTiles(){
 /* ---------- 추이(그룹 막대) ---------- */
 function renderTrend(){
   const rows=D.permits.filter(inRegion), years=[];
-  const y0=Math.min(...rows.map(r=>yr(r.permit))), y1=yr(D.updated);
+  const ys=rows.map(r=>yr(r.permit)).filter(Boolean); const y0=ys.length?Math.max(2018,Math.min(...ys)):2018, y1=yr(D.updated);
   for(let y=y0;y<=y1;y++)years.push(y);
   const agg=k=>years.map(y=>{const a=rows.filter(r=>yr(r[k])===y);return state.measure==='gfa'?a.reduce((s,r)=>s+r.gfa,0)/1000:a.length});
   const S=[['허가',agg('permit'),'var(--st1)'],['착공',agg('start'),'var(--st2)'],['준공',agg('complete'),'var(--st3)']];
@@ -331,7 +331,7 @@ function renderTable(){
   const rows=filtered();
   $('#tbl tbody').innerHTML=rows.length?rows.map(r=>`<tr>
     <td><span class="nm">${r.name}</span><span class="kd">${r.kind}${r.dong?' · '+r.dong:''}</span></td><td>${r.sido} ${r.sigungu}</td><td>${r.zone}</td>
-    <td class="n">${fmt(r.gfa)}</td><td class="n">${Math.round(r.office_ratio*100)}%</td><td>${r.floors||'–'}</td>
+    <td class="n">${fmt(r.gfa)}</td><td class="n">${r.office_ratio==null?'–':Math.round(r.office_ratio*100)+'%'}</td><td>${r.floors||'–'}</td>
     <td>${r.permit||'–'}</td><td>${r.start||'–'}</td><td>${r.complete||'–'}</td><td><span class="pill ${STCLS[r.stage]}">${r.stage}</span></td>
     <td>${r.articles&&r.articles.length?r.articles.map(a=>`<a href="${a.url}" target="_blank" rel="noopener" title="${a.title}">${a.date?a.date.slice(0,7)+' · ':''}${a.title.length>28?a.title.slice(0,28)+'…':a.title}</a>`).join('<br>'):'<span class="small">–</span>'}</td></tr>`).join('')
     :`<tr><td colspan="11" class="empty">조건에 맞는 인허가 건이 없습니다</td></tr>`;
@@ -409,7 +409,7 @@ function wire(){
 async function load(){
   try{[D,MAP]=await Promise.all([fetch('data/data.json').then(r=>r.json()),fetch('data/map.json').then(r=>r.json())])}
   catch(e){$('#updated').textContent='데이터를 불러오지 못했습니다 (data/data.json · data/map.json 확인)';return}
-  $('#updated').textContent='갱신 '+D.updated; if(D.sample)$('#banner').hidden=false; if(D.owner)$('#owner').textContent='기획 · 운영: '+D.owner;
+  $('#updated').textContent='갱신 '+D.updated+(D.coverage&&D.coverage.total?` · 인허가 수집 범위 전국 읍면동 ${D.coverage.scanned.toLocaleString('ko-KR')}/${D.coverage.total.toLocaleString('ko-KR')}`:''); if(D.sample)$('#banner').hidden=false; if(D.owner)$('#owner').textContent='기획 · 운영: '+D.owner;
   wire();renderTiles();renderTrend();renderMap();renderTable();renderMarket();renderDeals();renderNews();renderPolicy();
 }
 load();
