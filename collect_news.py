@@ -1,12 +1,12 @@
 """구글 뉴스 RSS → (1) 최근 오피스 기사 (2) 사업장별 관련 기사 매칭 (3) 제도 · 일정 갱신.
 
-- 매일: 일반 오피스 기사 수집
-- 매주(월요일 또는 --weekly): 사업장 이름 + 지역으로 재검색해 관련 기사 연결, 제도 · 일정 갱신
+- 매일: 일반 오피스 기사 수집 + 사업장 이름 · 지역으로 관련 기사 매칭(하루 MAX_MATCH 건, 오래된 것부터)
+- 매주(월요일 또는 --weekly): 제도 · 일정 갱신
 - ANTHROPIC_API_KEY 가 있으면 Claude 로 '같은 사업장인지' · '제도 진행 상태'를 판정하고, 없으면 규칙(이름 · 지역 토큰이 제목에 모두 포함)만 적용
 
 출력: data/cache/news.json, data/cache/policies.json, data/cache/permits.json 의 articles 갱신
 """
-import json, sys, re, datetime, urllib.parse, urllib.request, xml.etree.ElementTree as ET
+import json, os, sys, re, time, datetime, urllib.parse, urllib.request, xml.etree.ElementTree as ET
 from config import *
 
 RSS = "https://news.google.com/rss/search?q={q}&hl=ko&gl=KR&ceid=KR:ko"
@@ -53,10 +53,13 @@ def tokens(name):
     return [t for t in re.findall(r"[가-힣A-Za-z]{2,}", name) if t not in ("업무시설", "신축", "오피스", "빌딩", "사옥", "복합")]
 
 
+MAX_MATCH = int(os.environ.get("MAX_MATCH", "300"))   # 하루 기사 매칭 사업장 수
+
+
 def match_articles(permits):
-    for p in permits:
-        if p.get("articles_checked") and (datetime.date.today() - datetime.date.fromisoformat(p["articles_checked"])).days < 7:
-            continue
+    todo = [p for p in permits if not p.get("exclude")]
+    todo.sort(key=lambda p: p.get("articles_checked") or "")      # 한 번도 안 한 것 · 오래된 것부터
+    for p in todo[:MAX_MATCH]:
         toks = tokens(p["name"])[:2]
         if not toks:
             p["articles_checked"] = datetime.date.today().isoformat()
@@ -64,8 +67,10 @@ def match_articles(permits):
         q = f"{' '.join(toks)} {p['sigungu']} 오피스 OR 업무시설"
         try:
             cands = rss(q, 10)
+            time.sleep(0.4)
         except Exception as e:
             print("rss 실패", q, e, file=sys.stderr)
+            p["articles_checked"] = datetime.date.today().isoformat()
             continue
         keep = []
         for a in cands:
@@ -117,12 +122,14 @@ def main(weekly=False):
     json.dump(uniq[:25], open(CACHE / "news.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print("news", len(uniq))
 
+    pf = CACHE / "permits.json"
+    if pf.exists():
+        permits = json.load(open(pf, encoding="utf-8"))
+        match_articles(permits)
+        json.dump(permits, open(pf, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+        print("기사 매칭", sum(1 for p in permits if p.get("articles")), "건 연결", file=sys.stderr)
+
     if weekly or datetime.date.today().weekday() == 0:
-        pf = CACHE / "permits.json"
-        if pf.exists():
-            permits = json.load(open(pf, encoding="utf-8"))
-            match_articles(permits)
-            json.dump(permits, open(pf, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
         pp = CACHE / "policies.json"
         prev = json.load(open(pp, encoding="utf-8")) if pp.exists() else []
         json.dump(update_policies(prev), open(pp, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
