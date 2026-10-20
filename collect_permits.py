@@ -57,52 +57,58 @@ def geocode(addr):
     return float(docs[0]["y"]), float(docs[0]["x"])
 
 
-DEBUG_LEFT = 3
+DEBUG_LEFT = 6
 LAST_TOTAL = {}
+HTTP_CALLS = 0          # 이번 실행의 실제 호출 수
+MAX_HTTP = 6000         # 하루 호출 상한(공공데이터포털 일일 한도 안쪽)
+MAX_PAGES = 10
 
 
 def get(op, **params):
-    global DEBUG_LEFT
-    params.update(serviceKey=DATA_GO_KR_KEY, _type="json", numOfRows=1000)
-    url = f"{BASE}/{op}?" + urllib.parse.urlencode(params)
-    for attempt in range(3):
-        try:
-            with urllib.request.urlopen(url, timeout=60) as r:
-                text = r.read().decode("utf-8", "replace")
+    """건축HUB 호출. numOfRows 가 그대로 안 먹는 경우가 있어 totalCount 만큼 pageNo 를 올려 가며 모읍니다."""
+    global DEBUG_LEFT, HTTP_CALLS
+    out, page, total = [], 1, None
+    while page <= MAX_PAGES:
+        q = dict(params, serviceKey=DATA_GO_KR_KEY, _type="json", numOfRows=1000, pageNo=page)
+        url = f"{BASE}/{op}?" + urllib.parse.urlencode(q)
+        body = None
+        for attempt in range(3):
             try:
-                body = json.loads(text)
-            except ValueError:
-                if DEBUG_LEFT > 0:
-                    DEBUG_LEFT -= 1
-                    print("DEBUG non-json", op, params.get("sigunguCd"), text[:300].replace("\n", " "), file=sys.stderr)
-                return []
-            head = body.get("response", {}).get("header", {})
-            bod = body.get("response", {}).get("body", {})
-            items = bod.get("items", {})
-            if DEBUG_LEFT > 0:
-                DEBUG_LEFT -= 1
-                first = (items.get("item") if isinstance(items, dict) else None) or []
-                first = first[0] if isinstance(first, list) and first else first
-                print("DEBUG", op, params.get("sigunguCd"), "header=", head, "totalCount=", bod.get("totalCount"),
-                      "firstItem=", json.dumps(first, ensure_ascii=False)[:1500] if first else None, file=sys.stderr)
-            if not items or not isinstance(items, dict):
-                return []
-            it = items.get("item", [])
-            it = it if isinstance(it, list) else [it]
-            try:                                   # 1000건 넘는 응답은 다음 페이지까지(최대 5쪽)
-                total = int(bod.get("totalCount") or 0)
-            except (TypeError, ValueError):
-                total = 0
-            if total > len(it) and params.get("pageNo", 1) < 5 and len(it) >= 1000:
-                nxt = {k: v for k, v in params.items() if k not in ("serviceKey", "_type", "numOfRows")}
-                nxt["pageNo"] = params.get("pageNo", 1) + 1
-                it = it + get(op, **nxt)
-            LAST_TOTAL[op] = total
-            return it
-        except Exception as e:  # 네트워크 · 쿼터 초과 등
-            print("retry", op, params.get("sigunguCd"), e, file=sys.stderr)
-            time.sleep(2 * (attempt + 1))
-    return []
+                HTTP_CALLS += 1
+                with urllib.request.urlopen(url, timeout=60) as r:
+                    text = r.read().decode("utf-8", "replace")
+                try:
+                    body = json.loads(text)
+                except ValueError:
+                    if DEBUG_LEFT > 0:
+                        DEBUG_LEFT -= 1
+                        print("DEBUG non-json", op, params.get("sigunguCd"), text[:300].replace("\n", " "), file=sys.stderr)
+                    body = {}
+                break
+            except Exception as e:  # 네트워크 · 쿼터 초과 등
+                print("retry", op, params.get("sigunguCd"), e, file=sys.stderr)
+                time.sleep(2 * (attempt + 1))
+        if not body:
+            break
+        head = body.get("response", {}).get("header", {})
+        bod = body.get("response", {}).get("body", {})
+        items = bod.get("items", {})
+        it = (items.get("item", []) if isinstance(items, dict) else []) or []
+        it = it if isinstance(it, list) else [it]
+        try:
+            total = int(bod.get("totalCount") or 0)
+        except (TypeError, ValueError):
+            total = 0
+        if DEBUG_LEFT > 0:
+            DEBUG_LEFT -= 1
+            print("DEBUG", op, params.get("sigunguCd"), params.get("bjdongCd"), "page", page, "header=", head, "totalCount=", total, "got", len(it),
+                  "firstItem=", json.dumps(it[0], ensure_ascii=False)[:600] if it else None, file=sys.stderr)
+        out += it
+        if not it or len(out) >= total:
+            break
+        page += 1
+    LAST_TOTAL[op] = total
+    return out
 
 
 BJDONG = []   # (sgg, bjdongCd(5), sido, sigungu, dong) — load_sigungu_api 가 채움
@@ -250,6 +256,10 @@ def main():
     # 오래 안 훑은 동부터 MAX_CALLS 개만 (매일 일부씩 순환, 전국 한 바퀴에 며칠)
     todo = sorted(BJDONG, key=lambda b: state.get(f"{b[0]}{b[1]}", ""))[:MAX_CALLS]
     for sgg, bjd, sido, sigungu, dong in todo:
+        if HTTP_CALLS >= MAX_HTTP:
+            print("호출 상한 도달 — 나머지 동은 다음 실행에", file=sys.stderr)
+            break
+        # startDate/endDate 는 허가일이 아니라 대장 생성일 기준이라, 허가일은 아래에서 직접 거릅니다
         items = get("getApBasisOulnInfo", sigunguCd=sgg, bjdongCd=bjd, startDate=PERMIT_SINCE, endDate=end)
         n_calls += 1
         n_items += len(items)
@@ -258,6 +268,8 @@ def main():
             purps = (it.get("mainPurpsCdNm") or "").strip()
             seen_purps[purps] = seen_purps.get(purps, 0) + 1
             if purps not in OFFICE_PURPOSES:
+                continue
+            if (it.get("archPmsDay") or "").strip() < PERMIT_SINCE:   # 2018년 이전 허가는 제외
                 continue
             name = (it.get("bldNm") or "").strip() or f"{sigungu} {dong} 업무시설"
             is_otel = any(t in name for t in EXCLUDE_NAME_TOKENS)
@@ -272,7 +284,7 @@ def main():
                 if c:
                     lat, lng = c["lat"], c["lng"]
             ratio = old.get("office_ratio") if old.get("ratio_n") else None   # 층 1건으로 계산된 옛 값은 다시 계산
-            if ratio is None and n_calls < MAX_CALLS * 2:
+            if ratio is None and HTTP_CALLS < MAX_HTTP:
                 ratio = office_ratio(sgg, bjd, it.get("platGbCd"), it.get("bun"), it.get("ji"))
                 n_calls += 1
             start, comp = fmt_day(it.get("realStcnsDay")), fmt_day(it.get("useAprDay"))
@@ -315,9 +327,10 @@ def main():
             r["ratio_n"] = 2 if r["office_ratio"] is not None else 0
             budget -= 1
     scanned = sum(1 for b in BJDONG if state.get(f"{b[0]}{b[1]}"))
-    print("DEBUG calls", n_calls, "items", n_items, "purposes", sorted(seen_purps.items(), key=lambda x: -x[1])[:15], file=sys.stderr)
+    print("DEBUG calls", n_calls, "http", HTTP_CALLS, "items", n_items, "purposes", sorted(seen_purps.items(), key=lambda x: -x[1])[:15], file=sys.stderr)
     print(f"읍면동 {scanned}/{len(BJDONG)} 수집됨", file=sys.stderr)
-    out = sorted(rows.values(), key=lambda r: r["permit"] or "", reverse=True)
+    since = f"{PERMIT_SINCE[:4]}-{PERMIT_SINCE[4:6]}-{PERMIT_SINCE[6:]}"
+    out = sorted((r for r in rows.values() if (r.get("permit") or since) >= since), key=lambda r: r["permit"] or "", reverse=True)
     json.dump(out, open(cache, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     json.dump({"scanned": scanned, "total": len(BJDONG), "date": today.isoformat()},
               open(CACHE / "coverage.json", "w", encoding="utf-8"))
