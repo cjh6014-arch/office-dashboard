@@ -58,6 +58,7 @@ def geocode(addr):
 
 
 DEBUG_LEFT = 3
+LAST_TOTAL = {}
 
 
 def get(op, **params):
@@ -87,7 +88,17 @@ def get(op, **params):
             if not items or not isinstance(items, dict):
                 return []
             it = items.get("item", [])
-            return it if isinstance(it, list) else [it]
+            it = it if isinstance(it, list) else [it]
+            try:                                   # 1000건 넘는 응답은 다음 페이지까지(최대 5쪽)
+                total = int(bod.get("totalCount") or 0)
+            except (TypeError, ValueError):
+                total = 0
+            if total > len(it) and params.get("pageNo", 1) < 5 and len(it) >= 1000:
+                nxt = {k: v for k, v in params.items() if k not in ("serviceKey", "_type", "numOfRows")}
+                nxt["pageNo"] = params.get("pageNo", 1) + 1
+                it = it + get(op, **nxt)
+            LAST_TOTAL[op] = total
+            return it
         except Exception as e:  # 네트워크 · 쿼터 초과 등
             print("retry", op, params.get("sigunguCd"), e, file=sys.stderr)
             time.sleep(2 * (attempt + 1))
@@ -179,10 +190,13 @@ FLR_DEBUG = 3
 
 def office_ratio(sgg, bjd, plat_gb, bun, ji):
     global FLR_DEBUG
+    if not bun or bun == "0000":                   # 번지 없는 건은 엉뚱한 건물이 섞여 나와 건너뜀
+        return None
     flr = get("getApFlrOulnInfo", sigunguCd=sgg, bjdongCd=bjd, platGbCd=plat_gb, bun=bun, ji=ji)
     if FLR_DEBUG > 0:
         FLR_DEBUG -= 1
-        print("DEBUG flr", sgg, bjd, bun, ji, "n=", len(flr), json.dumps(flr[:2], ensure_ascii=False)[:500], file=sys.stderr)
+        print("DEBUG flr", sgg, bjd, bun, ji, "n=", len(flr), "total=", LAST_TOTAL.get("getApFlrOulnInfo"),
+              json.dumps([{k: f.get(k) for k in ("bldNm", "flrNo", "flrGbCdNm", "mainPurpsCd", "mainPurpsCdNm", "flrArea")} for f in flr[:4]], ensure_ascii=False), file=sys.stderr)
     def area(f):
         return float(f.get("flrArea") or f.get("area") or 0)
 
