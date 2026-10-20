@@ -7,7 +7,7 @@ API: 국토교통부_상업업무용 부동산 매매 신고 자료 (getRTMSData
 
 출력: data/cache/deals.json = [{"year":2025,"amount":13.4,"count":138}, ...]
 """
-import json, sys, time, datetime, urllib.parse, urllib.request
+import json, os, sys, time, datetime, urllib.parse, urllib.request
 from config import *
 from collect_permits import load_sigungu
 
@@ -20,7 +20,18 @@ def fetch(lawd, ym):
         body = json.loads(r.read().decode("utf-8"))
     items = body.get("response", {}).get("body", {}).get("items", {}) or {}
     it = items.get("item", [])
-    return it if isinstance(it, list) else [it]
+    it = it if isinstance(it, list) else [it]
+    global DEBUG_LEFT
+    if it and DEBUG_LEFT > 0:
+        DEBUG_LEFT -= 1
+        print("DEBUG deals firstItem", json.dumps(it[0], ensure_ascii=False)[:400], file=sys.stderr)
+    return it
+
+
+DEBUG_LEFT = 2
+
+
+MAX_DEAL_CALLS = int(os.environ.get("MAX_DEAL_CALLS", "1200"))   # 하루 호출 수 (최근 달부터 채움)
 
 
 def main():
@@ -34,16 +45,21 @@ def main():
         y, m = (y + 1, 1) if m == 12 else (y, m + 1)
     recent = set(months[-3:])
     sgg = [s for s, _, _ in load_sigungu()]
-    fails, stop = 0, False
-    for ym in months:
+    calls, fails, stop = 0, 0, False
+    for ym in reversed(months):            # 최근 달부터
         for code in sgg:
             key = f"{code}-{ym}"
             if key in raw and ym not in recent:
                 continue
+            if calls >= MAX_DEAL_CALLS:
+                stop = True
+                break
             try:
                 items = fetch(code, ym)
+                calls += 1
                 fails = 0
             except Exception as e:
+                calls += 1
                 fails += 1
                 print("deals 실패", key, e, file=sys.stderr)
                 if "403" in str(e) or fails >= 20:
@@ -59,18 +75,22 @@ def main():
                 amt = str(it.get("dealAmount") or it.get("거래금액") or "0").replace(",", "").strip()
                 rows.append(int(amt or 0))
             raw[key] = rows
-            time.sleep(0.1)
+            if calls % 100 == 0:
+                json.dump(raw, open(raw_p, "w", encoding="utf-8"))
+            time.sleep(0.05)
         if stop:
             break
     json.dump(raw, open(raw_p, "w", encoding="utf-8"))
     agg = {}
     for key, rows in raw.items():
         yr = int(key.split("-")[1][:4])
-        a = agg.setdefault(yr, {"year": yr, "amount": 0, "count": 0})
-        a["amount"] += sum(rows); a["count"] += len(rows)
-    out = [{"year": y, "amount": round(a["amount"] / 1e8, 1), "count": a["count"]} for y, a in sorted(agg.items())]  # 만원 → 조원
+        a = agg.setdefault(yr, {"year": yr, "amount": 0, "count": 0, "months": set()})
+        a["amount"] += sum(rows); a["count"] += len(rows); a["months"].add(key.split("-")[1])
+    out = [{"year": y, "amount": round(a["amount"] / 1e8, 1), "count": a["count"], "months": len(a["months"])}
+           for y, a in sorted(agg.items())]  # 만원 → 조원
     json.dump(out, open(CACHE / "deals.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
-    print("deals", out[-3:])
+    done = len(raw); total = len(months) * len(sgg)
+    print("deals calls", calls, f"coverage {done}/{total}", out[-3:])
 
 
 if __name__ == "__main__":
