@@ -34,6 +34,7 @@ def main():
         y, m = (y + 1, 1) if m == 12 else (y, m + 1)
     recent = set(months[-3:])
     sgg = [s for s, _, _ in load_sigungu()]
+    fails, stop = 0, False
     for ym in months:
         for code in sgg:
             key = f"{code}-{ym}"
@@ -41,8 +42,14 @@ def main():
                 continue
             try:
                 items = fetch(code, ym)
+                fails = 0
             except Exception as e:
+                fails += 1
                 print("deals 실패", key, e, file=sys.stderr)
+                if "403" in str(e) or fails >= 20:
+                    print("실거래가 API 사용 불가(활용신청 확인) — 거래 수집 중단", file=sys.stderr)
+                    stop = True
+                    break
                 continue
             rows = []
             for it in items:
@@ -53,6 +60,8 @@ def main():
                 rows.append(int(amt or 0))
             raw[key] = rows
             time.sleep(0.1)
+        if stop:
+            break
     json.dump(raw, open(raw_p, "w", encoding="utf-8"))
     agg = {}
     for key, rows in raw.items():
