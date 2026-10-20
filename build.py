@@ -1,4 +1,4 @@
-"""캐시(원천 수집 결과)를 합쳐 data/data.json 을 만듭니다.
+"""캐시(원천 수집 결과)를 합쳌 data/data.json 을 만듭니다.
 
 어느 한 원천이 비어 있으면 그 부분만 이전 data.json 값을 유지합니다.
 모든 원천이 비어 있으면(키 미설정 등) sample_data.py 결과를 그대로 둡니다.
@@ -25,6 +25,7 @@ def main():
     news = load("news.json", [])
     policies = load("policies.json", [])
     deals = load("deals.json", [])
+    coverage = load("coverage.json", {})
 
     real = bool(permits or market.get("vacancy"))
     if not real:
@@ -33,6 +34,7 @@ def main():
     out = {
         "updated": datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=9))).strftime("%Y-%m-%d %H:%M"),
         "sample": False,
+        "coverage": coverage,
         "owner": OWNER or prev.get("owner", ""),
         "permits": permits or prev.get("permits", []),
         "vacancy": market.get("vacancy") or prev.get("vacancy", []),
