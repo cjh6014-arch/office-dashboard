@@ -8,8 +8,10 @@
 입력: data/bjdong_codes.txt  (행정안전부 법정동코드 전체자료, 탭 구분 — 포털에서 내려받아 넣음)
 출력: data/cache/permits.json
 """
-import json, time, sys, re, datetime, urllib.parse, urllib.request
+import json, os, time, sys, re, datetime, urllib.parse, urllib.request
 from config import *
+
+MAX_CALLS = int(os.environ.get("MAX_CALLS", "1500"))   # 하루 읍면동 호출 수 (트래픽 한도에 맞춰 조정)
 
 BASE = "https://apis.data.go.kr/1613000/ArchPmsHubService"
 CENT = json.load(open(ROOT / "scripts" / "centroids.json", encoding="utf-8"))
@@ -53,9 +55,13 @@ def get(op, **params):
     return []
 
 
+BJDONG = []   # (sgg, bjdongCd(5), sido, sigungu, dong) — load_sigungu_api 가 채움
+
+
 def load_sigungu_api():
-    """행정안전부_행정표준코드_법정동코드 API(StanReginCd)에서 시군구 목록. 공공데이터포털 활용신청 필요."""
+    """행정안전부_행정표준코드_법정동코드 API(StanReginCd)에서 시군구 · 읍면동 목록. 공공데이터포털 활용신청 필요."""
     out, seen, page = [], set(), 1
+    names = {}
     while True:
         q = dict(ServiceKey=DATA_GO_KR_KEY, pageNo=page, numOfRows=1000, type="json", flag="Y")
         url = "https://apis.data.go.kr/1741000/StanReginCd/getStanReginCdList?" + urllib.parse.urlencode(q)
@@ -71,21 +77,28 @@ def load_sigungu_api():
             break
         for it in rows:
             code = str(it.get("region_cd", ""))
-            if len(code) == 10 and code[5:] == "00000" and code[2:5] != "000":
-                sgg = code[:5]
+            if len(code) != 10 or code[2:5] == "000":
+                continue
+            sgg, parts = code[:5], (it.get("locatadd_nm") or "").split()
+            if code[5:] == "00000":
                 if sgg in seen:
                     continue
                 seen.add(sgg)
-                parts = (it.get("locatadd_nm") or "").split()
+                names[sgg] = (parts[0] if parts else "", " ".join(parts[1:]))
                 out.append((sgg, parts[0] if parts else "", " ".join(parts[1:])))
+            elif code[8:10] == "00" and True:   # 읍 · 면 · 동 (리 제외)
+                BJDONG.append([sgg, code[5:10], parts[0] if parts else "", " ".join(parts[1:-1]), parts[-1] if parts else ""])
         page += 1
         if page > 60:
             break
-    cache = CACHE / "sigungu.json"
+    cache, bcache = CACHE / "sigungu.json", CACHE / "bjdong.json"
     if out:
         json.dump(out, open(cache, "w", encoding="utf-8"), ensure_ascii=False)
+        json.dump(BJDONG, open(bcache, "w", encoding="utf-8"), ensure_ascii=False)
     elif cache.exists():
         out = [tuple(x) for x in json.load(open(cache, encoding="utf-8"))]
+        if bcache.exists():
+            BJDONG[:] = json.load(open(bcache, encoding="utf-8"))
     return out
 
 
@@ -145,22 +158,30 @@ def main():
     cache = CACHE / "permits.json"
     if cache.exists():
         prev = {r["id"]: r for r in json.load(open(cache, encoding="utf-8"))}
-    rows = {}
-    seen_purps, n_items = {}, 0
-    end = datetime.date.today().strftime("%Y%m%d")
-    for sgg, sido, sigungu in load_sigungu():
-        items = get("getApBasisOulnInfo", sigunguCd=sgg, bjdongCd="", startDate=PERMIT_SINCE, endDate=end)
+    rows = dict(prev)
+    state_p = CACHE / "scan_state.json"
+    state = json.load(open(state_p, encoding="utf-8")) if state_p.exists() else {}
+    seen_purps, n_items, n_calls = {}, 0, 0
+    today = datetime.date.today()
+    end = today.strftime("%Y%m%d")
+    load_sigungu()
+    if not BJDONG:
+        print("읍면동 목록 없음 — 법정동코드 API 확인", file=sys.stderr)
+    # 오래 안 훑은 동부터 MAX_CALLS 개만 (매일 일부씩 순환, 전국 한 바퀴에 며칠)
+    todo = sorted(BJDONG, key=lambda b: state.get(f"{b[0]}{b[1]}", ""))[:MAX_CALLS]
+    for sgg, bjd, sido, sigungu, dong in todo:
+        items = get("getApBasisOulnInfo", sigunguCd=sgg, bjdongCd=bjd, startDate=PERMIT_SINCE, endDate=end)
+        n_calls += 1
         n_items += len(items)
+        state[f"{sgg}{bjd}"] = today.isoformat()
         for it in items:
             purps = (it.get("mainPurpsCdNm") or "").strip()
             seen_purps[purps] = seen_purps.get(purps, 0) + 1
-            name = (it.get("bldNm") or "").strip() or f"{it.get('platPlc','')} 업무시설"
             if purps not in OFFICE_PURPOSES:
                 continue
+            name = (it.get("bldNm") or "").strip() or f"{sigungu} {dong} 업무시설"
             is_otel = any(t in name for t in EXCLUDE_NAME_TOKENS)
-            pk = it.get("mgmPmsrgstPk") or f"{sgg}-{it.get('bjdongCd')}-{it.get('bun')}-{it.get('ji')}-{it.get('archPmsDay')}"
-            plat = it.get("platPlc", "")
-            dong = re.sub(r".*?(\S+동|\S+리|\S+가)\b.*", r"\1", plat) if plat else ""
+            pk = it.get("mgmPmsrgstPk") or f"{sgg}-{bjd}-{it.get('bun')}-{it.get('ji')}-{it.get('archPmsDay')}"
             old = prev.get(pk, {})
             lat, lng = old.get("lat"), old.get("lng")
             if lat is None:  # 좌표: (1) Kakao 지오코딩 (2) 시군구 대표점
@@ -168,8 +189,9 @@ def main():
                 if c:
                     lat, lng = c["lat"], c["lng"]
             ratio = old.get("office_ratio")
-            if ratio is None:
-                ratio = office_ratio(sgg, it.get("bjdongCd"), it.get("platGbCd"), it.get("bun"), it.get("ji"))
+            if ratio is None and n_calls < MAX_CALLS * 2:
+                ratio = office_ratio(sgg, bjd, it.get("platGbCd"), it.get("bun"), it.get("ji"))
+                n_calls += 1
             start, comp = fmt_day(it.get("realStcnsDay")), fmt_day(it.get("useAprDay"))
             rows[pk] = {
                 "id": pk, "name": name, "kind": (it.get("archGbCdNm") or "신축") + (" · 오피스텔" if is_otel else ""),
@@ -183,13 +205,15 @@ def main():
                 "exclude": is_otel, "articles": old.get("articles", []),
                 "articles_checked": old.get("articles_checked"),
             }
-        time.sleep(0.2)
-    print("DEBUG items total", n_items, "purposes", sorted(seen_purps.items(), key=lambda x: -x[1])[:20], file=sys.stderr)
-    if not rows and prev:
-        print("수집 결과 없음 — 이전 캐시 유지", file=sys.stderr)
-        rows = prev
+        time.sleep(0.1)
+    json.dump(state, open(state_p, "w", encoding="utf-8"))
+    scanned = sum(1 for b in BJDONG if state.get(f"{b[0]}{b[1]}"))
+    print("DEBUG calls", n_calls, "items", n_items, "purposes", sorted(seen_purps.items(), key=lambda x: -x[1])[:15], file=sys.stderr)
+    print(f"읍면동 {scanned}/{len(BJDONG)} 수집됨", file=sys.stderr)
     out = sorted(rows.values(), key=lambda r: r["permit"] or "", reverse=True)
     json.dump(out, open(cache, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    json.dump({"scanned": scanned, "total": len(BJDONG), "date": today.isoformat()},
+              open(CACHE / "coverage.json", "w", encoding="utf-8"))
     print("permits", len(out))
 
 
