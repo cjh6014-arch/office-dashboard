@@ -6,7 +6,7 @@
 
 출력: data/cache/market.json = {"vacancy":[{"quarter":"2024Q1","전국":..,"서울":..,"CBD":..,...}], "rent":[...]}
 """
-import json, re, sys, urllib.parse, urllib.request
+import json, re, sys, time, urllib.parse, urllib.request
 from config import *
 
 API = "https://www.reb.or.kr/r-one/openapi/SttsApiTblData.do"
@@ -28,8 +28,17 @@ def fetch(statbl):
     while True:
         q = dict(KEY=REB_KEY, Type="json", pIndex=page, pSize=1000, STATBL_ID=statbl, DTACYCLE_CD="QY")
         url = API + "?" + urllib.parse.urlencode(q)
-        with urllib.request.urlopen(url, timeout=60) as r:
-            body = json.loads(r.read().decode("utf-8"))
+        body = None
+        for attempt in range(4):                      # 일시적 연결 끊김 재시도
+            try:
+                with urllib.request.urlopen(url, timeout=60) as r:
+                    body = json.loads(r.read().decode("utf-8"))
+                break
+            except Exception as e:
+                print("R-ONE", statbl, "재시도", attempt + 1, e, file=sys.stderr)
+                time.sleep(3 * (attempt + 1))
+        if body is None:
+            raise RuntimeError("R-ONE 응답 실패")
         blocks = body.get("SttsApiTblData")
         if not blocks:
             msg = (body.get("RESULT") or {}).get("MESSAGE") or str(body)[:200]
@@ -93,8 +102,10 @@ def main():
         return
     out = {}
     for m in TABLES:
-        series = collect(m)
-        out[m] = series or prev.get(m, [])
+        merged = {r["quarter"]: dict(r) for r in prev.get(m, [])}   # 이전 값 위에 새 값 덮어쓰기(일부 표 실패 대비)
+        for r in collect(m):
+            merged.setdefault(r["quarter"], {"quarter": r["quarter"]}).update(r)
+        out[m] = [merged[q] for q in sorted(merged)]
     json.dump(out, open(cache, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print("market", {k: (len(v), v[-1] if v else None) for k, v in out.items()})
 
