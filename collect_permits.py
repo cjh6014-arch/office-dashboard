@@ -61,13 +61,15 @@ DEBUG_LEFT = 6
 LAST_TOTAL = {}
 HTTP_CALLS = 0          # 이번 실행의 실제 호출 수
 MAX_HTTP = 6000         # 하루 호출 상한(공공데이터포털 일일 한도 안쪽)
-MAX_PAGES = 10
+MAX_PAGES = 30          # 한 페이지 100건(API 상한)이라 큰 동은 여러 쪽
+LAST_OK = {}            # op → 마지막 호출이 정상 응답(resultCode 00)이었는지
 
 
 def get(op, **params):
     """건축HUB 호출. numOfRows 가 그대로 안 먹는 경우가 있어 totalCount 만큼 pageNo 를 올려 가며 모읍니다."""
     global DEBUG_LEFT, HTTP_CALLS
     out, page, total = [], 1, None
+    LAST_OK[op] = False
     while page <= MAX_PAGES:
         q = dict(params, serviceKey=DATA_GO_KR_KEY, _type="json", numOfRows=1000, pageNo=page)
         url = f"{BASE}/{op}?" + urllib.parse.urlencode(q)
@@ -91,6 +93,10 @@ def get(op, **params):
         if not body:
             break
         head = body.get("response", {}).get("header", {})
+        if str(head.get("resultCode")) != "00":          # 쿼터 초과 등 — 이 동은 다음 실행에 다시
+            print("API 오류", op, params.get("sigunguCd"), params.get("bjdongCd"), head, file=sys.stderr)
+            break
+        LAST_OK[op] = True
         bod = body.get("response", {}).get("body", {})
         items = bod.get("items", {})
         it = (items.get("item", []) if isinstance(items, dict) else []) or []
@@ -107,6 +113,8 @@ def get(op, **params):
         if not it or len(out) >= total:
             break
         page += 1
+    else:
+        print("쪽수 상한 — 일부만 수집", op, params.get("sigunguCd"), params.get("bjdongCd"), total, file=sys.stderr)
     LAST_TOTAL[op] = total
     return out
 
@@ -208,6 +216,8 @@ def office_ratio(sgg, bjd, plat_gb, bun, ji):
 
     def is_office(f):   # 주용도코드 14xxx = 업무시설 계열(일반 · 공공 · 금융업소 등), 이름에 업무 · 사무 포함
         code, nm = str(f.get("mainPurpsCd") or ""), (f.get("mainPurpsCdNm") or "") + (f.get("etcPurps") or "")
+        if code == "14202" or "오피스텔" in nm:          # 오피스텔은 업무시설로 세지 않음
+            return False
         return code.startswith("14") or "업무" in nm or "사무" in nm
     if len(flr) < 2:                               # 층 기록이 1건뿐이면 비중으로 보기 어려워 보류(다음 실행에 재시도)
         return None
@@ -249,7 +259,7 @@ def main():
     state = json.load(open(state_p, encoding="utf-8")) if state_p.exists() else {}
     if state.get("_v") != 2:                      # 수집 방식이 바뀌면 전국을 처음부터 다시 훑음
         state = {"_v": 2}
-    seen_purps, n_items, n_calls = {}, 0, 0
+    seen_purps, n_items, n_calls, n_fail = {}, 0, 0, 0
     today = datetime.date.today()
     end = today.strftime("%Y%m%d")
     load_sigungu()
@@ -265,7 +275,14 @@ def main():
         items = get("getApBasisOulnInfo", sigunguCd=sgg, bjdongCd=bjd, startDate=PERMIT_SINCE, endDate=end)
         n_calls += 1
         n_items += len(items)
-        state[f"{sgg}{bjd}"] = today.isoformat()
+        if LAST_OK.get("getApBasisOulnInfo"):
+            state[f"{sgg}{bjd}"] = today.isoformat()
+            n_fail = 0
+        else:
+            n_fail += 1
+            if n_fail >= 30:                          # 계속 실패하면(쿼터 소진 등) 오늘은 여기까지
+                print("연속 실패 — 인허가 수집 중단", file=sys.stderr)
+                break
         for it in items:
             purps = (it.get("mainPurpsCdNm") or "").strip()
             seen_purps[purps] = seen_purps.get(purps, 0) + 1
