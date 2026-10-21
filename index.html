@@ -204,6 +204,7 @@ footer p{max-width:90ch}
   <h2>최근 기사</h2>
   <p class="sub">구글 뉴스에서 '오피스 · 업무시설' 공급 · 공실 · 거래 관련 기사 중 제목에 지역 · 사업명이 드러난 것</p>
   <div class="panel news"><ul id="newsList"></ul></div>
+  <div class="pager" id="newsPager"></div>
 </section>
 
 <section id="policy">
@@ -246,7 +247,7 @@ const STC={'착공 전':'var(--st1)','공사 중':'var(--st2)','준공':'var(--s
 const STCLS={'착공 전':'s1','공사 중':'s2','준공':'s3'};
 const ZC={CBD:'var(--z1)',GBD:'var(--z2)',YBD:'var(--z3)',BBD:'var(--z4)',서울:'var(--accent)',전국:'var(--z5)'};
 const SEOUL=new Set(['서울']), METRO=new Set(['서울','경기','인천']);
-let D=null, MAP=null, state={measure:'gfa',region:'all',mapView:'seoul',mapStages:new Set(['착공 전','공사 중','준공']),stage:'',zone:'',q:'',sortK:'permit',sortD:-1,mk:new Set(['서울','CBD','GBD','YBD']),pol:'',pick:null,pubx:false,page:1};
+let D=null, MAP=null, state={measure:'gfa',region:'all',mapView:'seoul',mapStages:new Set(['착공 전','공사 중','준공']),stage:'',zone:'',q:'',sortK:'permit',sortD:-1,mk:new Set(['서울','CBD','GBD','YBD']),pol:'',pick:null,pubx:false,page:1,npage:1};
 
 /* ---------- tooltip ---------- */
 const tip=$('#tip');
@@ -348,16 +349,16 @@ function renderTable(){
     :`<tr><td colspan="11" class="empty">조건에 맞는 인허가 건이 없습니다</td></tr>`;
   $('#count').innerHTML=`${rows.length}건 · 연면적 합계 ${fmt(rows.reduce((s,r)=>s+r.gfa,0)/1000)}천㎡${state.pick?' · <a href="#list" id="unpick">선택 해제</a>':''}`;
   const u=$('#unpick'); if(u)u.addEventListener('click',e=>{e.preventDefault();state.pick=null;state.page=1;renderTable()});
-  renderPager(rows.length,pages);
+  renderPager('#pager',state.page,rows.length,pages,p=>{state.page=p;renderTable();$('#list').scrollIntoView({behavior:'smooth',block:'start'})});
 }
-function renderPager(n,pages){
-  const el=$('#pager'); if(!el)return;
+function renderPager(sel,p,n,pages,go){
+  const el=$(sel); if(!el)return;
   if(pages<=1){el.innerHTML='';return;}
-  const p=state.page, nums=[];
+  const nums=[];
   for(let i=Math.max(1,p-2);i<=Math.min(pages,p+2);i++)nums.push(i);
   if(nums[0]>1){if(nums[0]>2)nums.unshift('…');nums.unshift(1);} if(nums[nums.length-1]<pages){if(nums[nums.length-1]<pages-1)nums.push('…');nums.push(pages);}
   el.innerHTML=`<button data-p="${p-1}" ${p<=1?'disabled':''}>‹</button>`+nums.map(x=>x==='…'?'<span>…</span>':`<button data-p="${x}" class="${x===p?'cur':''}">${x}</button>`).join('')+`<button data-p="${p+1}" ${p>=pages?'disabled':''}>›</button><span class="pinfo">${(p-1)*PAGE+1}–${Math.min(n,p*PAGE)} / ${n}건 · 10건씩</span>`;
-  $$('#pager button[data-p]').forEach(b=>b.addEventListener('click',()=>{state.page=+b.dataset.p;renderTable();$('#list').scrollIntoView({behavior:'smooth',block:'start'})}));
+  el.querySelectorAll('button[data-p]').forEach(b=>b.addEventListener('click',()=>go(+b.dataset.p)));
 }
 function exportXlsx(){
   const rows=filtered().map(r=>({'건물명':r.name,'구분':r.kind,'시도':r.sido,'시군구':r.sigungu,'법정동':r.dong,'권역':r.zone,'연면적(㎡)':r.gfa,'업무시설 비중':r.office_ratio,'층수':r.floors,'허가일':r.permit,'실제착공일':r.start,'사용승인일':r.complete,'단계':r.stage,'관련기사':(r.articles||[]).map(a=>a.title+' '+a.url).join(' | ')}));
@@ -406,7 +407,13 @@ function renderDeals(){
 }
 
 /* ---------- 기사 · 제도 ---------- */
-function renderNews(){$('#newsList').innerHTML=D.news.length?D.news.map(n=>`<li><span class="dt">${n.date}</span><a href="${n.url}" target="_blank" rel="noopener">${n.title}</a>${n.source?` <span class="small">· ${n.source}</span>`:''}</li>`).join(''):'<li class="empty">연결된 기사가 없습니다</li>'}
+function renderNews(){
+  const all=D.news, pages=Math.max(1,Math.ceil(all.length/PAGE));
+  if(state.npage>pages)state.npage=pages; if(state.npage<1)state.npage=1;
+  const view=all.slice((state.npage-1)*PAGE,state.npage*PAGE);
+  $('#newsList').innerHTML=view.length?view.map(n=>`<li><span class="dt">${n.date}</span><a href="${n.url}" target="_blank" rel="noopener">${n.title}</a>${n.source?` <span class="small">· ${n.source}</span>`:''}</li>`).join(''):'<li class="empty">연결된 기사가 없습니다</li>';
+  renderPager('#newsPager',state.npage,all.length,pages,p=>{state.npage=p;renderNews();$('#news').scrollIntoView({behavior:'smooth',block:'start'})});
+}
 function renderPolicy(){
   const fields=[...new Set(D.policies.map(p=>p.field))];
   $('#polFields').innerHTML=`<button class="chip" aria-pressed="${!state.pol}" data-v="">전체</button>`+fields.map(f=>`<button class="chip" aria-pressed="${state.pol===f}" data-v="${f}">${f}</button>`).join('');
