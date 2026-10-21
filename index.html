@@ -198,6 +198,18 @@ footer p{max-width:90ch}
   <h2>오피스 거래 규모</h2>
   <p class="sub">연간 업무시설 거래액(조원) · 국토교통부 상업 · 업무용 실거래가 중 건물용도가 '업무'인 신고 건 집계 · 최근 달부터 거슬러 매일 조금씩 모으는 중이라 지난 연도는 수집된 개월만큼만 반영</p>
   <div class="panel"><div id="dealChart"></div></div>
+  <h3>오피스 거래 목록 <span class="small">10억원 이상 · 최근 거래순</span></h3>
+  <div class="row">
+    <select id="dlSido"><option value="">지역 전체</option></select>
+    <input type="search" id="dlq" placeholder="시군구 · 지번 검색" aria-label="거래 검색">
+    <button class="btn" id="dlxls">엑셀 다운로드</button>
+    <span class="count" id="dlcount"></span>
+  </div>
+  <div class="tablewrap"><table id="dlTbl" style="min-width:860px"><thead><tr>
+    <th data-k="d">거래일<span class="s">↕</span></th><th data-k="sigungu">지역<span class="s">↕</span></th><th>지번</th><th>용도 · 유형</th>
+    <th class="n" data-k="a">거래금액(억원)<span class="s">↕</span></th><th class="n" data-k="bar">건물면적(㎡)<span class="s">↕</span></th><th class="n" data-k="par">대지면적(㎡)</th><th>층</th><th>건축년도</th><th>거래 · 매수자</th>
+  </tr></thead><tbody></tbody></table></div>
+  <div class="pager" id="dlPager"></div>
 </section>
 
 <section id="news">
@@ -223,7 +235,7 @@ footer p{max-width:90ch}
     <dt>권역</dt><dd>한국부동산원 서울 오피스 권역을 따릅니다. CBD(도심 · 종로 · 중구), GBD(강남 · 서초), YBD(여의도 · 마포 · 영등포), 그 밖의 서울은 '서울 기타', BBD는 판교 · 분당, 나머지 경기 · 인천은 '수도권', 그 외는 '지방'입니다.</dd>
     <dt>공실률</dt><dd>조사 대상 오피스의 임대 가능 면적 중 비어 있는 면적의 비율(분기 말)입니다. 표본 교체 · 기준 변경 시 전 분기와 바로 비교하기 어려울 수 있습니다.</dd>
     <dt>임대료</dt><dd>㎡당 월 임대료(천원)이며 관리비 · 렌트프리를 반영하지 않은 명목 임대료입니다. 실질 임대료(NOC)는 렌트프리 · 무상 인테리어를 빼야 합니다.</dd>
-    <dt>거래 규모</dt><dd>실거래가 공개시스템의 상업 · 업무용 거래 중 건물 용도가 업무시설인 건의 금액 합계입니다. 지분 · 부분 거래가 섞여 있어 통상 시장 보고서의 '오피스 거래액'보다 작게 나올 수 있습니다.</dd>
+    <dt>거래 규모 · 목록</dt><dd>실거래가 공개시스템의 상업 · 업무용 거래 중 건물 용도가 업무시설인 건의 금액 합계이고, 목록은 그중 10억원 이상 건입니다(해제 신고 건 제외). 실거래 자료에는 건물명이 없어 지번으로 표시하며, 지분 · 부분 거래가 섞여 있어 통상 시장 보고서의 '오피스 거래액'보다 작게 나올 수 있습니다.</dd>
     <dt>사업장 위치</dt><dd>인허가 대장의 법정동 · 리 대표점에 표시합니다(샘플 데이터는 시군구 대표점). 정확한 대지 위치는 세움터 건축물대장으로 확인하세요.</dd>
     <dt>관련 기사</dt><dd>건물명에 드러난 사업자 · 브랜드와 시 · 군 · 동 이름으로 구글 뉴스를 매주 다시 검색해, 제목에 오피스 · 업무시설과 이름 · 지역이 함께 나오는 기사만 붙입니다. 확신이 없으면 비워 둡니다.</dd>
   </dl>
@@ -247,7 +259,7 @@ const STC={'착공 전':'var(--st1)','공사 중':'var(--st2)','준공':'var(--s
 const STCLS={'착공 전':'s1','공사 중':'s2','준공':'s3'};
 const ZC={CBD:'var(--z1)',GBD:'var(--z2)',YBD:'var(--z3)',BBD:'var(--z4)',서울:'var(--accent)',전국:'var(--z5)'};
 const SEOUL=new Set(['서울']), METRO=new Set(['서울','경기','인천']);
-let D=null, MAP=null, state={measure:'gfa',region:'all',mapView:'seoul',mapStages:new Set(['착공 전','공사 중','준공']),stage:'',zone:'',q:'',sortK:'permit',sortD:-1,mk:new Set(['서울','CBD','GBD','YBD']),pol:'',pick:null,pubx:false,page:1,npage:1};
+let D=null, MAP=null, state={measure:'gfa',region:'all',mapView:'seoul',mapStages:new Set(['착공 전','공사 중','준공']),stage:'',zone:'',q:'',sortK:'permit',sortD:-1,mk:new Set(['서울','CBD','GBD','YBD']),pol:'',pick:null,pubx:false,page:1,npage:1,dpage:1,dq:'',dsido:'',dk:'d',dd:-1};
 
 /* ---------- tooltip ---------- */
 const tip=$('#tip');
@@ -406,6 +418,32 @@ function renderDeals(){
   g+=`<text x="${L}" y="${T-3}" class="lbl">조원 · 괄호는 수집된 개월 수</text></svg>`;$('#dealChart').innerHTML=g;bindTips($('#dealChart'));
 }
 
+/* ---------- 거래 목록 ---------- */
+function dealRows(){
+  let rows=(D.deal_list||[]).filter(r=>!state.dsido||r.sido===state.dsido);
+  if(state.dq){const qs=state.dq.toLowerCase().split(/\s+/).filter(Boolean);rows=rows.filter(r=>{const h=`${r.sido} ${r.sigungu} ${r.jibun} ${r.use} ${r.bt}`.toLowerCase();return qs.every(q=>h.includes(q))})}
+  const k=state.dk,d=state.dd;
+  return rows.sort((a,b)=>{const x=a[k]??'',y=b[k]??'';return (x>y?1:x<y?-1:0)*d||(b.d>a.d?1:-1)});
+}
+function renderDealList(){
+  const all=D.deal_list||[];
+  const sel=$('#dlSido'); if(sel.options.length<=1){[...new Set(all.map(r=>r.sido))].sort().forEach(s=>{const o=document.createElement('option');o.textContent=s;sel.appendChild(o)})}
+  const rows=dealRows(), pages=Math.max(1,Math.ceil(rows.length/PAGE));
+  if(state.dpage>pages)state.dpage=pages; if(state.dpage<1)state.dpage=1;
+  const view=rows.slice((state.dpage-1)*PAGE,state.dpage*PAGE);
+  $('#dlTbl tbody').innerHTML=view.length?view.map(r=>`<tr><td>${r.d}</td><td>${r.sido} ${r.sigungu}</td><td>${r.jibun||'–'}</td><td>${r.use}${r.bt?' · '+r.bt:''}${r.share?' · 지분':''}</td>
+    <td class="n">${fmt1(r.a/10000)}</td><td class="n">${r.bar!=null?fmt1(r.bar):'–'}</td><td class="n">${r.par!=null?fmt1(r.par):'–'}</td><td>${r.fl||'–'}</td><td>${r.by||'–'}</td><td>${[r.dg,r.buyer?'매수 '+r.buyer:''].filter(Boolean).join(' · ')||'–'}</td></tr>`).join('')
+    :`<tr><td colspan="10" class="empty">${all.length?'조건에 맞는 거래가 없습니다':'거래 목록은 다음 자동 갱신부터 채워집니다'}</td></tr>`;
+  const tot=rows.reduce((s,r)=>s+r.a,0); $('#dlcount').textContent=`${rows.length}건 · 합계 ${tot>=1e8?fmt1(tot/1e8)+'조원':fmt(tot/1e4)+'억원'}`;
+  renderPager('#dlPager',state.dpage,rows.length,pages,p=>{state.dpage=p;renderDealList();$('#dlTbl').scrollIntoView({behavior:'smooth',block:'start'})});
+}
+function exportDeals(){
+  const rows=dealRows().map(r=>({'거래일':r.d,'시도':r.sido,'시군구':r.sigungu,'지번':r.jibun,'건물용도':r.use,'건물유형':r.bt,'거래금액(만원)':r.a,'건물면적(㎡)':r.bar,'대지면적(㎡)':r.par,'층':r.fl,'건축년도':r.by,'거래유형':r.dg,'매수자':r.buyer,'매도자':r.seller,'지분거래':r.share}));
+  if(!window.XLSX){alert_('엑셀 라이브러리를 불러오지 못했습니다');return}
+  const wb=XLSX.utils.book_new();XLSX.utils.book_append_sheet(wb,XLSX.utils.json_to_sheet(rows),'거래');
+  try{XLSX.writeFile(wb,`오피스_거래_${D.updated.slice(0,10)}.xlsx`)}catch(e){alert_('이 화면에서는 다운로드가 막혀 있습니다. 배포된 사이트에서 받아 주세요')}
+}
+
 /* ---------- 기사 · 제도 ---------- */
 function renderNews(){
   const all=D.news, pages=Math.max(1,Math.ceil(all.length/PAGE));
@@ -433,13 +471,17 @@ function wire(){
   $('#q').addEventListener('input',e=>{state.q=e.target.value.trim();state.pick=null;state.page=1;renderTable()});
   $('#pubx').addEventListener('change',e=>{state.pubx=e.target.checked;state.pick=null;state.page=1;renderTable()});
   $('#xls').addEventListener('click',exportXlsx);
+  $('#dlxls').addEventListener('click',exportDeals);
+  $('#dlq').addEventListener('input',e=>{state.dq=e.target.value.trim();state.dpage=1;renderDealList()});
+  $('#dlSido').addEventListener('change',e=>{state.dsido=e.target.value;state.dpage=1;renderDealList()});
+  $$('#dlTbl th[data-k]').forEach(th=>th.addEventListener('click',()=>{const k=th.dataset.k;state.dd=state.dk===k?-state.dd:(k==='sigungu'?1:-1);state.dk=k;state.dpage=1;renderDealList()}));
   $$('#tbl th[data-k]').forEach(th=>th.addEventListener('click',()=>{const k=th.dataset.k;state.sortD=state.sortK===k?-state.sortD:(k==='name'||k==='sigungu'||k==='zone'||k==='stage'?1:-1);state.sortK=k;state.page=1;renderTable()}));
 }
 async function load(){
   try{[D,MAP]=await Promise.all([fetch('data/data.json').then(r=>r.json()),fetch('data/map.json').then(r=>r.json())])}
   catch(e){$('#updated').textContent='데이터를 불러오지 못했습니다 (data/data.json · data/map.json 확인)';return}
   $('#updated').textContent='갱신 '+D.updated+(D.coverage&&D.coverage.total?` · 인허가 수집 범위 전국 읍면동 ${D.coverage.scanned.toLocaleString('ko-KR')}/${D.coverage.total.toLocaleString('ko-KR')}`:''); if(D.sample)$('#banner').hidden=false; if(D.owner)$('#owner').textContent='기획 · 운영: '+D.owner;
-  wire();renderTiles();renderTrend();renderMap();renderTable();renderMarket();renderDeals();renderNews();renderPolicy();
+  wire();renderTiles();renderTrend();renderMap();renderTable();renderMarket();renderDeals();renderDealList();renderNews();renderPolicy();
 }
 load();
 })();
