@@ -12,7 +12,36 @@ from config import *
 RSS = "https://news.google.com/rss/search?q={q}&hl=ko&gl=KR&ceid=KR:ko"
 GENERAL_QUERIES = ["오피스 공실률", "오피스 공급 서울", "업무시설 신축 착공", "프라임 오피스 거래", "오피스 임대료"]
 POLICY_QUERIES = ["업무시설 용적률 개정", "도심 복합개발 업무시설", "오피스 주거 전환 특례", "국제업무지구 개발계획",
-                  "부동산 PF 건전성 상업용", "상업용부동산 임대동향 발표"]
+                  "부동산 PF 건전성 상업용", "상업용부동산 임대동향 발표",
+                  "국토교통부 업무시설 제도", "서울시 오피스 공급 대책", "업무시설 지구단위계획 변경", "오피스 리츠 세제",
+                  "도시계획위원회 업무시설 가결", "공실 오피스 주택 전환 정부"]
+POLICY_RECENT = " when:1y"       # 구글뉴스 검색 연산자: 최근 1년
+# 키 없이 쓰는 규칙 분류(기사 제목 기준)
+POL_MUST = re.compile(r"오피스|업무|상업용|상업지|도심|PF|프라임|리츠|지구단위|도시계획|용적률|공실")
+POL_ACT = re.compile(r"대책|개정|시행|발표|승인|고시|입법예고|계획|심의|통과|가결|추진|검토|지정|해제|특례|인센티브|용적률|조례|법안|국회|제도|규제|완화|허용|지원|전환|적용|개편|선정|특별법|보증|의무|공모|결과|정비|늘린다|도입")
+POL_FIELD = [("금융·세제", r"PF|대출|세제|세금|금리|리츠|펀드|과세|감면|건전성|보증|HUG"), ("국회", r"국회|법안|개정안|의원|발의"),
+             ("통계", r"임대동향|통계|조사 결과|공실률 발표|지가"), ("도시계획", r"용적률|용도|지구단위|도시계획|조례|고시|정비|높이"),
+             ("개발사업", r"업무지구|복합개발|착공|승인|사업계획|개발계획|조성|준공|입주")]
+POL_STATUS = [("완료", r"시행|통과|가결|확정|고시|승인|완료|체결|개정했|마무리|결정|발표|결과|선정|적용|상장"), ("계류", r"계류|보류|무산|지연|반대|제동|난항|평행선|정해진 바 없"),
+              ("예정", r"예정|예고|앞두|내년|연내|검토|추진|계획|전망|나선다|한다$")]
+
+
+def classify_policies(found):
+    """규칙으로 기사 → 제도 · 일정 항목. 제목에 제도 동사와 오피스 키워드가 함께 있어야 함."""
+    out, seen = [], set()
+    for a in found:
+        t = a["title"]
+        if not (POL_MUST.search(t) and POL_ACT.search(t)):
+            continue
+        key = re.sub(r"[^가-힣A-Za-z0-9]", "", t)[:18]
+        if key in seen:
+            continue
+        seen.add(key)
+        field = next((f for f, pat in POL_FIELD if re.search(pat, t)), "개발사업")
+        status = next((st for st, pat in POL_STATUS if re.search(pat, t)), "진행 중")
+        out.append({"date": (a.get("date") or "")[:7], "field": field, "title": t, "status": status,
+                    "note": (a.get("source") or "보도") + " · 제목 기준 자동 분류", "source": a.get("url", "")})
+    return out
 
 
 def rss(q, limit=20):
@@ -90,9 +119,15 @@ def update_policies(prev):
     found = []
     for q in POLICY_QUERIES:
         try:
-            found += rss(q, 8)
+            found += rss(q + POLICY_RECENT, 8)
         except Exception as e:
             print("policy rss 실패", q, e, file=sys.stderr)
+    prev = [p for p in prev if "(예시)" not in p.get("title", "")]     # 샘플 행은 실제 항목이 생기면 제거
+    if not ANTHROPIC_KEY:
+        new = classify_policies(found)
+        seen = {re.sub(r"[^가-힣A-Za-z0-9]", "", p["title"])[:18] for p in prev}
+        merged = prev + [n for n in new if re.sub(r"[^가-힣A-Za-z0-9]", "", n["title"])[:18] not in seen]
+        return sorted(merged, key=lambda p: p.get("date", ""), reverse=True)[:60]
     text = claude("아래 기사 제목 목록에서 오피스 · 업무시설 개발 · 금융과 관련된 정부 · 국회 · 지자체 제도나 일정만 골라 JSON 배열로 답하세요. "
                   "각 항목은 {\"date\":\"YYYY-MM\",\"field\":\"도시계획|개발사업|금융·세제|국회|통계\",\"title\":\"...\",\"status\":\"완료|진행 중|계류|예정\",\"note\":\"한 줄\",\"source\":\"기사URL\"}. "
                   "확신이 없는 항목은 빼고, JSON 외 다른 글은 쓰지 마세요.\n\n" +
@@ -129,8 +164,10 @@ def main(weekly=False):
         json.dump(permits, open(pf, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
         print("기사 매칭", sum(1 for p in permits if p.get("articles")), "건 연결", file=sys.stderr)
 
-    if weekly or datetime.date.today().weekday() == 0:
-        pp = CACHE / "policies.json"
+    pp = CACHE / "policies.json"
+    cur = json.load(open(pp, encoding="utf-8")) if pp.exists() else []
+    kst = (datetime.datetime.utcnow() + datetime.timedelta(hours=9)).date()
+    if weekly or kst.weekday() == 0 or not cur or any("(예시)" in p.get("title", "") for p in cur):
         prev = json.load(open(pp, encoding="utf-8")) if pp.exists() else []
         json.dump(update_policies(prev), open(pp, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
         print("weekly 갱신 완료")
