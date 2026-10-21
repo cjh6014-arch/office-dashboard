@@ -264,7 +264,7 @@ def main():
     if state.get("_v") != 2:                      # 수집 방식이 바뀌면 전국을 처음부터 다시 훑음
         state = {"_v": 2}
     seen_purps, n_items, n_calls, n_fail = {}, 0, 0, 0
-    today = datetime.date.today()
+    today = (datetime.datetime.utcnow() + datetime.timedelta(hours=9)).date()   # KST
     end = today.strftime("%Y%m%d")
     load_sigungu()
     if not BJDONG:
