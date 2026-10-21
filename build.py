@@ -31,6 +31,7 @@ def main():
     news = load("news.json", [])
     policies = load("policies.json", [])
     deals = load("deals.json", [])
+    deal_list = load("deal_list.json", [])
     coverage = load("coverage.json", {})
 
     real = bool(permits or market.get("vacancy"))
@@ -46,6 +47,7 @@ def main():
         "vacancy": market.get("vacancy") or prev.get("vacancy", []),
         "rent": market.get("rent") or prev.get("rent", []),
         "deals": deals or prev.get("deals", []),
+        "deal_list": deal_list or prev.get("deal_list", []),
         "policies": policies or prev.get("policies", []),
         "news": news or prev.get("news", []),
     }
