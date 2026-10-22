@@ -105,7 +105,7 @@ def match_articles(permits):
         for a in cands:
             t = a["title"]
             if not (("오피스" in t or "업무시설" in t or "사옥" in t) and any(k in t for k in toks)
-                    and (p["sigungu"].split()[0][:2] in t or (p["dong"] and p["dong"][:2] in t) or toks[0] in t)):
+                    and (((p.get("sigungu") or p.get("sido") or "").split() or [""])[0][:2] in t or (p.get("dong") and p["dong"][:2] in t) or toks[0] in t)):
                 continue
             verdict = claude(f"다음 기사 제목이 아래 사업장(신축 · 전환 성격 포함)에 관한 기사인지 '예' 또는 '아니오'로만 답하세요.\n"
                              f"사업장: {p['name']} / {p['sido']} {p['sigungu']} {p['dong']} / 연면적 {p['gfa']}㎡ / 허가 {p['permit']}\n기사 제목: {t}", 5)
@@ -160,7 +160,10 @@ def main(weekly=False):
     pf = CACHE / "permits.json"
     if pf.exists():
         permits = json.load(open(pf, encoding="utf-8"))
-        match_articles(permits)
+        try:
+            match_articles(permits)
+        except Exception as e:                      # 매칭이 깨져도 제도 · 일정 갱신은 계속
+            print("기사 매칭 오류", repr(e), file=sys.stderr)
         json.dump(permits, open(pf, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
         print("기사 매칭", sum(1 for p in permits if p.get("articles")), "건 연결", file=sys.stderr)
 
