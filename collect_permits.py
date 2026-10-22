@@ -60,9 +60,9 @@ def geocode(addr):
 DEBUG_LEFT = 6
 LAST_TOTAL = {}
 HTTP_CALLS = 0          # 이번 실행의 실제 호출 수
-MAX_HTTP = 6000         # 하루 호출 상한(공공데이터포털 일일 한도 안쪽)
+MAX_HTTP = 8500         # 하루 호출 상한(공공데이터포털 일일 한도 안쪽)
 MAX_PAGES = 30          # 한 페이지 100건(API 상한)이라 큰 동은 여러 쪽
-TIME_BUDGET = int(os.environ.get("PERMIT_MINUTES", "75")) * 60   # 인허가 수집에 쓸 최대 시간(초)
+TIME_BUDGET = int(os.environ.get("PERMIT_MINUTES", "150")) * 60  # 인허가 수집에 쓸 최대 시간(초)
 T0 = time.time()
 LAST_OK = {}            # op → 마지막 호출이 정상 응답(resultCode 00)이었는지
 RATIO_MIN_GFA = 3000    # 업무시설 비중(층별 조회)은 연면적 3,000㎡ 이상만
@@ -269,8 +269,9 @@ def main():
     load_sigungu()
     if not BJDONG:
         print("읍면동 목록 없음 — 법정동코드 API 확인", file=sys.stderr)
-    # 오래 안 훑은 동부터 MAX_CALLS 개만 (매일 일부씩 순환, 전국 한 바퀴에 며칠)
-    todo = sorted(BJDONG, key=lambda b: state.get(f"{b[0]}{b[1]}", ""))[:MAX_CALLS]
+    # 오래 안 훑은 동부터, 같은 날짜 안에서는 서울 → 경기 → 인천 → 나머지 순 (매일 일부씩 순환)
+    PRIO = {"서울특별시": 0, "경기도": 1, "인천광역시": 2}
+    todo = sorted(BJDONG, key=lambda b: (state.get(f"{b[0]}{b[1]}", ""), PRIO.get(b[2], 3)))[:MAX_CALLS * 2]
     for sgg, bjd, sido, sigungu, dong in todo:
         if HTTP_CALLS >= MAX_HTTP:
             print("호출 상한 도달 — 나머지 동은 다음 실행에", file=sys.stderr)
