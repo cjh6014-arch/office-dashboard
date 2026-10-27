@@ -26,6 +26,9 @@ def main():
         if r.get("exclude") or key in seen:
             continue
         seen.add(key)
+        r["conv"] = not str(r.get("kind", "")).startswith(("신축", "증축", "개축", "재축"))   # 용도변경 · 대수선 등은 신규 공급이 아님
+        if r["conv"] and (r.get("gfa") or 0) > 300000:       # 용도변경 건의 연면적 필드는 단위가 뒤섞여 있어 믿기 어려움
+            r["gfa"], r["kind"] = 0, r["kind"] + " · 면적 미상"
         permits.append(r)
     market = load("market.json", {})
     news = load("news.json", [])
