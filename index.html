@@ -133,13 +133,13 @@ footer p{max-width:90ch}
 
 <section id="summary">
   <h2>요약</h2>
-  <p class="sub">최근 12개월 기준 · 연면적은 건물 전체 연면적(업무시설 외 층 포함)</p>
+  <p class="sub">최근 12개월 기준 · 신축 · 증축 · 개축 허가만 집계(용도변경 · 대수선 제외) · 연면적은 건물 전체 연면적(업무시설 외 층 포함)</p>
   <div class="tiles" id="tiles"><div class="tile"><div class="k">요약 불러오는 중…</div></div></div>
 </section>
 
 <section id="trend">
   <h2>업무시설 건축 허가 · 착공 · 준공 추이</h2>
-  <p class="sub">연도별 · 허가일 · 실제착공일 · 사용승인일 기준</p>
+  <p class="sub">연도별 · 허가일 · 실제착공일 · 사용승인일 기준 · 신축 · 증축 · 개축만</p>
   <div class="row">
     <div class="seg" id="trendMeasure"><button aria-pressed="true" data-v="gfa">연면적</button><button data-v="count">건수</button></div>
     <div class="seg" id="trendRegion"><button aria-pressed="true" data-v="all">전국</button><button data-v="seoul">서울</button><button data-v="metro">수도권</button><button data-v="local">지방</button></div>
@@ -166,12 +166,13 @@ footer p{max-width:90ch}
 
 <section id="list">
   <h2>업무시설 인허가 목록</h2>
-  <p class="sub">주용도 '업무시설' 허가 대장 · 업무시설 비중은 층별 용도 중 업무시설 바닥면적 비율(연면적 3,000㎡ 이상만 조회 · 오피스텔 층 제외) · 같은 자리의 반복 허가는 최신 1건만 · 관련 기사는 건물명 · 지역이 맞는 것만 자동 연결(매일 재검색) · "공공"은 관공서 · 공공기관 청사</p>
+  <p class="sub">주용도 '업무시설' 허가 대장(기본은 신축 · 증축 · 개축, 용도변경 · 대수선은 체크 시 포함) · 업무시설 비중은 층별 용도 중 업무시설 바닥면적 비율(연면적 3,000㎡ 이상만 조회 · 오피스텔 층 제외) · 같은 자리의 반복 허가는 최신 1건만 · 관련 기사는 건물명 · 지역이 맞는 것만 자동 연결(매일 재검색) · "공공"은 관공서 · 공공기관 청사</p>
   <div class="row">
     <div class="seg" id="stageFilter"><button aria-pressed="true" data-v="">전체</button><button data-v="착공 전">착공 전</button><button data-v="공사 중">공사 중</button><button data-v="준공">준공</button></div>
     <select id="zoneFilter"><option value="">권역 전체</option><option>CBD</option><option>GBD</option><option>YBD</option><option>BBD</option><option>서울 기타</option><option>수도권</option><option>지방</option></select>
     <input type="search" id="q" placeholder="건물명 · 시군구 검색" aria-label="검색">
     <label class="small" style="display:inline-flex;align-items:center;gap:4px"><input type="checkbox" id="pubx"> 공공청사 제외</label>
+    <label class="small" style="display:inline-flex;align-items:center;gap:4px"><input type="checkbox" id="convx"> 용도변경 · 대수선 포함</label>
     <button class="btn" id="xls">엑셀 다운로드</button>
     <span class="count" id="count"></span>
   </div>
@@ -259,7 +260,7 @@ const STC={'착공 전':'var(--st1)','공사 중':'var(--st2)','준공':'var(--s
 const STCLS={'착공 전':'s1','공사 중':'s2','준공':'s3'};
 const ZC={CBD:'var(--z1)',GBD:'var(--z2)',YBD:'var(--z3)',BBD:'var(--z4)',서울:'var(--accent)',전국:'var(--z5)'};
 const SEOUL=new Set(['서울']), METRO=new Set(['서울','경기','인천']);
-let D=null, MAP=null, state={measure:'gfa',region:'all',mapView:'seoul',mapStages:new Set(['착공 전','공사 중','준공']),stage:'',zone:'',q:'',sortK:'permit',sortD:-1,mk:new Set(['서울','CBD','GBD','YBD']),pol:'',pick:null,pubx:false,page:1,npage:1,dpage:1,dq:'',dsido:'',dk:'d',dd:-1};
+let D=null, MAP=null, state={measure:'gfa',region:'all',mapView:'seoul',mapStages:new Set(['착공 전','공사 중','준공']),stage:'',zone:'',q:'',sortK:'permit',sortD:-1,mk:new Set(['서울','CBD','GBD','YBD']),pol:'',pick:null,pubx:false,convx:false,page:1,npage:1,dpage:1,dq:'',dsido:'',dk:'d',dd:-1};
 
 /* ---------- tooltip ---------- */
 const tip=$('#tip');
@@ -277,10 +278,11 @@ function seg(id,key,cb){$$(`#${id} button`).forEach(b=>b.addEventListener('click
 /* ---------- 요약 ---------- */
 function renderTiles(){
   const now=new Date(D.updated.slice(0,10)), ago=new Date(now);ago.setFullYear(ago.getFullYear()-1);
-  const last=(k)=>D.permits.filter(r=>r[k]&&new Date(r[k])>ago&&new Date(r[k])<=now);
+  const NEW=D.permits.filter(r=>!r.conv);
+  const last=(k)=>NEW.filter(r=>r[k]&&new Date(r[k])>ago&&new Date(r[k])<=now);
   const sum=a=>a.reduce((s,r)=>s+r.gfa,0);
   const p=last('permit'),s=last('start'),c=last('complete');
-  const going=D.permits.filter(r=>r.stage==='공사 중'), pend=D.permits.filter(r=>r.stage==='착공 전');
+  const going=NEW.filter(r=>r.stage==='공사 중'), pend=NEW.filter(r=>r.stage==='착공 전');
   const v=D.vacancy, vl=v[v.length-1], vp=v[v.length-2];
   const dlt=(k)=>{if(vl[k]==null||vp==null||vp[k]==null)return '';const d=vl[k]-vp[k];return `<span class="${d>0?'up':'dn'}">${d>0?'▲':'▼'}${fmt1(Math.abs(d))}%p</span> 전분기 대비`};
   const t=[
@@ -296,7 +298,7 @@ function renderTiles(){
 
 /* ---------- 추이(그룹 막대) ---------- */
 function renderTrend(){
-  const rows=D.permits.filter(inRegion), years=[];
+  const rows=D.permits.filter(r=>!r.conv&&inRegion(r)), years=[];
   const ys=rows.map(r=>yr(r.permit)).filter(Boolean); const y0=ys.length?Math.max(2018,Math.min(...ys)):2018, y1=yr(D.updated);
   for(let y=y0;y<=y1;y++)years.push(y);
   const agg=k=>years.map(y=>{const a=rows.filter(r=>yr(r[k])===y);return state.measure==='gfa'?a.reduce((s,r)=>s+r.gfa,0)/1000:a.length});
@@ -329,7 +331,7 @@ function renderMap(){
     const d=polys.map(pg=>pg.map(r=>'M'+ring(r)+'Z').join('')).join('');
     g+=`<path d="${d}" class="${f.properties.code==='11010'||f.properties.code==='11020'||f.properties.code==='11230'||f.properties.code==='11220'||f.properties.code==='11190'?'hl':''}"><title>${f.properties.name}</title></path>`}
   if(v==='seoul'){[['CBD',126.985,37.572],['GBD',127.045,37.498],['YBD',126.92,37.526],['마곡',126.835,37.56],['성수',127.055,37.545]].forEach(([n,x,y])=>{const [px,py]=P.p(x,y);g+=`<text class="zone" x="${px}" y="${py}" text-anchor="middle">${n}</text>`})}
-  const rows=D.permits.filter(r=>state.mapStages.has(r.stage)&&(v==='all'||r.sido==='서울')).sort((a,b)=>b.gfa-a.gfa);
+  const rows=D.permits.filter(r=>!r.conv&&state.mapStages.has(r.stage)&&(v==='all'||r.sido==='서울')).sort((a,b)=>b.gfa-a.gfa);
   const rad=gfa=>Math.max(3.5,Math.sqrt(gfa/1000)*(v==='seoul'?1.6:1.0));
   for(const r of rows){const [x,y]=P.p(r.lng,r.lat); if(x<0||y<0||x>P.W||y>P.H)continue;
     g+=`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${rad(r.gfa).toFixed(1)}" fill="${STC[r.stage]}" data-id="${r.id}" data-tip="<b>${r.name}</b><br>${r.sido} ${r.sigungu} · ${r.zone}<br>연면적 ${fmt(r.gfa)}㎡ · ${r.stage}<br>허가 ${r.permit}${r.start?' · 착공 '+r.start:''}${r.complete?' · 준공 '+r.complete:''}"/>`}
@@ -341,7 +343,7 @@ function renderMap(){
 
 /* ---------- 표 ---------- */
 function filtered(){
-  let rows=D.permits.filter(r=>(!state.stage||r.stage===state.stage)&&(!state.zone||r.zone===state.zone)&&!(state.pubx&&r.public));
+  let rows=D.permits.filter(r=>(!state.stage||r.stage===state.stage)&&(!state.zone||r.zone===state.zone)&&!(state.pubx&&r.public)&&(state.convx||!r.conv));
   if(state.pick)rows=rows.filter(r=>r.id===state.pick);
   if(state.q){const qs=state.q.toLowerCase().split(/\s+/).filter(Boolean);rows=rows.filter(r=>{const h=`${r.name} ${r.sido} ${r.sigungu} ${r.dong||''} ${r.addr||''}`.toLowerCase();return qs.every(q=>h.includes(q))})}
   const k=state.sortK,d=state.sortD;
@@ -470,6 +472,7 @@ function wire(){
   $('#zoneFilter').addEventListener('change',e=>{state.zone=e.target.value;state.pick=null;state.page=1;renderTable()});
   $('#q').addEventListener('input',e=>{state.q=e.target.value.trim();state.pick=null;state.page=1;renderTable()});
   $('#pubx').addEventListener('change',e=>{state.pubx=e.target.checked;state.pick=null;state.page=1;renderTable()});
+  $('#convx').addEventListener('change',e=>{state.convx=e.target.checked;state.pick=null;state.page=1;renderTable()});
   $('#xls').addEventListener('click',exportXlsx);
   $('#dlxls').addEventListener('click',exportDeals);
   $('#dlq').addEventListener('input',e=>{state.dq=e.target.value.trim();state.dpage=1;renderDealList()});
