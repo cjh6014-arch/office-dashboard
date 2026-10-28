@@ -262,7 +262,7 @@ const STC={'착공 전':'var(--st1)','공사 중':'var(--st2)','준공':'var(--s
 const STCLS={'착공 전':'s1','공사 중':'s2','준공':'s3'};
 const ZC={CBD:'var(--z1)',GBD:'var(--z2)',YBD:'var(--z3)',BBD:'var(--z4)',서울:'var(--accent)',전국:'var(--z5)'};
 const SEOUL=new Set(['서울']), METRO=new Set(['서울','경기','인천']);
-let D=null, MAP=null, state={measure:'gfa',region:'all',mapView:'seoul',mapStages:new Set(['착공 전','공사 중','준공']),mapMin:10000,stage:'',zone:'',q:'',sortK:'permit',sortD:-1,mk:new Set(['서울','CBD','GBD','YBD']),pol:'',ppage:1,pick:null,pubx:false,convx:false,page:1,npage:1,dpage:1,dq:'',dsido:'',dk:'d',dd:-1};
+let D=null, MAP=null, state={measure:'gfa',region:'all',mapView:'seoul',mapStages:new Set(['착공 전','공사 중','준공']),mapMin:10000,stage:'',zone:'',q:'',sortK:'permit',sortD:-1,mk:new Set(['서울','CBD','GBD','YBD','BBD']),pol:'',ppage:1,pick:null,pubx:false,convx:false,page:1,npage:1,dpage:1,dq:'',dsido:'',dk:'d',dd:-1};
 
 /* ---------- tooltip ---------- */
 const tip=$('#tip');
@@ -293,7 +293,7 @@ function renderTiles(){
     ['최근 12개월 준공',`${fmt(sum(c)/1000)}<small>천㎡</small>`,`${c.length}건`],
     ['공사 중(전체)',`${fmt(sum(going)/1000)}<small>천㎡</small>`,`${going.length}건 · 착공 전 ${pend.length}건`],
     [`서울 공실률 ${vl.quarter}`,`${fmt1(vl['서울'])}<small>%</small>`,dlt('서울')],
-    [`CBD · GBD · YBD`,`${fmt1(vl.CBD)} · ${fmt1(vl.GBD)} · ${fmt1(vl.YBD)}<small>%</small>`,`전국 ${fmt1(vl['전국'])}%`],
+    [`CBD · GBD · YBD · BBD`,`${fmt1(vl.CBD)} · ${fmt1(vl.GBD)} · ${fmt1(vl.YBD)} · ${fmt1(vl.BBD)}<small>%</small>`,`전국 ${fmt1(vl['전국'])}%`],
   ];
   $('#tiles').innerHTML=t.map(([k,v,d])=>`<div class="tile"><div class="k">${k}</div><div class="v">${v}</div><div class="d">${d}</div></div>`).join('');
 }
@@ -405,7 +405,7 @@ function lineChart(el,data,keys,unit,dec){
 function renderMarket(){
   const keys=['서울','CBD','GBD','YBD','BBD','전국'].filter(k=>state.mk.has(k));
   $('#mkSeries').innerHTML=['서울','CBD','GBD','YBD','BBD','전국'].map(k=>`<button class="chip" aria-pressed="${state.mk.has(k)}" data-v="${k}"><i class="sw" style="background:${ZC[k]||'var(--z5)'}"></i>${k}</button>`).join('');
-  $$('#mkSeries .chip').forEach(b=>b.addEventListener('click',()=>{const k=b.dataset.v;if(state.mk.has(k)){if(state.mk.size>1)state.mk.delete(k)}else if(state.mk.size<4)state.mk.add(k);renderMarket()}));
+  $$('#mkSeries .chip').forEach(b=>b.addEventListener('click',()=>{const k=b.dataset.v;if(state.mk.has(k)){if(state.mk.size>1)state.mk.delete(k)}else if(state.mk.size<6)state.mk.add(k);renderMarket()}));
   if(!keys.length)return;
   lineChart($('#vacChart'),D.vacancy,keys,'%');lineChart($('#rentChart'),D.rent,keys,'천원');
   const last=D.vacancy.slice(-5).reverse(), rl=Object.fromEntries(D.rent.map(r=>[r.quarter,r]));
