@@ -29,6 +29,11 @@ def main():
         r["conv"] = not str(r.get("kind", "")).startswith(("신축", "증축", "개축", "재축"))   # 용도변경 · 대수선 등은 신규 공급이 아님
         if r["conv"] and (r.get("gfa") or 0) > 300000:       # 용도변경 건의 연면적 필드는 단위가 뒤섞여 있어 믿기 어려움
             r["gfa"], r["kind"] = 0, r["kind"] + " · 면적 미상"
+        for k in ("permit", "start", "complete"):            # 대장 오타(예: 허가일 2500-04-30)는 날짜를 비우고 표시만
+            v = r.get(k)
+            if v and (v[:4] > str(datetime.date.today().year + 1) or v[:4] < "1950"):
+                r[k] = None
+                r["kind"] = r["kind"] + f" · {dict(permit='허가일', start='착공일', complete='준공일')[k]} 오류(대장 {v})"
         permits.append(r)
     market = load("market.json", {})
     news = load("news.json", [])
