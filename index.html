@@ -155,6 +155,7 @@ footer p{max-width:90ch}
   <p class="sub">원 크기 = 연면적 · 색 = 단계 · 원을 누르면 아래 목록이 그 사업장으로 좁혀집니다 · 위치는 지번 주소 기준(주소 변환 전인 건은 시군구 대표점 부근에 흩어 표시)</p>
   <div class="row">
     <div class="seg" id="mapView"><button aria-pressed="true" data-v="seoul">서울 · 권역</button><button data-v="all">전국</button></div>
+    <select id="mapMin"><option value="0">연면적 전체</option><option value="3000">3,000㎡ 이상</option><option value="10000" selected>1만㎡ 이상</option><option value="30000">3만㎡ 이상</option><option value="100000">10만㎡ 이상</option></select>
     <div class="chips" id="mapStages">
       <button class="chip" aria-pressed="true" data-v="착공 전"><i class="sw" style="background:var(--st1)"></i>착공 전</button>
       <button class="chip" aria-pressed="true" data-v="공사 중"><i class="sw" style="background:var(--st2)"></i>공사 중</button>
@@ -225,6 +226,7 @@ footer p{max-width:90ch}
   <p class="sub">정부 · 국회 · 지자체 발표와 보도를 매주 다시 검색해 진행 상황(완료 · 진행 중 · 계류 · 예정)과 새 항목을 반영합니다. 정확한 내용은 출처 원문에서 확인하세요.</p>
   <div class="row"><div class="chips" id="polFields"></div></div>
   <div class="tablewrap"><table id="polTbl" style="min-width:700px"><thead><tr><th>시기</th><th>분야</th><th>항목</th><th>상태</th><th>비고</th><th>출처</th></tr></thead><tbody></tbody></table></div>
+  <div class="pager" id="polPager"></div>
 </section>
 
 <section id="terms">
@@ -260,7 +262,7 @@ const STC={'착공 전':'var(--st1)','공사 중':'var(--st2)','준공':'var(--s
 const STCLS={'착공 전':'s1','공사 중':'s2','준공':'s3'};
 const ZC={CBD:'var(--z1)',GBD:'var(--z2)',YBD:'var(--z3)',BBD:'var(--z4)',서울:'var(--accent)',전국:'var(--z5)'};
 const SEOUL=new Set(['서울']), METRO=new Set(['서울','경기','인천']);
-let D=null, MAP=null, state={measure:'gfa',region:'all',mapView:'seoul',mapStages:new Set(['착공 전','공사 중','준공']),stage:'',zone:'',q:'',sortK:'permit',sortD:-1,mk:new Set(['서울','CBD','GBD','YBD']),pol:'',pick:null,pubx:false,convx:false,page:1,npage:1,dpage:1,dq:'',dsido:'',dk:'d',dd:-1};
+let D=null, MAP=null, state={measure:'gfa',region:'all',mapView:'seoul',mapStages:new Set(['착공 전','공사 중','준공']),mapMin:10000,stage:'',zone:'',q:'',sortK:'permit',sortD:-1,mk:new Set(['서울','CBD','GBD','YBD']),pol:'',ppage:1,pick:null,pubx:false,convx:false,page:1,npage:1,dpage:1,dq:'',dsido:'',dk:'d',dd:-1};
 
 /* ---------- tooltip ---------- */
 const tip=$('#tip');
@@ -331,12 +333,12 @@ function renderMap(){
     const d=polys.map(pg=>pg.map(r=>'M'+ring(r)+'Z').join('')).join('');
     g+=`<path d="${d}" class="${f.properties.code==='11010'||f.properties.code==='11020'||f.properties.code==='11230'||f.properties.code==='11220'||f.properties.code==='11190'?'hl':''}"><title>${f.properties.name}</title></path>`}
   if(v==='seoul'){[['CBD',126.985,37.572],['GBD',127.045,37.498],['YBD',126.92,37.526],['마곡',126.835,37.56],['성수',127.055,37.545]].forEach(([n,x,y])=>{const [px,py]=P.p(x,y);g+=`<text class="zone" x="${px}" y="${py}" text-anchor="middle">${n}</text>`})}
-  const rows=D.permits.filter(r=>!r.conv&&state.mapStages.has(r.stage)&&(v==='all'||r.sido==='서울')).sort((a,b)=>b.gfa-a.gfa);
-  const rad=gfa=>Math.max(3.5,Math.sqrt(gfa/1000)*(v==='seoul'?1.6:1.0));
+  const rows=D.permits.filter(r=>!r.conv&&r.gfa>=state.mapMin&&state.mapStages.has(r.stage)&&(v==='all'||r.sido==='서울')).sort((a,b)=>b.gfa-a.gfa);
+  const rad=gfa=>Math.min(18,Math.max(3.5,Math.sqrt(gfa/1000)*(v==='seoul'?1.6:1.0)));
   for(const r of rows){const [x,y]=P.p(r.lng,r.lat); if(x<0||y<0||x>P.W||y>P.H)continue;
     g+=`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${rad(r.gfa).toFixed(1)}" fill="${STC[r.stage]}" data-id="${r.id}" data-tip="<b>${r.name}</b><br>${r.sido} ${r.sigungu} · ${r.zone}<br>연면적 ${fmt(r.gfa)}㎡ · ${r.stage}<br>허가 ${r.permit}${r.start?' · 착공 '+r.start:''}${r.complete?' · 준공 '+r.complete:''}"/>`}
   g+='</svg>';
-  $('#mapChart').innerHTML=g+`<div class="legend"><span><i class="c" style="background:var(--st1)"></i>착공 전</span><span><i class="c" style="background:var(--st2)"></i>공사 중</span><span><i class="c" style="background:var(--st3)"></i>준공</span><span class="small">${rows.length}건 표시${v==='seoul'?' · 음영 = CBD · GBD · YBD 해당 구':''}</span></div>`;
+  $('#mapChart').innerHTML=g+`<div class="legend"><span><i class="c" style="background:var(--st1)"></i>착공 전</span><span><i class="c" style="background:var(--st2)"></i>공사 중</span><span><i class="c" style="background:var(--st3)"></i>준공</span><span class="small">${rows.length}건 표시 · 신축 · 증축 · 개축${state.mapMin?' · 연면적 '+fmt(state.mapMin)+'㎡ 이상':''}${v==='seoul'?' · 음영 = CBD · GBD · YBD 해당 구':''}</span></div>`;
   bindTips($('#mapChart'));
   $$('#mapChart circle').forEach(c=>c.addEventListener('click',()=>{state.pick=c.dataset.id;state.q='';$('#q').value='';state.page=1;renderTable();location.hash='list'}));
 }
@@ -457,10 +459,13 @@ function renderNews(){
 function renderPolicy(){
   const fields=[...new Set(D.policies.map(p=>p.field))];
   $('#polFields').innerHTML=`<button class="chip" aria-pressed="${!state.pol}" data-v="">전체</button>`+fields.map(f=>`<button class="chip" aria-pressed="${state.pol===f}" data-v="${f}">${f}</button>`).join('');
-  $$('#polFields .chip').forEach(b=>b.addEventListener('click',()=>{state.pol=b.dataset.v;renderPolicy()}));
+  $$('#polFields .chip').forEach(b=>b.addEventListener('click',()=>{state.pol=b.dataset.v;state.ppage=1;renderPolicy()}));
   const cls={'완료':'p-done','진행 중':'p-going','계류':'p-pend','예정':'p-plan'};
   const rows=D.policies.filter(p=>!state.pol||p.field===state.pol).sort((a,b)=>b.date>a.date?1:-1);
-  $('#polTbl tbody').innerHTML=rows.map(p=>`<tr><td>${p.date}</td><td>${p.field}</td><td style="white-space:normal;min-width:240px">${p.title}</td><td><span class="pill ${cls[p.status]||'p-plan'}">${p.status}</span></td><td style="white-space:normal;min-width:180px">${p.note||''}</td><td>${p.source?`<a href="${p.source}" target="_blank" rel="noopener">원문</a>`:''}</td></tr>`).join('');
+  const pages=Math.max(1,Math.ceil(rows.length/PAGE)); if(state.ppage>pages)state.ppage=pages; if(state.ppage<1)state.ppage=1;
+  const view=rows.slice((state.ppage-1)*PAGE,state.ppage*PAGE);
+  renderPager('#polPager',state.ppage,rows.length,pages,p=>{state.ppage=p;renderPolicy();$('#policy').scrollIntoView({behavior:'smooth',block:'start'})});
+  $('#polTbl tbody').innerHTML=view.map(p=>`<tr><td>${p.date}</td><td>${p.field}</td><td style="white-space:normal;min-width:240px">${p.title}</td><td><span class="pill ${cls[p.status]||'p-plan'}">${p.status}</span></td><td style="white-space:normal;min-width:180px">${p.note||''}</td><td>${p.source?`<a href="${p.source}" target="_blank" rel="noopener">원문</a>`:''}</td></tr>`).join('');
 }
 
 /* ---------- 초기화 ---------- */
@@ -468,6 +473,7 @@ function wire(){
   seg('trendMeasure','measure',renderTrend);seg('trendRegion','region',renderTrend);
   seg('mapView','mapView',renderMap);
   $$('#mapStages .chip').forEach(b=>b.addEventListener('click',()=>{const k=b.dataset.v;state.mapStages.has(k)?state.mapStages.delete(k):state.mapStages.add(k);b.setAttribute('aria-pressed',state.mapStages.has(k));renderMap()}));
+  $('#mapMin').addEventListener('change',e=>{state.mapMin=+e.target.value;renderMap()});
   seg('stageFilter','stage',()=>{state.pick=null;state.page=1;renderTable()});
   $('#zoneFilter').addEventListener('change',e=>{state.zone=e.target.value;state.pick=null;state.page=1;renderTable()});
   $('#q').addEventListener('input',e=>{state.q=e.target.value.trim();state.pick=null;state.page=1;renderTable()});
