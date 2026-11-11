@@ -51,6 +51,11 @@ def main():
             "울산광역시": "울산", "세종특별자치시": "세종", "경기도": "경기", "강원특별자치도": "강원", "강원도": "강원", "충청북도": "충북",
             "충청남도": "충남", "전북특별자치도": "전북", "전라북도": "전북", "전라남도": "전남", "경상북도": "경북", "경상남도": "경남", "제주특별자치도": "제주"}
     names = {s: (SIDO.get(sd, sd[:2]), sg) for s, sd, sg in sgg_all}
+    bj = CACHE / "bjdong.json"                     # 시군구 목록 API 가 일부만 줄 때를 대비해 읍면동 목록에서도 이름을 채움
+    if bj.exists():
+        for row in json.load(open(bj, encoding="utf-8")):
+            names.setdefault(row[0], (SIDO.get(row[2], row[2][:2]), row[3]))
+    sgg = sorted(set(sgg) | set(names))
     calls, fails, stop = 0, 0, False
     for ym in reversed(months):            # 최근 달부터
         for code in sgg:
