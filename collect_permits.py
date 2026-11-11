@@ -165,6 +165,11 @@ def load_sigungu_api():
         if len(old) > len(BJDONG):
             print("읍면동 목록이 이전보다 짧음", len(BJDONG), "<", len(old), "— 이전 목록 사용", file=sys.stderr)
             BJDONG[:] = old
+    if cache.exists():                        # 시군구 목록도 마찬가지
+        old = [tuple(x) for x in json.load(open(cache, encoding="utf-8"))]
+        if len(old) > len(out):
+            print("시군구 목록이 이전보다 짧음", len(out), "<", len(old), "— 이전 목록 사용", file=sys.stderr)
+            out = old
     if out:
         json.dump(out, open(cache, "w", encoding="utf-8"), ensure_ascii=False)
         json.dump(BJDONG, open(bcache, "w", encoding="utf-8"), ensure_ascii=False)
