@@ -7,14 +7,14 @@
  },
  {
   "year": 2023,
-  "amount": 4.7,
-  "count": 1924,
+  "amount": 6.7,
+  "count": 2361,
   "months": 12
  },
  {
   "year": 2024,
-  "amount": 13.2,
-  "count": 3572,
+  "amount": 13.3,
+  "count": 3573,
   "months": 12
  },
  {
@@ -26,7 +26,7 @@
  {
   "year": 2026,
   "amount": 11.6,
-  "count": 3092,
+  "count": 3106,
   "months": 11
  }
 ]
