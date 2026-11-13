@@ -216409,7 +216409,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000139677,
@@ -216482,7 +216482,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000140922,
@@ -216512,7 +216512,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000140375,
@@ -216542,7 +216542,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000140576,
@@ -216572,7 +216572,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000139733,
@@ -216602,7 +216602,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000140131,
@@ -216632,7 +216632,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000140744,
@@ -216662,7 +216662,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000134124,
@@ -216721,8 +216721,15 @@
   "complete": null,
   "stage": "착공 전",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "'여의도권', 영등포구 일대 오피스타운으로 개발로 들썩",
+    "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBLUDgtWkk5dXcyRkthc1BIWHE0YnBJd2RQOGtxN3BSSnhEUWJRdzFKTXhsOTU5dm1pYV9BWEpLT1V5MHZkNEM5dV9CZXZiSnZDRW9sanJIXzI?oc=5",
+    "date": "2013-05-22",
+    "source": "세계일보"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000130523,
@@ -216752,7 +216759,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000134086,
@@ -216782,7 +216789,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000129324,
@@ -216842,7 +216849,7 @@
   "stage": "공사 중",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000136312,
@@ -216872,7 +216879,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000134724,
@@ -216902,7 +216909,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000135696,
@@ -216931,8 +216938,21 @@
   "complete": null,
   "stage": "착공 전",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "도시형생활오피스 송도 씨워크 인테라스 한라 이달 분양",
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9DTXh2SkR0WmM2cXRhLUZlX0NmQzNkejI2YjdtcjhHTGtXM00taGlLejBRdnZjeUFiYUl5cjItSzdBaDNlTC1SNDNZWEVxTWdxbkZ6M2xtdTFVQdIBWEFVX3lxTFBVdDlsSlk4MUphVGR4M3ptNzgtQno4aFZnY0tYYXg3VVdWOHFuaWQwYy1UbHVBOGR6OWFaUVU0STVjNEp4RHd4Z0NxQnRTR21jVVUwMHVvbnQ?oc=5",
+    "date": "2019-09-02",
+    "source": "아주경제"
+   },
+   {
+    "title": "송도국제도시에 소형 오피스…송도 씨워크 인테라스 한라 분양",
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE94aU10QUV6ell4R3Q0WnZJQmVEaUp2TWpjZThNSDdkc3c2Zjh1SVpWOFJlT0FyNlpCSVF5YVEtUGlaSFpadG5jT19JYzRQZWVmWGZrZ0RwYlhUd9IBWEFVX3lxTFA2OWJsNEtwVU9OX1hkbUt1dWRGbEdhQW5kZWZZY3Jra3g2VE42cE5jVHQzWnNLbE1WcUlzQ3EtSll0NHJ4NGJtajdPV3h4dzNUSjBTemREZUw?oc=5",
+    "date": "2019-09-17",
+    "source": "아주경제"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000135302,
@@ -216962,7 +216982,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000132323,
@@ -216991,8 +217011,21 @@
   "complete": null,
   "stage": "착공 전",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "1~2인 가구 ‘이너매스 여울숲‘ 오피스텔 280실 분양",
+    "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBkV0xWcFd6Z2pmY2NFWlpyT3BtQ2JKMC1uamVvc19YOU50dWo5VHB3cV9na1lYZXJQMHRYWDZia081ZG9MX1NCY19jZDJzYl9WU2FaejZ1SF9LdldJWXduV1QzaU1McWs2eVpaQjRocHNoN1hr?oc=5",
+    "date": "2020-04-23",
+    "source": "대한경제"
+   },
+   {
+    "title": "동탄2신도시 ‘이너매스 여울숲’ 오피스텔 280실 분양",
+    "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1LeElOMkVVX3hGWkV1WER2d0ZSMF9taVYzc285Ni1DbHFmS3J5VEw0Q1hvTlhCXzlrQ3RsanA0NWlDWTJmcFl3d1pKVWdlU0lNQVFDb2hOWjE4aHNlajQ4eUVsR2M?oc=5",
+    "date": "2020-04-24",
+    "source": "서울경제TV"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000127286,
@@ -217022,7 +217055,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000128054,
@@ -217051,8 +217084,15 @@
   "complete": null,
   "stage": "착공 전",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "방화동 499-1 특별계획구역 재정비 - 노후 업무시설 새단장·통학로 안전 강화",
+    "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBWVFAxRE5qbDJjcjh4NnV4V2lZT3NseFpob1R6VWRoQTFha2k0ZXR0TDM2UUpRc0NGSDhKUno1d1hVRHRRbXBXZ0F4U3BGRm5tZzF2c2FwbjNCNUVjYU0tMjFOYWZxU2JKN2pFLUpxc3htdw?oc=5",
+    "date": "2026-07-09",
+    "source": "고령자주택신문"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000127877,
@@ -217082,7 +217122,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000127895,
@@ -217112,7 +217152,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000127526,
@@ -217172,7 +217212,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1051100090758,
@@ -217262,7 +217302,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000124524,
@@ -217292,7 +217332,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000124422,
@@ -217322,7 +217362,7 @@
   "stage": "공사 중",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000121593,
@@ -217351,8 +217391,15 @@
   "complete": "2022-11-22",
   "stage": "준공",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "[단독] 강남구청, 개포동 오피스 사망사고 현장서 희림 '부실감리' 적발",
+    "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1lejVZZHF4RUlPVUxfUWh1TWxTcFlZc01Rbmh5UUY0TTV5VGwzSnJPdXFFd1h4aVh2cGFWNDNycldrUFhoYThJcXdnWXpNOTNDUFloTlUyRjRmRzNV?oc=5",
+    "date": "2026-01-28",
+    "source": "뉴스핌"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000122424,
@@ -217382,7 +217429,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000123641,
@@ -217412,7 +217459,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000122500,
@@ -217442,7 +217489,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000121825,
@@ -217472,7 +217519,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000121063,
@@ -217501,8 +217548,21 @@
   "complete": null,
   "stage": "착공 전",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "여의도동 업무시설 건립 사업, 서울시 건축위원회 심의 통과",
+    "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFAwVjAyczJtNzlPd2MwcnExVWlPUGo5STc1MmstZWdPT2JiTmhiX1ZOc09qN3piNkxBcTFkRzBhaExTUlpXaUNDSHRxSS1RRkFEZUVueWFzODVvY0lLdEpJcjV0elI?oc=5",
+    "date": "2026-05-27",
+    "source": "영등포시대"
+   },
+   {
+    "title": "들썩들썩하는 영등포구 '非여의도권'오피스시장 빛보나",
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBGMVdRX1hXaUJJLXdJeWRSMkk5Nzc5aldiTW1kbFRIMEswcFZFdkF0QURfckRNSXduNFhVTUkzdFp0dUt6QWdkMDY1TzRhel94dWkwaHFwMUpBZw?oc=5",
+    "date": "2018-08-07",
+    "source": "파이낸셜뉴스"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000567755,
@@ -217532,7 +217592,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000134184,
@@ -217562,7 +217622,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000120590,
@@ -217592,7 +217652,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1232100196113,
@@ -217622,7 +217682,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1136100078769,
@@ -217652,7 +217712,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000120424,
@@ -217681,8 +217741,27 @@
   "complete": "2024-08-08",
   "stage": "준공",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "목동 CBS 자리에 업무시설·시니어 주택 들어선다",
+    "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5RbENINkZFMTBkUVJKUF9HMlJFMnhqcnpzTlJid2NMb19BenRMWmxDcjZfR01qZzk5amtiay1FQkFoVTBYa0VfMG5hNDNhN05aZnNpV0Jna2doUGlzVDQyTnBHQnVjaFVJTnJtLUhfbDE2c2k3dl9yNtIBeEFVX3lxTE5RbENINkZFMTBkUVJKUF9HMlJFMnhqcnpzTlJid2NMb19BenRMWmxDcjZfR01qZzk5amtiay1FQkFoVTBYa0VfMG5hNDNhN05aZnNpV0Jna2doUGlzVDQyTnBHQnVjaFVJTnJtLUhfbDE2c2k3dl9yNg?oc=5",
+    "date": "2026-11-12",
+    "source": "뉴시스"
+   },
+   {
+    "title": "목동 CBS 부지에 최고 35층 업무시설 들어선다",
+    "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBvY1ZtdndMUjNXSllNNmQtQm10cXExNkN1WGNDUWU5Q1pqLXhNYzdtS2pmT2NvRDZRaEx0NmpCbnd6V2gzMXc5aUNpVFpoQm01UDI1S2Jzb3hKenRseG85dg?oc=5",
+    "date": "2024-05-09",
+    "source": "아시아경제"
+   },
+   {
+    "title": "“학군지 목동에 하이엔드 오피스텔 뜬다” ‘목동윤슬자이’ 6월 분양",
+    "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBEV2tTdy1wZEdweldRWmtyTkdNY296dUdEeFNYZ0J4c2o4QWlSRlZGeDJtOEJ2RWFMTUFoaEtnQzY0TEl0bzI5amgtT0ZPZmdRdkHSAVNBVV95cUxQZVV6MENCZkFHSkVfMmsyRWFSWkdfMFQwWGJyamxNclJBc0RYOVFjbXVIVkY3MFlGOUVKS084bE14ajk4ejJ6bHNyV1hycTgtVUhKUQ?oc=5",
+    "date": "2026-05-14",
+    "source": "서울경제"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000118032,
@@ -217742,7 +217821,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000118058,
@@ -217771,8 +217850,27 @@
   "complete": null,
   "stage": "착공 전",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "‘광교중앙역SK뷰’, 쾌적한 자연환경과 다양한 편의시설 갖춘 역세권 소형 오피스텔, 오피스 분양",
+    "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9XMnlRbE1mdFZ1dF8xdWFqUmtrYTFQSTZwRzdOWFk1bVpCN0Q1Zy00ZUZ3eDNzYW1DNm1pdmxpekJjeDJsbkZtcDBDc1JMams5VW5qTkpZSWVSTno3YUJEaEg2Qlp1Zkl0aERZTkZMN2ZsQQ?oc=5",
+    "date": "2019-04-17",
+    "source": "굿모닝충청"
+   },
+   {
+    "title": "‘광교중앙역SK뷰’ 프리미엄 주거서비스 제공하는 역세권 오피스텔, 오피스 분양",
+    "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBJcHdrODNUZ3p5NmhXNUdEc1Fjc2lERkxhTm1EZ0VrSUZBRGRIdGRGQzdaVG14dkN2QkVfbXg4LUpWTHc2cU5MRlZ3RmpTZ3JhZDhuNEs3OGZMbnZhanlkQi1uWWdPcXNYQlZNMW5B?oc=5",
+    "date": "2019-04-15",
+    "source": "울산종합일보"
+   },
+   {
+    "title": "광교호수공원이 한 눈에···'광교 SK VIEW 오피스·오피스텔' 주목",
+    "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1Ja1BvUzZkNUIyTkRYNzNHNkZheXVnalFGRGRBT2VzYUsxdWUzNFFKcGs2RHI1Q1B1TWVsMHJwcE1wWkYwQnJwS3FtU05ZZFNTeUxtMkQ4YWNIMXdPOGp3aEt3?oc=5",
+    "date": "2016-04-27",
+    "source": "국토일보"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000117226,
@@ -217802,7 +217900,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000118489,
@@ -217832,7 +217930,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000118487,
@@ -217862,7 +217960,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000118451,
@@ -217891,8 +217989,15 @@
   "complete": null,
   "stage": "착공 전",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "서울 업무시설 거래량 1위 강서구 '마곡 아이파크 디어반' 주목",
+    "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFB3NEVkTGNzQ3ptYlNvT001YzFrZ0tGb0pJRVlyUDVGUFJRdjZZMnROYlhMT3JqOWFJOUtsbUdWZGZ4VTBWLWlZUWpvaThKQ0ppMF9QNzhidzRzbV9oTVBzWHp1SEw?oc=5",
+    "date": "2023-12-12",
+    "source": "국토일보"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000117266,
@@ -217921,8 +218026,15 @@
   "complete": null,
   "stage": "공사 중",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "수원시청역 역세권 오피스 ‘스페이스 앤 이룸타워’ 그랜드 오픈",
+    "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQeExnSGpZX1hib0lvc3VBYXJNNUd0b2QyMUZxczd6SzlvamxIa0VfdnBpekN3TTktVTN2RTdpeGVtaWZWTW42d0Fld1Q0WlBfYTRGdk5OYjJnN0R2ODYtdWYxOVRqY00yaDNqejU4dk9BeXFoX2tmbFBGTmZrVEhYY2tGWGdvNjcyMzE0MzFsc1XSAaQBQVVfeXFMUG1JbzhUaHgtN1B5eU1TdUZIbTVFaEotaVc2M1NRWTNreUpkWF96VnFOVVE2Tjl1WXFoWUxGbjRtdEUtX0JXb0M5eEM3S0NhbGtnN1lMYzFQekR1YkR4OHE1bnZXNGlqdnIwVlR1dWxQUlpZODN4dTIyWmxDaHJzakNFdV9sTnBvZkJkZzRjUmlBV3hyZWZvMDFKS1pLeTh5MnJRemU?oc=5",
+    "date": "2021-05-28",
+    "source": "Chosunbiz"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000117056,
@@ -217952,7 +218064,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000116725,
@@ -217981,8 +218093,15 @@
   "complete": "2026-04-30",
   "stage": "준공",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "역삼동 고급 오피스텔 '루카831' 이달 분양",
+    "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1FWURMbU05QWlMdlFvamxZWWI0ZXI1a2NBYUdZU0Y2QWxnSmoyTUJTazVYRmY1UGhGTjZSOE1UMlBjWm41RW1ZeFlCcndlRjRCWDZFTUNMRExIQ3dwaHJ0SndqZmNZOWxhemhYZlU2eDZtZmd4b3Q5U3RZTG5XX03SAXNBVV95cUxQTEs3Q3RoYnpGZjBqZVZWMWw1VXRyWmxyTTYwY2NySkpGSnZsVFNDeGd6SzBENmpmOTNHSDNTTHd4TzB5aTE0RTYyMGxzWFBleEU0VHlmUUItNHJEUnhKRzRDOW5yM1dkQl9HZm82b3ZyRGdR?oc=5",
+    "date": "2021-05-08",
+    "source": "땅집고"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000116535,
@@ -218012,7 +218131,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000116500,
@@ -218042,7 +218161,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000116502,
@@ -218072,7 +218191,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000116169,
@@ -218102,7 +218221,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000115379,
@@ -218132,7 +218251,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1230100138428,
@@ -218162,7 +218281,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000113822,
@@ -218191,8 +218310,15 @@
   "complete": "2024-12-12",
   "stage": "준공",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "사우동 행정복지센터, 바이오월(수직정원) 설치를 통한 그린오피스 조성에 앞장",
+    "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9mSjNZbEhnN3lhUEY1aHA2ODF2VVpNb3VvWmJNb0FDUEhpdC0zNHNHRXJOVGpjNFZKZGw4MWt1TXI2VTdhd3hSeWJDV0FKUkVyTEVpa0RWWXgtU253Y3hzWTljek9jd2JTdTRN?oc=5",
+    "date": "2022-06-15",
+    "source": "김포데일리"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000110674,
@@ -218222,7 +218348,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000112154,
@@ -218252,7 +218378,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000107745,
@@ -218282,7 +218408,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000107595,
@@ -218312,7 +218438,7 @@
   "stage": "공사 중",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000107952,
@@ -218372,7 +218498,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000104372,
@@ -218402,7 +218528,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000105078,
@@ -218432,7 +218558,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000105079,
@@ -218462,7 +218588,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000102785,
@@ -218492,7 +218618,7 @@
   "stage": "공사 중",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000102321,
@@ -218552,7 +218678,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000098567,
@@ -218582,7 +218708,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000096452,
@@ -218612,7 +218738,7 @@
   "stage": "공사 중",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1276100505278,
@@ -218642,7 +218768,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000096834,
@@ -218672,7 +218798,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1050100116493,
@@ -218731,8 +218857,15 @@
   "complete": null,
   "stage": "착공 전",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "\"잠실동 상가·삼성동 오피스텔, 10월부터 허가없이 살 수 있다\" - 머니투데이",
+    "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBtTjZOQUUwM1BTQ1lpMm9rd2QzczZhbzUxcHVsRDZyeEhsaHJzTkhHZXJORlVKY0NFczVDbVlORGNvNjl3R2RsZC1oX0RzQTlsV1JHTVUxaGFiQTZhQU1mc3V5SXpnTTViNUHSAW9BVV95cUxNMnVDQ0tsNFNOWlRuMk5POW1lQVRVNkVoSEFObndCQ0tVSTR4MnFLWFYzT196M2h3aWdQMHcwYTlKTlFuOXdvaTBMVjhaOWd6ZlBKU1Y2b2l0RWs0dDJXUzNyYkRpeHQ1TklkV2x2Sjg?oc=5",
+    "date": "2023-06-09",
+    "source": "머니투데이"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000096009,
@@ -218762,7 +218895,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000090072,
@@ -218792,7 +218925,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000093572,
@@ -218821,8 +218954,27 @@
   "complete": null,
   "stage": "공사 중",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "KT에스테이트, '성수동269' 오피스 개발 2200억 자금 조달",
+    "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE1MVmJOWnBJdEI3OFBTY2JKUW9URnhNNTdrelVUdmJfSG53WmI5cGI1dFVJRG5Qb0luYXYwQTIxdnNOcnkzNkE?oc=5",
+    "date": "2026-05-12",
+    "source": "Daum"
+   },
+   {
+    "title": "성수동 오피스 개발 줄잇는 자금조달...매각시장도 활기",
+    "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPY0hSMkZhTmltazFqb1F6UjlJSHBNOXVvNjVEV2JzYXo5ODA2STZvSldoNUNydXYyV1o2ZVJuR2FnUlZnMWc3cWw4ZG4zU0toYmtsdC0wTHh5VHhPRG5pMTBKYWQ3a0lsYWhwZ0J2MU8wbGNZeXJQekxaVmFNOHprVlptV0pyc1dPelQ3ZlhOanJlYjAxQmwtd3FEUDhPcUMwd0JMbw?oc=5",
+    "date": "2025-10-07",
+    "source": "딜북뉴스"
+   },
+   {
+    "title": "무신사 둥지 튼 성수동에… 오피스 개발 재개한다",
+    "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5zN0FKcEp6bHRfcFhRQ2luNFlTRVFyc3BJUU5lNGl1ZlNTWGljTWZrekRmRUpseEU3SFZzNFRWT051QV8tbkNBVjNOY0tIQXdsSEHSAVNBVV95cUxOVDFyX2JqRDNtZ096QnJ1UEFGamZkbEJEalFtUDJaVWNqOUQ2eURJNUw3cHgxbDkzeFFKQmJxNlNaeE5IbGNZRk4zSmRNZ3RET25uVQ?oc=5",
+    "date": "2025-05-28",
+    "source": "서울경제"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000090822,
@@ -218852,7 +219004,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000094776,
@@ -218912,7 +219064,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000092173,
@@ -218941,8 +219093,15 @@
   "complete": "2026-08-31",
   "stage": "준공",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "롯데캐슬 넥스티엘Ⅱ 입주 시작…아라역 직결 교통망·검단 업무시설 확충 기대",
+    "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9JdDBjdTFIVm1jNXBKWGZVX1FydVdIZGpUVmxfdVFJcndMSnZlUGlTbm5CYzVNNUN4WUZ4Y0xqckVzYkVybXZRcGJwZVNyTGJNbnNqbGo1Q0Y?oc=5",
+    "date": "2026-10-27",
+    "source": "뷰어스"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000094823,
@@ -218972,7 +219131,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1226100168261,
@@ -219002,7 +219161,7 @@
   "stage": "공사 중",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000091979,
@@ -219032,7 +219191,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000096191,
@@ -219062,7 +219221,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000096130,
@@ -219092,7 +219251,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000089072,
@@ -219151,8 +219310,27 @@
   "complete": null,
   "stage": "착공 전",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "‘광교중앙역SK뷰’, 쾌적한 자연환경과 다양한 편의시설 갖춘 역세권 소형 오피스텔, 오피스 분양",
+    "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9XMnlRbE1mdFZ1dF8xdWFqUmtrYTFQSTZwRzdOWFk1bVpCN0Q1Zy00ZUZ3eDNzYW1DNm1pdmxpekJjeDJsbkZtcDBDc1JMams5VW5qTkpZSWVSTno3YUJEaEg2Qlp1Zkl0aERZTkZMN2ZsQQ?oc=5",
+    "date": "2019-04-17",
+    "source": "굿모닝충청"
+   },
+   {
+    "title": "‘광교중앙역SK뷰’ 프리미엄 주거서비스 제공하는 역세권 오피스텔, 오피스 분양",
+    "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBJcHdrODNUZ3p5NmhXNUdEc1Fjc2lERkxhTm1EZ0VrSUZBRGRIdGRGQzdaVG14dkN2QkVfbXg4LUpWTHc2cU5MRlZ3RmpTZ3JhZDhuNEs3OGZMbnZhanlkQi1uWWdPcXNYQlZNMW5B?oc=5",
+    "date": "2019-04-15",
+    "source": "울산종합일보"
+   },
+   {
+    "title": "광교호수공원이 한 눈에···'광교 SK VIEW 오피스·오피스텔' 주목",
+    "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1Ja1BvUzZkNUIyTkRYNzNHNkZheXVnalFGRGRBT2VzYUsxdWUzNFFKcGs2RHI1Q1B1TWVsMHJwcE1wWkYwQnJwS3FtU05ZZFNTeUxtMkQ4YWNIMXdPOGp3aEt3?oc=5",
+    "date": "2016-04-27",
+    "source": "국토일보"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000089023,
@@ -219181,8 +219359,27 @@
   "complete": null,
   "stage": "착공 전",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "‘광교중앙역SK뷰’, 쾌적한 자연환경과 다양한 편의시설 갖춘 역세권 소형 오피스텔, 오피스 분양",
+    "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9XMnlRbE1mdFZ1dF8xdWFqUmtrYTFQSTZwRzdOWFk1bVpCN0Q1Zy00ZUZ3eDNzYW1DNm1pdmxpekJjeDJsbkZtcDBDc1JMams5VW5qTkpZSWVSTno3YUJEaEg2Qlp1Zkl0aERZTkZMN2ZsQQ?oc=5",
+    "date": "2019-04-17",
+    "source": "굿모닝충청"
+   },
+   {
+    "title": "‘광교중앙역SK뷰’ 프리미엄 주거서비스 제공하는 역세권 오피스텔, 오피스 분양",
+    "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBJcHdrODNUZ3p5NmhXNUdEc1Fjc2lERkxhTm1EZ0VrSUZBRGRIdGRGQzdaVG14dkN2QkVfbXg4LUpWTHc2cU5MRlZ3RmpTZ3JhZDhuNEs3OGZMbnZhanlkQi1uWWdPcXNYQlZNMW5B?oc=5",
+    "date": "2019-04-15",
+    "source": "울산종합일보"
+   },
+   {
+    "title": "광교호수공원이 한 눈에···'광교 SK VIEW 오피스·오피스텔' 주목",
+    "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1Ja1BvUzZkNUIyTkRYNzNHNkZheXVnalFGRGRBT2VzYUsxdWUzNFFKcGs2RHI1Q1B1TWVsMHJwcE1wWkYwQnJwS3FtU05ZZFNTeUxtMkQ4YWNIMXdPOGp3aEt3?oc=5",
+    "date": "2016-04-27",
+    "source": "국토일보"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000088971,
@@ -219211,8 +219408,27 @@
   "complete": null,
   "stage": "착공 전",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "‘광교중앙역SK뷰’, 쾌적한 자연환경과 다양한 편의시설 갖춘 역세권 소형 오피스텔, 오피스 분양",
+    "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9XMnlRbE1mdFZ1dF8xdWFqUmtrYTFQSTZwRzdOWFk1bVpCN0Q1Zy00ZUZ3eDNzYW1DNm1pdmxpekJjeDJsbkZtcDBDc1JMams5VW5qTkpZSWVSTno3YUJEaEg2Qlp1Zkl0aERZTkZMN2ZsQQ?oc=5",
+    "date": "2019-04-17",
+    "source": "굿모닝충청"
+   },
+   {
+    "title": "‘광교중앙역SK뷰’ 프리미엄 주거서비스 제공하는 역세권 오피스텔, 오피스 분양",
+    "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBJcHdrODNUZ3p5NmhXNUdEc1Fjc2lERkxhTm1EZ0VrSUZBRGRIdGRGQzdaVG14dkN2QkVfbXg4LUpWTHc2cU5MRlZ3RmpTZ3JhZDhuNEs3OGZMbnZhanlkQi1uWWdPcXNYQlZNMW5B?oc=5",
+    "date": "2019-04-15",
+    "source": "울산종합일보"
+   },
+   {
+    "title": "광교호수공원이 한 눈에···'광교 SK VIEW 오피스·오피스텔' 주목",
+    "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1Ja1BvUzZkNUIyTkRYNzNHNkZheXVnalFGRGRBT2VzYUsxdWUzNFFKcGs2RHI1Q1B1TWVsMHJwcE1wWkYwQnJwS3FtU05ZZFNTeUxtMkQ4YWNIMXdPOGp3aEt3?oc=5",
+    "date": "2016-04-27",
+    "source": "국토일보"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000089001,
@@ -219241,8 +219457,27 @@
   "complete": null,
   "stage": "착공 전",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "‘광교중앙역SK뷰’, 쾌적한 자연환경과 다양한 편의시설 갖춘 역세권 소형 오피스텔, 오피스 분양",
+    "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9XMnlRbE1mdFZ1dF8xdWFqUmtrYTFQSTZwRzdOWFk1bVpCN0Q1Zy00ZUZ3eDNzYW1DNm1pdmxpekJjeDJsbkZtcDBDc1JMams5VW5qTkpZSWVSTno3YUJEaEg2Qlp1Zkl0aERZTkZMN2ZsQQ?oc=5",
+    "date": "2019-04-17",
+    "source": "굿모닝충청"
+   },
+   {
+    "title": "‘광교중앙역SK뷰’ 프리미엄 주거서비스 제공하는 역세권 오피스텔, 오피스 분양",
+    "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBJcHdrODNUZ3p5NmhXNUdEc1Fjc2lERkxhTm1EZ0VrSUZBRGRIdGRGQzdaVG14dkN2QkVfbXg4LUpWTHc2cU5MRlZ3RmpTZ3JhZDhuNEs3OGZMbnZhanlkQi1uWWdPcXNYQlZNMW5B?oc=5",
+    "date": "2019-04-15",
+    "source": "울산종합일보"
+   },
+   {
+    "title": "광교호수공원이 한 눈에···'광교 SK VIEW 오피스·오피스텔' 주목",
+    "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1Ja1BvUzZkNUIyTkRYNzNHNkZheXVnalFGRGRBT2VzYUsxdWUzNFFKcGs2RHI1Q1B1TWVsMHJwcE1wWkYwQnJwS3FtU05ZZFNTeUxtMkQ4YWNIMXdPOGp3aEt3?oc=5",
+    "date": "2016-04-27",
+    "source": "국토일보"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000088323,
@@ -219272,7 +219507,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000088913,
@@ -219301,8 +219536,15 @@
   "complete": "2025-05-08",
   "stage": "준공",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "[DD탐방] 녹색으로 물든 한싹 신사옥…`보안+α` 기업으로 도약",
+    "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE14MFdpWmVuZ1BGTGZSdWV3T3RtYU1jZXAwbVhSZ0hza0xQLXFaV0x0UTAwSTRSaTFJaVJUVmM2SjdZSzVtWDNfWHlEQVpvZ2dhZDNUcWpUMjdEbUpSRVBBbHIwa04?oc=5",
+    "date": "2025-06-23",
+    "source": "디지털데일리"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000088831,
@@ -219332,7 +219574,7 @@
   "stage": "공사 중",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000088418,
@@ -219392,7 +219634,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000089103,
@@ -219422,7 +219664,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000087974,
@@ -219452,7 +219694,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000089097,
@@ -219481,8 +219723,15 @@
   "complete": null,
   "stage": "착공 전",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "금천구 독산동 개발 '시동'…오피스텔·도로 들어선다",
+    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE54clJQLVA4NjhyME9fUmhGaDQ2MHBfMDBLb2tTVnRDZEdUbWw0V25ua0JLcmJYRUpXak1lWDV6VmFtLU5OS0FucXY5VDdZNlRSU0tFS1ppRzFYbWfSAWBBVV95cUxPWmVXenByX2d3c25TNEtRQktvQkRfUUNpMDlibGw4c3NYTmczeC1fNnBQNUh1aGpud1ZUVVU0NFJtU0RBWWt0d0k0RnFScFE5ZWtURVVFMmxRWHhBdW00Ynk?oc=5",
+    "date": "2021-08-25",
+    "source": "연합뉴스"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000087496,
@@ -219512,7 +219761,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000084553,
@@ -219542,7 +219791,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000086901,
@@ -219572,7 +219821,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000084872,
@@ -219602,7 +219851,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000085887,
@@ -219632,7 +219881,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000087568,
@@ -219662,7 +219911,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000085940,
@@ -219692,7 +219941,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000086033,
@@ -219722,7 +219971,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1048100071029,
@@ -219752,7 +220001,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000083555,
@@ -219782,7 +220031,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000084147,
@@ -219812,7 +220061,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000084197,
@@ -219872,7 +220121,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000084125,
@@ -219902,7 +220151,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000083397,
@@ -219932,7 +220181,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000083057,
@@ -219962,7 +220211,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000082933,
@@ -219992,7 +220241,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000082989,
@@ -220021,8 +220270,15 @@
   "complete": null,
   "stage": "착공 전",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "시청역 태평로빌딩, 리모델링으로 ‘스마트 오피스’ 탈바꿈",
+    "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFB6c24wbHlBZE5QZXBDWDZhVk1MZ2xMekJkYjh6T0ZvcVBnOUpwTnlSb0k0ZlFfaEJPUjFkQ3FFWjdqUXFydzlRM2d4NWJwUER2eUg0bUtKMDZTdmFjallSdkw1QXgxakRTb2UyLdIBcEFVX3lxTE9nTVFabks5Q1dUSFp2NXJRYnBTUGxLLWQwb2pDWFdSV05oZHM0VlFCbE9SYWxNcHRZVHVPWFBMVFB2d2huYm85b2h0ZkdYSWhnUkVnNlBSdFpGbk4xRWpvQlNnLUduLXpfcGwwamhNS1A?oc=5",
+    "date": "2026-04-30",
+    "source": "한국도시환경헤럴드"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000082923,
@@ -220052,7 +220308,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000083175,
@@ -220082,7 +220338,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000082452,
@@ -220142,7 +220398,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000081183,
@@ -220172,7 +220428,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000079572,
@@ -220202,7 +220458,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000081032,
@@ -220232,7 +220488,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000080625,
@@ -220262,7 +220518,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000081026,
@@ -220292,7 +220548,7 @@
   "stage": "공사 중",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1134100225163,
@@ -220352,7 +220608,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000079922,
@@ -220382,7 +220638,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000078324,
@@ -220441,8 +220697,21 @@
   "complete": null,
   "stage": "착공 전",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "[프라퍼티 로스터리] 신사동 도산공원 배후 감성 오피스 선호 지역 - SPI",
+    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9CSGlCX0NuX1lFTkJlSWJhRjV3WHRuMVJPdEZwT0tDeUl6M3dqNkF6VnFPNGoza296UjNnNHR6YXFRWVV3Qjhud0lUN3hFUjRIOTZDYTR1QVhPTmR6cDZaQXluQkozc0w5?oc=5",
+    "date": "2026-04-20",
+    "source": "SPI - 상업용 부동산 콘텐츠 & 데이터 애널리틱스"
+   },
+   {
+    "title": "강남구 신사동 오피스·먹자상권 5층 빌딩 61억원",
+    "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE56NHZHNWo4YXVkTVN4SFJBSm9Hb1lJY1djQUJndHJXU283RUVxZ2hfOE1NdVUwcjZzcVJ2RjJ1TVB2dUw4T1hJdmRqQzFkMDFkVWNUNXZBWWdiS2xaazlubjMtVXliNTNja2RRbXE1YTVxU03SAXNBVV95cUxOejR2RzVqOGF1ZE1TeEhSQUpvR29ZSWNXY0FCZ3RyV1NvN0VFcWdoXzhNTXVVMHI2c3FSdkYydU1QdnVMOE9YSXZkakMxZDAxZFVjVDV2QVlnYktsWms5bm4zLVV5YjUzY2tkUW1xNWE1cVNN?oc=5",
+    "date": "2022-06-21",
+    "source": "땅집고"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000078727,
@@ -220472,7 +220741,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000076960,
@@ -220502,7 +220771,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000078743,
@@ -220532,7 +220801,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000076981,
@@ -220562,7 +220831,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000077675,
@@ -220592,7 +220861,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000078984,
@@ -220622,7 +220891,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000077046,
@@ -220652,7 +220921,7 @@
   "stage": "공사 중",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000076166,
@@ -220681,8 +220950,21 @@
   "complete": null,
   "stage": "착공 전",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "섹션오피스 ‘퀸즈파크나인’ 분양…마곡 랜드마크 프리미엄 선점 기회!",
+    "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBlUVdtMFZXalNFU09lRVVkdXBJWWtyMGZwTVFXV1Rpbk1mRUR5bkZPTXJ3RmhIZ3doTlQ0TklLcGtHUERMV1N1N0FzRFItS05fRkk4TndFYmRqSmRidUptc2RtT09zX2NxeHg0eUlyLWs?oc=5",
+    "date": "2014-12-18",
+    "source": "나우뉴스"
+   },
+   {
+    "title": "“오피스텔은 잊어라, 대세는 섹션오피스다” 퀸즈파크나인 주목",
+    "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE45eHc4V1lkc0NCMjQ1RTg4a0RUS1RRS2hwSGQ4c191NzFYQ2dLeFR5TUE3eTJaUG53QlN6ZDc4aEZsckQxZ0xDOUItV2p6X05ycWVUektueHlQeWo4Y011cEpuVExBcVlxSUROaF82Y04?oc=5",
+    "date": "2014-12-05",
+    "source": "나우뉴스"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000076298,
@@ -220712,7 +220994,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1226100167661,
@@ -220742,7 +221024,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000076330,
@@ -220771,8 +221053,15 @@
   "complete": null,
   "stage": "착공 전",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "복층형 섹션오피스 ‘시흥 배곧신도시 아브뉴프랑 센트럴' 분양 진행 중",
+    "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFB6VGRrMU9KVFpKOU8tdEwybFVJMzRlYmRKb0lpZXJsMUUweURUc0xqdjBwdFNRRThkdHpJcURkeGFoZVB6M0ItVUxDYUt3MjUzdU9fd211VTdOMTB2OFhabXhwZGdna3fSAWtBVV95cUxNem5QUkZRd3JCTGg4NlZJZ0V2MmI2cU1ibEpUYU9hSmhDdm1DSUlQekw5dWRoTy1tVlZGZm9FUzJTa1psMEVvc3JUdzZFZDNYNlMzcG41LUNUMHhrRUNjVjU2YUhBVkdGTTZBRQ?oc=5",
+    "date": "2018-02-21",
+    "source": "이투뉴스"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1235100177920,
@@ -220802,7 +221091,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000076288,
@@ -220832,7 +221121,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000076532,
@@ -220862,7 +221151,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000074501,
@@ -220952,7 +221241,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000073760,
@@ -220981,8 +221270,15 @@
   "complete": null,
   "stage": "착공 전",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "에버딘, 서울 중구 오피스 ‘퍼시픽타워’ 품는다",
+    "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE91cE9Ha1U3a0ZXTUtqMmhqeHZzZjZmODJSN2VuaUxreDdHMnJ6enpBREYyQ2IwNEpHeDVteDhiTEw4VGxWRnJTM1JlaElWSGh5X2c?oc=5",
+    "date": "2025-07-28",
+    "source": "매일경제"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000074517,
@@ -221042,7 +221338,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000073731,
@@ -221072,7 +221368,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1045100064875,
@@ -221132,7 +221428,7 @@
   "stage": "공사 중",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000073383,
@@ -221162,7 +221458,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000073505,
@@ -221192,7 +221488,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1226100167482,
@@ -221222,7 +221518,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000073462,
@@ -221282,7 +221578,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000072576,
@@ -221312,7 +221608,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000073277,
@@ -221342,7 +221638,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000072519,
@@ -221372,7 +221668,7 @@
   "stage": "공사 중",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000072933,
@@ -221402,7 +221698,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000071885,
@@ -221431,8 +221727,27 @@
   "complete": null,
   "stage": "착공 전",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "하인즈, 서울 마포구 한샘 상암사옥 인수",
+    "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE10MzR3cmpaVHc3QnA1c3Vjamw1bzh3MG90a3BLUWhDSnBranVQd2VpR2d2MS10TEVyTGFMQnVYNzJyWmhzcDdhcmtqMElDOEE4QmlCeUZLVzZRTlZTbEYzUHFXQnk?oc=5",
+    "date": "2024-10-14",
+    "source": "매일일보"
+   },
+   {
+    "title": "서울 한 뼘 ‘마포구 덕은동’…덕은지구 오피스 시장 ‘재조명’",
+    "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBjSlRCT1JoSHl0Sm8wR284amdvMjVPQVlDTThKUmFneW5hVllZUFRVLTByZnh4UV9yckk1Z0FYSTBYTmprRE85TWdaMzFKWm9lbHfSAVNBVV95cUxQV0tXREhRRHZMOFR2VWczWERIVVVQb0ktTVRsWDJkOGZQSUxBYXdlcERLQV9heXl5Nm92MmszUzVrRVRFTGlmY2xzZDNWODBOSWRmTQ?oc=5",
+    "date": "2024-01-24",
+    "source": "서울경제"
+   },
+   {
+    "title": "6호선 마포구청역세권, ‘마포 상암 미르웰한올림’ 오피스텔·오피스 총 709실 3월 분양",
+    "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE50dkxfUFZCdjhJRERGWDMtcFRiSGZZX0ZhekxYR3AteUFSTFItZjdtQm5va0FRM014SW9acm0zQ2V1T0g5Z3YwSFhsdmU0TFVGem1fTWN5cEtIaXg4YzlsaVJyVnBzMEdGX2c?oc=5",
+    "date": "2016-03-16",
+    "source": "뉴스에이"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000071895,
@@ -221461,8 +221776,27 @@
   "complete": "2023-08-07",
   "stage": "준공",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "하인즈, 서울 마포구 한샘 상암사옥 인수",
+    "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE10MzR3cmpaVHc3QnA1c3Vjamw1bzh3MG90a3BLUWhDSnBranVQd2VpR2d2MS10TEVyTGFMQnVYNzJyWmhzcDdhcmtqMElDOEE4QmlCeUZLVzZRTlZTbEYzUHFXQnk?oc=5",
+    "date": "2024-10-14",
+    "source": "매일일보"
+   },
+   {
+    "title": "서울 한 뼘 ‘마포구 덕은동’…덕은지구 오피스 시장 ‘재조명’",
+    "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBjSlRCT1JoSHl0Sm8wR284amdvMjVPQVlDTThKUmFneW5hVllZUFRVLTByZnh4UV9yckk1Z0FYSTBYTmprRE85TWdaMzFKWm9lbHfSAVNBVV95cUxQV0tXREhRRHZMOFR2VWczWERIVVVQb0ktTVRsWDJkOGZQSUxBYXdlcERLQV9heXl5Nm92MmszUzVrRVRFTGlmY2xzZDNWODBOSWRmTQ?oc=5",
+    "date": "2024-01-24",
+    "source": "서울경제"
+   },
+   {
+    "title": "6호선 마포구청역세권, ‘마포 상암 미르웰한올림’ 오피스텔·오피스 총 709실 3월 분양",
+    "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE50dkxfUFZCdjhJRERGWDMtcFRiSGZZX0ZhekxYR3AteUFSTFItZjdtQm5va0FRM014SW9acm0zQ2V1T0g5Z3YwSFhsdmU0TFVGem1fTWN5cEtIaXg4YzlsaVJyVnBzMEdGX2c?oc=5",
+    "date": "2016-03-16",
+    "source": "뉴스에이"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000071440,
@@ -221492,7 +221826,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000072100,
@@ -221521,8 +221855,27 @@
   "complete": "2025-03-24",
   "stage": "준공",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "더네이쳐홀딩스 원효사옥, ‘디자인’과 ‘친환경’의 조화로 서울의 새 랜드마크로 부상",
+    "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9nRld5ai1qdFpMSlVxa01MbFZHWlZkU0Y5dnZUOXJ1TmExVXJ4ZUFxMHJlODBuUXEtOHNjRGNfU2h0QXNJdVpnN0pMQTZicVZnRzFLMVhnaGV6blIwZC1KR242VVRBVTIzLWtudQ?oc=5",
+    "date": "2025-11-07",
+    "source": "뉴스탭"
+   },
+   {
+    "title": "더네이쳐홀딩스, 신사옥 건립...\"글로벌 성장 발판\"",
+    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBELW5uMEFMekFhTEJXVFI5WEdvSGRMYUx1TmFfN2V4U3VIbng0V01WcHU0N1N1aG5vRGxmeFk3WkhGSU5XQkxkdlc1QUh6TU0?oc=5",
+    "date": "2023-03-06",
+    "source": "딜사이트"
+   },
+   {
+    "title": "“더네이쳐홀딩스 원효 사옥은 하나의 작품이죠”",
+    "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE54YmdkMk8wN0dfdG9KTlpqZE1jeU9HZkxIOW0yZE14TmpNLTZZaHNDVVphS2VQc3RjVldrMVBrSk9Vb1dMb1dLRFJIeXZfRkNJMU9nbk5n?oc=5",
+    "date": "2025-11-07",
+    "source": "Fashion Insight"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000072015,
@@ -221552,7 +221905,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000072095,
@@ -221582,7 +221935,7 @@
   "stage": "공사 중",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000071457,
@@ -221612,7 +221965,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000071477,
@@ -221642,7 +221995,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1229100261023,
@@ -221672,7 +222025,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1229100260983,
@@ -221702,7 +222055,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000071559,
@@ -221732,7 +222085,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000072005,
@@ -221762,7 +222115,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000072099,
@@ -221822,7 +222175,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000071467,
@@ -221852,7 +222205,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000071180,
@@ -221942,7 +222295,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000070886,
@@ -221972,7 +222325,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000070599,
@@ -222002,7 +222355,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000070556,
@@ -222032,7 +222385,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000071000,
@@ -222062,7 +222415,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000070574,
@@ -222092,7 +222445,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000071131,
@@ -222122,7 +222475,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000070368,
@@ -222182,7 +222535,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000070507,
@@ -222211,8 +222564,27 @@
   "complete": null,
   "stage": "착공 전",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "강남구 대치동 일대 24층 업무시설 조성…테헤란로 비즈니스 축 강화 - 머니투데이",
+    "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE0zTkpqdjhfVzQ0dG5xZ3VXWmRvRlhvYl85cjRHYmJDNGY4Wk43c0lZTVlxaEl2QTZlYXpMTzM1SGJQbGlfWFplQ05pT0RaNGlmMFMyaDFjRDZLNGNwamFMbjItY3c0MnNoSUHSAW9BVV95cUxPOER4VEMtYU1WTkRyMXBHR25vc3RxTmcyNWRDbnJ4UTdVWUVGRzQ2WktzaThRVjBGVjNFa25PcmxpUVk3RDU5Q2x1WDY4LUlKNkZsU3FyOEpwMkRGNmhrYk41dzUzMW4tRERtcEZHNzA?oc=5",
+    "date": "2026-06-11",
+    "source": "머니투데이"
+   },
+   {
+    "title": "대치동 테헤란로 업무시설 건립 본격화",
+    "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1DNDNSbFhWS0FtZEZ1MTBCT3hjaUxqd2V1Ymg3NG5Iajdpbk5iN25qLWFYQ05YRkJaRFF3Y0VlcEdPREJ4YnlFSmpVZ2FrS2RLMFZJNlhpNUUtVzdDSWJ1dTBTSk5nc0NocWNLSNIBcEFVX3lxTE1Mc24yQXhyeTNTMkRoN19yWWNtWV9zdk5XbWZFSXdzaGJyRmhIbWFUc1A4WXVCeGFnSlNtUTBxZG1hckF4VTJMamd4Rk1kUFd2cDBEdVdJQnpDMGdwalFuMVpKWVh1a3YwS3hSTi1DY1o?oc=5",
+    "date": "2026-06-22",
+    "source": "한국도시환경헤럴드"
+   },
+   {
+    "title": "대치동에 24층 업무시설…코엑스는 보행·녹지공간 확대",
+    "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5fbTNXYkNxVnFqTy11b3NtQ3MtUDJrdG9oSVlWTTVpblF3QWt6aUZfbFBLeGRyb0lRbk1kR19nY0ZQYmVNUmVCNVFteFY0TE1zOTdad09ncnk0eFdiSXN1MdIBeEFVX3lxTE5tTXk4dHlvVnhPcUZaVlFWckRPR093RUdwVWtQTGNkbEQ5M2NJYlJtY1dWdUhFY3VUejVQU0Nkdjk0aTh3UlY2TUlhOFE0UTVTeDNRbS1sWXYxdldXNXpVRWZDeGFBX2gtV1FNNkNPN0lrOUhKQVQ0ZA?oc=5",
+    "date": "2026-08-26",
+    "source": "뉴시스"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000068539,
@@ -222241,8 +222613,15 @@
   "complete": "2022-12-14",
   "stage": "준공",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "\"잠실동 상가·삼성동 오피스텔, 10월부터 허가없이 살 수 있다\" - 머니투데이",
+    "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBtTjZOQUUwM1BTQ1lpMm9rd2QzczZhbzUxcHVsRDZyeEhsaHJzTkhHZXJORlVKY0NFczVDbVlORGNvNjl3R2RsZC1oX0RzQTlsV1JHTVUxaGFiQTZhQU1mc3V5SXpnTTViNUHSAW9BVV95cUxNMnVDQ0tsNFNOWlRuMk5POW1lQVRVNkVoSEFObndCQ0tVSTR4MnFLWFYzT196M2h3aWdQMHcwYTlKTlFuOXdvaTBMVjhaOWd6ZlBKU1Y2b2l0RWs0dDJXUzNyYkRpeHQ1TklkV2x2Sjg?oc=5",
+    "date": "2023-06-09",
+    "source": "머니투데이"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000069559,
@@ -222272,7 +222651,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1230100137808,
@@ -222332,7 +222711,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000068784,
@@ -222362,7 +222741,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000068456,
@@ -222392,7 +222771,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000069541,
@@ -222452,7 +222831,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000068699,
@@ -222482,7 +222861,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000068537,
@@ -222512,7 +222891,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000070029,
@@ -222542,7 +222921,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000066108,
@@ -222602,7 +222981,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000065468,
@@ -222632,7 +223011,7 @@
   "stage": "공사 중",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000068104,
@@ -222661,8 +223040,15 @@
   "complete": "2023-01-27",
   "stage": "준공",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "여의도동 업무시설 건립 사업, 서울시 건축위원회 심의 통과",
+    "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFAwVjAyczJtNzlPd2MwcnExVWlPUGo5STc1MmstZWdPT2JiTmhiX1ZOc09qN3piNkxBcTFkRzBhaExTUlpXaUNDSHRxSS1RRkFEZUVueWFzODVvY0lLdEpJcjV0elI?oc=5",
+    "date": "2026-05-27",
+    "source": "영등포시대"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000068381,
@@ -222692,7 +223078,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000066174,
@@ -222722,7 +223108,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000067025,
@@ -222752,7 +223138,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000068301,
@@ -222782,7 +223168,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000065050,
@@ -222811,8 +223197,21 @@
   "complete": null,
   "stage": "착공 전",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "효성, ‘광교 효성해링턴타워’ 섹션오피스 상가 분양",
+    "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOZXNpaEhkaE9acW9HV3p0Slo2QU93NWItNTZGcUxSVzhwWGlIUENWOWJMcnpGenNXcTM5MUFFX3JiNHN3NjVqeTJZajRwMENUZk0tUEk3U1FyZTQ0WG9FQTQ0dUhvLTJSZkN3bWloaXUwZ3ViUUZxVWduWDlFR0FDNw?oc=5",
+    "date": "2016-10-22",
+    "source": "글로벌이코노믹"
+   },
+   {
+    "title": "[화제의 분양현장]광교 효성해링턴 타워 레이크, 광교호수공원 프리미엄… 오피스텔 내 상가 91실 분양",
+    "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBJYzAzZGZHY0VZdXp1MjNOZ1VDay1Td29uR3ZVRkZnc2dYdGthMTl6SzhLYjJlZDItdkI2ZDE0Q0JOc2V5WEZqTW0wYWRTeFcwQ1Rvd2pvTnh6ai1CWDNYLVdKRFRGQU5iSEtIcnU2MkNCZU1y0gFkQVVfeXFMUHZabTBwSmlhRUFoamdtTXA2S3RoNmtSSTlpYmROUmlaMlZqLXFQZml2V1pMRk5INklXWVNQNzNLMmZIWkplS21TQ241WVYxMHdLcU44N1RSd05VUS1tM2NsTS0yYg?oc=5",
+    "date": "2017-12-29",
+    "source": "동아일보"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000064975,
@@ -222872,7 +223271,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000064906,
@@ -222902,7 +223301,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000063958,
@@ -222932,7 +223331,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000065083,
@@ -222962,7 +223361,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1276100501796,
@@ -222992,7 +223391,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000062832,
@@ -223022,7 +223421,7 @@
   "stage": "공사 중",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000062991,
@@ -223052,7 +223451,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000063299,
@@ -223082,7 +223481,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000062903,
@@ -223112,7 +223511,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1226100167102,
@@ -223142,7 +223541,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000063169,
@@ -223232,7 +223631,7 @@
   "stage": "공사 중",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1035100054898,
@@ -223292,7 +223691,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000062092,
@@ -223322,7 +223721,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000062055,
@@ -223352,7 +223751,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000062209,
@@ -223381,8 +223780,15 @@
   "complete": null,
   "stage": "착공 전",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "Investment·Real Estate 서울 도심 오피스텔 경희궁의아침 vs 용비어천가",
+    "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5FQWYxcDQyQWpQcE9ZX3JyaC01cUc3SHZXNTJaQmJFNE1XQ09sMThEWXlxbDFDaF9PR1NtaEY0VGExdko5R2lXQjRONzRrc3gzZUttS3h2YWRMQ0VIcmt3LU1oQnVyRERPY2hpa2hjb1Z2UUpfY3lHdGZzRnliXzg?oc=5",
+    "date": "2009-02-06",
+    "source": "economychosun.com"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1226100167023,
@@ -223412,7 +223818,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000062199,
@@ -223442,7 +223848,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1138100077356,
@@ -223472,7 +223878,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1138100077355,
@@ -223502,7 +223908,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1033100089235,
@@ -223531,8 +223937,15 @@
   "complete": null,
   "stage": "착공 전",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "동래구 오피스텔 화재...주민 8명 중.경상",
+    "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1SSWV4LW84b1o1ckVvTmhfUTFzcS1nTFI4RkM3NjZlY2tFaF9nMVhQTDZSdjlzeXZNNW9mNzF3QnpMUVJ2N0hyTXFNZ3hxQWJmMXhTSkNjVXFzMHVOdlJ3NmdkOTFtNnZ0Z2NWRTJPdHo1d9IBdkFVX3lxTE5YYUZmMDRoX2FOakQtZHFpR0NXcmNqaVJ2OEtmRll5SXQyc193NzlsUTF4VmhnanRuM3hnZVN3ekoxVTdfaFJYRk5SLXNvZnVQdDVhdGM3R0FBQTgxQ2szWDhPSFB1MFFpM2dUOXRaZWs2V3hxUVE?oc=5",
+    "date": "2024-01-21",
+    "source": "LG헬로비전"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1034100072248,
@@ -223562,7 +223975,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1051100089937,
@@ -223592,7 +224005,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000061296,
@@ -223622,7 +224035,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000061602,
@@ -223652,7 +224065,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000061588,
@@ -223681,8 +224094,27 @@
   "complete": null,
   "stage": "착공 전",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "\"올해엔 지식산업센터, 내년엔 오피스\" 성수동 업무시설 '우후죽순'",
+    "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFA1ZlhTR3YtNmU3U2RqTEZ2RkN3dWI0YnF3OGhDRVgtd250Q0I3VTJEbnJZUGJBbExsaFctb2hCZktBWUlRUi1vSXEyY2NWTWJIUk5naWJkQS1Dc0hGaU9YaVVtYmNELXl5NF9NTkk0MVlEQQ?oc=5",
+    "date": "2025-02-28",
+    "source": "마켓인"
+   },
+   {
+    "title": "KT에스테이트, '성수동269' 오피스 개발 2200억 자금 조달",
+    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFA5X2FDM0xhbUFyN0hBTEN1clB4SEpUZXlOT1U2NjJaM3BKUzNtSUt0S1JLV0MwX2prRGlIS0tWMXRnd000eHk0TXNkWUJLRnJZcEVBY0VnR050dE5UeDdRZ3JpSmhMbUJC0gFsQVVfeXFMTzVmX3YwQnZNMmJlSjNzZ3VzT0cwbGRQeV8yTFotdlR1MEphc0ZpeFEyT2xNZVlMcEltWnl6YmNKSEFmV1VNV1Zoa1FfVTlRR1IwcmkyM1Y2U3ZhTk5Vd0VWWHN3enhvaUVRZjQz?oc=5",
+    "date": "2026-05-12",
+    "source": "블로터"
+   },
+   {
+    "title": "'태영건설 PF 청산 시작됐다' 성수동 오피스 1차 사업부지 공매",
+    "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFAwNjM3ay1yS2toSmNTbnVfQ05zd2FMNGhZcTNXSl8wMkRIa2RkMVRSbnEwaEF5S3ByVVpBN0djWENHVEZydWU1VHpUWmFBa01aaHg0ag?oc=5",
+    "date": "2024-05-13",
+    "source": "비즈한국"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000061477,
@@ -223711,8 +224143,15 @@
   "complete": null,
   "stage": "착공 전",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "[경매사냥] 역세권 오피스텔…서울 종로구 르메이에르종로타운1 전용면적 56.6㎡ 1회 유찰 3억2880만원",
+    "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5ud21iQVQ0VWY5M1lvdm51ZWVILVNyV1AzeGhBZWVuOHJ2UWNwa3J0UjNVeVpZNlFqNlY5dGE1TVhVc21scE1zTFhJN1hqSTdUNUw0VTlMTVZBWEVqUEtYUnpFV3JQSWpGT3MxT2lvVjNpTU5MVmhMMnhnRdIBjwFBVV95cUxNX3FfMXpfSGRsbDFtWEdHMHRrWWlqSTJZNzV0Rkg2bUZCTEdwcHk0LXNLQjNqdGxJUzV0UTVRNkRaaWJIemFFQmRCYTd5cFN0ZDFNVC1qWFFScWI0UjlhYXVDRjRqanZhNl9oX3JEVmlLcjJ4UDc1Y29YVk5zNVhzaFN0QVRwN3IxTGMzNm5TTQ?oc=5",
+    "date": "2017-12-29",
+    "source": "Chosunbiz"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000061483,
@@ -223742,7 +224181,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000061918,
@@ -223772,7 +224211,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000061609,
@@ -223802,7 +224241,7 @@
   "stage": "공사 중",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1135100191108,
@@ -223862,7 +224301,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000061795,
@@ -223892,7 +224331,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000061627,
@@ -223922,7 +224361,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000061830,
@@ -223952,7 +224391,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000057112,
@@ -223982,7 +224421,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000059319,
@@ -224012,7 +224451,7 @@
   "stage": "공사 중",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000059974,
@@ -224042,7 +224481,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000061164,
@@ -224072,7 +224511,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000060997,
@@ -224102,7 +224541,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1079100055370,
@@ -224132,7 +224571,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1028100038696,
@@ -224252,7 +224691,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000056273,
@@ -224281,8 +224720,27 @@
   "complete": null,
   "stage": "착공 전",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "중구 소공4구역 8지구, 용적률 497.7%서 815%로…주차장 부지 업무시설 재개발",
+    "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBtdUxmcTViVHdWRDd2X05sY1N3UDZyS3dFYmJidHlzZTVfUkYzS1FPajFBVnQzdlZfN0ZGakJhX2prQnMwM2FhZ0FFZlNWU3ZGa01FQ0c3N0NsRWZWQldWNGNKeWJ1M0FGd2U4?oc=5",
+    "date": "2026-11-05",
+    "source": "데일리하우징"
+   },
+   {
+    "title": "세운지구 업무시설 계획, 484세대 주거복합단지로 전면 전환",
+    "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5pQmtNZWZ2LW5RTnd3aTBuRmltMm1Mc05FMXd3d1JJOGI1ZnZoSVZKV3VqcmJqU283aUhpenNxVVZCeUxaM09PRlZwcll2c1A0MmhaV2djeGJnWnNGd0hqQ3p4ODE?oc=5",
+    "date": "2026-08-30",
+    "source": "매일일보"
+   },
+   {
+    "title": "을지로3가 13지구 재개발 ‘본격화’ - 19층 업무시설 들어선다",
+    "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE91aVVVX0txSW9Vc0E3TnRjeDE5ei1VdVdfbkhkbVc2SkRGWWpibmFqMzZnQl9OSTR3dmxKTXpvay1QY1JpT2hEZWUxeWYyTWc2MUhvWVU5OEE0d3BROGRDa2lHbjMyRHRqTjd5TtIBcEFVX3lxTE9manR4d0paUmtnNjBzT28wbjlQSEF3UXo3Z3YyMVp6czJtWmE4SWNodFc3Zkg2bDNqUXVIaFhrend1UU5Bb094NFJuRlBHdW1KMXo4N21sa1RHaVhycmp0eDhzS1M5QjR5d2lBMGZkWU8?oc=5",
+    "date": "2025-12-26",
+    "source": "한국도시환경헤럴드"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000056842,
@@ -224312,7 +224770,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000056840,
@@ -224342,7 +224800,7 @@
   "stage": "공사 중",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000053279,
@@ -224372,7 +224830,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000053276,
@@ -224402,7 +224860,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1029100041957,
@@ -224492,7 +224950,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000052942,
@@ -224522,7 +224980,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000052936,
@@ -224552,7 +225010,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000049416,
@@ -224582,7 +225040,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000050828,
@@ -224612,7 +225070,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000052808,
@@ -224641,8 +225099,21 @@
   "complete": null,
   "stage": "착공 전",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "마스턴운용, 준공 앞둔 성수동 프라임 오피스 매수인지위 양수도",
+    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1uMzQxWUJSUnp3cGYxeVQ4TDNuRmZqLVJCSDRjQjQ4TTZ0WExaQ0JvcTg0R2sxVmRPcWd0Rk10YTkydC1udk9ickxmSS1Yb0FGYzFuT0RKZWRUX1XSAWBBVV95cUxQRG9JX2QxSHVwSGNxMEUwZktNZGdFdmhzOGpMY2xTR1B0b3RTTGIxUWNQZ2dDTWtVdWUyYVpyTDNWdkt2Q3hRNGJ0dWR5T3d2enVaT0ZjbE9STmJXX0hDMks?oc=5",
+    "date": "2026-02-26",
+    "source": "연합뉴스"
+   },
+   {
+    "title": "성수동 오피스 개발 줄잇는 자금조달...매각시장도 활기",
+    "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPY0hSMkZhTmltazFqb1F6UjlJSHBNOXVvNjVEV2JzYXo5ODA2STZvSldoNUNydXYyV1o2ZVJuR2FnUlZnMWc3cWw4ZG4zU0toYmtsdC0wTHh5VHhPRG5pMTBKYWQ3a0lsYWhwZ0J2MU8wbGNZeXJQekxaVmFNOHprVlptV0pyc1dPelQ3ZlhOanJlYjAxQmwtd3FEUDhPcUMwd0JMbw?oc=5",
+    "date": "2025-10-07",
+    "source": "딜북뉴스"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000048565,
@@ -224672,7 +225143,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1069100134181,
@@ -224702,7 +225173,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1069100134180,
@@ -224732,7 +225203,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1041100066180,
@@ -224762,7 +225233,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000050761,
@@ -224792,7 +225263,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000048781,
@@ -224822,7 +225293,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000048231,
@@ -224852,7 +225323,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000044915,
@@ -224882,7 +225353,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000044928,
@@ -224912,7 +225383,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000046772,
@@ -224942,7 +225413,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1258100171329,
@@ -224972,7 +225443,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1136100078149,
@@ -225002,7 +225473,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1028100038656,
@@ -225061,8 +225532,27 @@
   "complete": null,
   "stage": "착공 전",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "지엔비, 서초동 오피스 개발사업 좌초…토지 공매",
+    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1hX2E0c0lTTF93T215dGhwX2xHNElWdF83a0NObzZnX19GaXJWUV9fem1LV2F5SXVhUlRlX3RuY1hZVWhLWGY3Q2twNFVDbms?oc=5",
+    "date": "2024-10-23",
+    "source": "딜사이트"
+   },
+   {
+    "title": "서초동 '11'빌딩이 우리나라 1호 공유오피스라고?",
+    "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFB2cUFpWWJkczJSRVdzOXllTElVTl9qcTk3WjZKTFpSLUVvdE14RjAtT0t5TC1JS0c2RlhqSTRPUXRXMlpIMFJON1Zn?oc=5",
+    "date": "2021-10-05",
+    "source": "브런치"
+   },
+   {
+    "title": "[단독]서초동 '노른자땅' 코오롱부지에 운동·업무시설 들어선다",
+    "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQN2ZQNHRwX21jeU5DNGk3TnFZT0lhMkZuVkk4dzl2NUhjdHlleGxNdnhKVC14VEJpNTA5bXhnUl9hZUcyWGhIRXdzZnI5ZHh6Q1JBRFl2X01yUFNfTHY3VVpOejVpQ21RTDBkMWd5ZjN5dU5GMkZTVk9VX2NyOWFXNQ?oc=5",
+    "date": "2021-03-11",
+    "source": "www.edaily.co.kr"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000044501,
@@ -225092,7 +225582,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000043922,
@@ -225122,7 +225612,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000040834,
@@ -225152,7 +225642,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000044829,
@@ -225182,7 +225672,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000043823,
@@ -225212,7 +225702,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 12523000141412,
@@ -225242,7 +225732,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1135100190668,
@@ -225272,7 +225762,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1032100104514,
@@ -225302,7 +225792,7 @@
   "stage": "공사 중",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000042572,
@@ -225332,7 +225822,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1041100066139,
@@ -225391,8 +225881,21 @@
   "complete": null,
   "stage": "착공 전",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "여의도동 업무시설 건립 사업, 서울시 건축위원회 심의 통과",
+    "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFAwVjAyczJtNzlPd2MwcnExVWlPUGo5STc1MmstZWdPT2JiTmhiX1ZOc09qN3piNkxBcTFkRzBhaExTUlpXaUNDSHRxSS1RRkFEZUVueWFzODVvY0lLdEpJcjV0elI?oc=5",
+    "date": "2026-05-27",
+    "source": "영등포시대"
+   },
+   {
+    "title": "들썩들썩하는 영등포구 '非여의도권'오피스시장 빛보나",
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBGMVdRX1hXaUJJLXdJeWRSMkk5Nzc5aldiTW1kbFRIMEswcFZFdkF0QURfckRNSXduNFhVTUkzdFp0dUt6QWdkMDY1TzRhel94dWkwaHFwMUpBZw?oc=5",
+    "date": "2018-08-07",
+    "source": "파이낸셜뉴스"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000038437,
@@ -225421,8 +225924,15 @@
   "complete": null,
   "stage": "착공 전",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "서울 업무시설 거래량 1위 강서구 '마곡 아이파크 디어반' 주목",
+    "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFB3NEVkTGNzQ3ptYlNvT001YzFrZ0tGb0pJRVlyUDVGUFJRdjZZMnROYlhMT3JqOWFJOUtsbUdWZGZ4VTBWLWlZUWpvaThKQ0ppMF9QNzhidzRzbV9oTVBzWHp1SEw?oc=5",
+    "date": "2023-12-12",
+    "source": "국토일보"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000039371,
@@ -225452,7 +225962,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000040206,
@@ -225482,7 +225992,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1276100499676,
@@ -225512,7 +226022,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000040631,
@@ -225542,7 +226052,7 @@
   "stage": "공사 중",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000038829,
@@ -225571,8 +226081,21 @@
   "complete": "2022-11-22",
   "stage": "준공",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "OKNP의 공공미술 이야기-예술이 있는 프라임 오피스 '그랜드센트럴'",
+    "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBSWnRxMnoyOXN2NTF1X3VHaGY2cHVxWnU1VG1ncmE5S09jSUNHbVJQTGgwU1hJMkFwbXVRaEJSZDFrSW02UlRpalNrTDB3MjlrSjJLdy12YzM1cVI3bDAzN2tFVnBUQ2RPS1pPWGVzM1lHZHc?oc=5",
+    "date": "2025-01-21",
+    "source": "하우징헤럴드"
+   },
+   {
+    "title": "서울역 인근 그랜드센트럴 옆, 20층 규모 업무시설 들어선다",
+    "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPMmZvel92V3c5Zmd6TFNtelBqTnNZUlFVakpxMjVmUzZQV0Exc3ItRGh4NjVtTGVaak1FVVV4Vmx6U3Q4cHVuaDUyVVliMHBWYnJJSEQ5amRVV0I2VnlieUVuU25VaTJWRWRoTlBRWHM2UlJZRHBXekdTNDRyUW1tUA?oc=5",
+    "date": "2026-07-24",
+    "source": "edaily.co.kr"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000040129,
@@ -225602,7 +226125,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000037876,
@@ -225631,8 +226154,15 @@
   "complete": null,
   "stage": "착공 전",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "강동구, 고덕비즈밸리 기업 입주 본격화…JYP엔터테인먼트 신사옥 건립 예정",
+    "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9OZUMzVnFhTDVBTkt0QV9Xc01UaFBuQy1xaG1BTVJYR1hfajE4anZkV2dfUFBqUm5lX2R3UnZIN3BkeWNsRThiU0l4Tmh5NnU4VjBTUzBtTG9hSWJjOC1Tc0c3aERfTDRFUU5IVmRB?oc=5",
+    "date": "2024-08-02",
+    "source": "전국매일신문"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000038032,
@@ -225662,7 +226192,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000037589,
@@ -225691,8 +226221,15 @@
   "complete": null,
   "stage": "착공 전",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "이지스운용, 서울 논현동 두산건설 본사사옥 매각 착수",
+    "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1yZ0I5YnpTblRCVXp3QlBDU3NQOHg2WndxbzF4ZjZuVldRSmFmaVh2bmdNdnVwTENxbDZselR1VDd5c0Zkc3QxY3dzcFJfVXUw?oc=5",
+    "date": "2025-04-23",
+    "source": "매일경제 마켓"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000038325,
@@ -225722,7 +226259,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000037782,
@@ -225751,8 +226288,27 @@
   "complete": null,
   "stage": "공사 중",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "[단독] 현대차그룹, 용산 원효로 사옥 48층 랜드마크 복합단지 개발",
+    "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE92WmdrM0pnTFRTbnc3Q21qLVdRMkJpQnlXYlVxUHZGM2ZIdUp4bmdPQ2Zua1lUSURqVlBKTGpMbFVJLVZ3aUdqdWJwOG5ZeWExVGxHZl9iYVcybmRfUHRpU1czc0Y4RUNMMm9sNDdnV3NMVkhOb0lMTTB1VdIBjwFBVV95cUxPQXdXeHNzYWhBWUxlU1J4UEU3dkI4dmNWamI2WTNMN3p6RGNBYkRieE9JVW00UDV4cl96LWN6YlBaMTluM1hDcmg0U2xyR1BmdDYtX0g0TnlLczNqb0dHREMxcWdqc0xidURUdV9hLWt1SnV1TzBaUnR5YkZLVWQwcjN1dFZNMFdZSlpQY0JkUQ?oc=5",
+    "date": "2017-04-05",
+    "source": "Chosunbiz"
+   },
+   {
+    "title": "현대차 원효로 사옥 부지 최고 48층 복합단지 추진",
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1QSElDUXVzQzRGajNkdzg3ajl3QUh0b0lzRjlyZFhmNU5aaHN1QVZ0ZWh2WFZZMWNTbWNnZHo3MjFkellsQ0l0Y0F6UHRMSkd4c0V1ZFlkaDkxdw?oc=5",
+    "date": "2017-04-05",
+    "source": "한국경제"
+   },
+   {
+    "title": "“방치할 순 없는데”···현대차 원효로사옥 개발이 ‘요원’한 이유",
+    "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBvdEtmZEJXTURRamNnaEdmMk9ILU5fWFEyeXJFdWRDY01mZ2ZfT250VnI3N3ZjYnZ3T1FaZkNHUm5kN01TM2FWM3VLbHE3ZExsbmRNVHR0SEcyR3NWNkxtbTlld2lzanVYOVEwczVtMTBrd9IBdkFVX3lxTFBzVkNHZXJKMndBNUNUYVE4VzZfcjVUOGlFSDA0QmstelFDc2dxbklCczgxdTBtTnZ2alhsMDJESDJHaUZlSGpPaWVGdG9vMktvVzVXRkp5cHZ4SDhPZFhzbnJlM2cxMk5WeTB5d3ZWV2pRMTVHbVE?oc=5",
+    "date": "2019-12-05",
+    "source": "시사저널e"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000038181,
@@ -225781,8 +226337,15 @@
   "complete": null,
   "stage": "착공 전",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "에스원, 금융사 신사옥·복합시설 맞춤형 건물관리 서비스 제공 '본격화'",
+    "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1ESzVqTERTVlR5eVdxNklhNmxCR1Y2RXJoM3J6c2N2Ni1HYkhZMThxVFRlVE5PdTdLMTdhSFJVay1OMEFYN0RFeTNUOTByZmd4UHZvdGlIWl9VUFJwLW1QZTFHMXQ4bFc0cHY4?oc=5",
+    "date": "2026-11-12",
+    "source": "맥스무비"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000038170,
@@ -225812,7 +226375,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000038145,
@@ -225841,8 +226404,27 @@
   "complete": null,
   "stage": "착공 전",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "경복궁이 내려다 보이는 공유 오피스가 무료라고? 종로 '아트코리아랩'",
+    "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBmTnA2cm1ZMk50S0tJSHc5MmVRZTl6VldpMEd2UzlOWndaUkZLY1VpeGduc09aVlJNOXFkZ3dIR3hoNklaUDZpMTZnQmtaRFRFcEhYeFVQa2c?oc=5",
+    "date": "2026-03-06",
+    "source": "서울특별시"
+   },
+   {
+    "title": "종로 중대형 오피스, 좌초 위기서 리츠로 부활",
+    "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFB2YnFjaUFVN1oyVElMcWpmRDVFTmJZbWNkeFJMQmFyWXNxM1FOakZ2S2RTWGV2cHdRS1g5SGxyODhUeW4tazJmQnpDV1NoRVg5dXNiclVFVUg?oc=5",
+    "date": "2026-04-16",
+    "source": "매일경제"
+   },
+   {
+    "title": "'훈민정음 유적' 품은 오피스…종로 '공평15·16지구' 준공",
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1YM2dtX0xVdkcteGEyTXZYNUR0ZHo3VTdIQmJtRFpnMnVkMks0YXE0WW9pRUhBcFBrdXdQWmh5LTRxRW51cEh0dkVqbmtKMEVJM21Ib3JaR1EwQQ?oc=5",
+    "date": "2026-04-17",
+    "source": "한국경제"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000038083,
@@ -225872,7 +226454,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000037598,
@@ -225901,8 +226483,15 @@
   "complete": null,
   "stage": "착공 전",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "분당 '특A급' 오피스빌딩 '휴맥스빌리지' 매물로…매각가 약 3천억",
+    "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE15Nm4wc3pSMGJnN0ZrUnRwaktkb0QzTVlWdXJUTkNUdXUzSzR3TzFxZk9CNlMxNE0tRVE5bUE5V3YxX004UEIwSXRCeEI4WTRMenY3YllTXzdQYkRP?oc=5",
+    "date": "2025-09-16",
+    "source": "뉴스핌"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 10825000144673,
@@ -225932,7 +226521,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000038269,
@@ -225962,7 +226551,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000035811,
@@ -225991,8 +226580,15 @@
   "complete": null,
   "stage": "착공 전",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "[서울25]52년 역사 연남동 ‘동진시장’에 2025년 판매·업무시설 들어선다",
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9kWUZZV2ZtbFF2VUhxdjh5MVkybnNrZVJEeEdsRGRwM2tjUml5NHJVbDNyMm8tRHpMakV2S0VUZFJZV01UNS1Welp2T3dGWThHTE9Id0lWUFRZd9IBX0FVX3lxTE41SzRvT3hkN1FMd3NuRUlMNmNQamxpMUxIX0RVUWdqdlQyWGFnQ3ZobEh5cUI5TkkxOE5CTF9JQ2dTM2pEOUUzZkQtZVdCNEFtN2RxQUtlRnZkeTJOWWcw?oc=5",
+    "date": "2023-09-08",
+    "source": "경향신문"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000037310,
@@ -226022,7 +226618,7 @@
   "stage": "공사 중",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1259100118714,
@@ -226052,7 +226648,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000035703,
@@ -226082,7 +226678,7 @@
   "stage": "공사 중",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000035267,
@@ -226112,7 +226708,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000035781,
@@ -226141,8 +226737,27 @@
   "complete": null,
   "stage": "착공 전",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "공유 오피스 인기 ‘신도림 핀포인트 타워’ 개인 투자 가능한 상품으로 주목",
+    "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9hRTZIYWN3WGEyM1VDOXZFanFOUmFoV0pfRWxYS01nQzB6UDhxZ1BXLS1hLUNBVUdNdENiRF9NZVNGVkc5QWJzNUlXNF9fZVN0TlHSAVNBVV95cUxOcm5xLU83a203amR3eG5zcVQtSHhVdXFQSGpLallmSGpuaF9fY3lPdjQ2RXZmTnlabVdZRTlUMUlMRGR3ZVpfSlMtU0FIV1ZiV1Jscw?oc=5",
+    "date": "2019-07-08",
+    "source": "서울경제"
+   },
+   {
+    "title": "신도림 유일 섹션오피스 ‘신도림 핀포인트 타워’ 투자자 관심 높아",
+    "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1MNzFsNTdPdW96cFZQVF9uZ1kxa0NZYWdUcy1OdVNNT3FSZ0pJTS13TmZtV2RldHZsQ1hsRGNVQ0RNcFl0a1BRUEZTRGwyd1lySE5DbmhCMG5xQWdZM29ENENyUWgtZ9IBakFVX3lxTE9tdmdwSEhxMjZTMDFMM0lxa25ZR2hHNmxZS2hTTG1nZGhxT2xSbXZjdV9icjk4ZzdoQTd1bFN0Z1ZHRDFtMVdsRk4wbDFuRTRobW83bUVpY2lJOW80TTJsT280ZnFmM0hEanc?oc=5",
+    "date": "2019-07-05",
+    "source": "NBN미디어"
+   },
+   {
+    "title": "역세권 오피스 품귀… ‘신도림 핀포인트 타워’ 분양",
+    "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9yQ3JUSVE1VkFaTWxLSnFFYWFMazVfTDh5azk5bWkzR2lvMko4NTZ4Q1lmUnBQRk9NNUd6TWhFSGJPc0dBRl9BcTJRM2FJQ1dIMVdCdjdPQjJKWkxFbGZiNktBLVd1THFtQUtLU09WV245UnlB0gFkQVVfeXFMTTZmWENnTWJndkJoekt1SVdtR3pZUlNGLTZ5dHJ3NTBhR2RsZ3piaktpMXFrWmtHWmJ2WVE1TE1vNWk3VkVYaEljcTV3U3RRamJjbHZsT3RHeU5kc3AyNlhhYVpqdg?oc=5",
+    "date": "2019-07-03",
+    "source": "동아일보"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000035738,
@@ -226172,7 +226787,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000035273,
@@ -226202,7 +226817,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000035413,
@@ -226232,7 +226847,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 12523000141294,
@@ -226262,7 +226877,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1069100133921,
@@ -226292,7 +226907,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1035100054798,
@@ -226322,7 +226937,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000035736,
@@ -226352,7 +226967,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000035539,
@@ -226382,7 +226997,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000035238,
@@ -226412,7 +227027,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 12523000141273,
@@ -226442,7 +227057,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000033417,
@@ -226472,7 +227087,7 @@
   "stage": "준공",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000033639,
@@ -226501,8 +227116,15 @@
   "complete": "2023-02-28",
   "stage": "준공",
   "exclude": false,
-  "articles": [],
-  "articles_checked": null
+  "articles": [
+   {
+    "title": "제주항공, 김포공항 떠나 염창동에 첫 단독 사옥…\"내년 상반기 입주\"",
+    "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9oMHp1WkFELXJSTWJJVE9NVnJBZXFadzNNelJnU01FZlBpSGd1cjRBZXpYUjkxaFlhdjV3OGctTEx4V08wTXhXdjRieXZDMjI2REhrUy1fTEtiN2ozTUpnLdIBeEFVX3lxTE1JZDBwdEZELXJ3VEppREJrNGoyUGpQUE12a25ySkFuR1BmYzc1WDBjSU9VMHRiaEZiZElwSFVTcTcwUFF1U2MzaUpTMkN4MTBudXEzeXZmQnFhNWI3TGYwMHhoMy14ZW1iY1hYRGZxbDBlQ0F2WUctdg?oc=5",
+    "date": "2026-09-16",
+    "source": "뉴시스"
+   }
+  ],
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000033383,
@@ -226532,7 +227154,7 @@
   "stage": "공사 중",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000033975,
@@ -226562,7 +227184,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1047100074436,
@@ -226592,7 +227214,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1041100066019,
@@ -226682,7 +227304,7 @@
   "stage": "착공 전",
   "exclude": false,
   "articles": [],
-  "articles_checked": null
+  "articles_checked": "2026-11-13"
  },
  {
   "id": 1000000000000000032589,
@@ -256571,8 +257193,8 @@
   "sgg_code": "48170",
   "dong": "충무공동",
   "zone": "지방",
-  "lat": 35.18918,
-  "lng": 128.13046,
+  "lat": 35.1799693694985,
+  "lng": 128.144150708711,
   "gfa": 14919,
   "office_ratio": 0.52,
   "ratio_n": 2,
@@ -256583,7 +257205,7 @@
   "ji": "0004",
   "addr": "경상남도 진주시 충무공동 225-4번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-12",
   "start": null,
   "complete": "2022-04-29",
@@ -256661,8 +257283,8 @@
   "sgg_code": "28200",
   "dong": "도림동",
   "zone": "수도권",
-  "lat": 37.4435,
-  "lng": 126.73046,
+  "lat": 37.4212023406407,
+  "lng": 126.718727776135,
   "gfa": 8356,
   "office_ratio": 0.82,
   "ratio_n": 2,
@@ -256673,7 +257295,7 @@
   "ji": "0003",
   "addr": "인천광역시 남동구 도림동 562-3번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-12",
   "start": null,
   "complete": null,
@@ -256691,8 +257313,8 @@
   "sgg_code": "28200",
   "dong": "고잔동",
   "zone": "수도권",
-  "lat": 37.43142,
-  "lng": 126.73726,
+  "lat": 37.4057735296134,
+  "lng": 126.694967329461,
   "gfa": 4977,
   "office_ratio": 0.49,
   "ratio_n": 2,
@@ -256703,7 +257325,7 @@
   "ji": "0007",
   "addr": "인천광역시 남동구 고잔동 634-7번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-12",
   "start": null,
   "complete": null,
@@ -256721,8 +257343,8 @@
   "sgg_code": "27170",
   "dong": "내당동",
   "zone": "지방",
-  "lat": 35.87185,
-  "lng": 128.55196,
+  "lat": 35.8602188289712,
+  "lng": 128.544668617135,
   "gfa": 591,
   "office_ratio": null,
   "ratio_n": 0,
@@ -256733,7 +257355,7 @@
   "ji": "0005",
   "addr": "대구광역시 서구 내당동 410-5번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-12",
   "start": "2022-04-29",
   "complete": "2022-12-07",
@@ -256751,8 +257373,8 @@
   "sgg_code": "11470",
   "dong": "목동",
   "zone": "서울 기타",
-  "lat": 37.53635,
-  "lng": 126.85292,
+  "lat": 37.524291154889,
+  "lng": 126.874948541305,
   "gfa": 6970,
   "office_ratio": 0.5,
   "ratio_n": 2,
@@ -256763,7 +257385,7 @@
   "ji": "0268",
   "addr": "서울특별시 양천구 목동 405-268번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-12",
   "start": null,
   "complete": "2022-08-18",
@@ -256841,8 +257463,8 @@
   "sgg_code": "41461",
   "dong": "김량장동",
   "zone": "수도권",
-  "lat": 37.20155,
-  "lng": 127.26492,
+  "lat": 37.235905026759,
+  "lng": 127.207725545441,
   "gfa": 2966,
   "office_ratio": null,
   "ratio_n": 0,
@@ -256853,7 +257475,7 @@
   "ji": "0002",
   "addr": "경기도 용인시 처인구 김량장동 128-2번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-12",
   "start": null,
   "complete": "2022-05-24",
@@ -256871,8 +257493,8 @@
   "sgg_code": "41194",
   "dong": "송내동",
   "zone": "수도권",
-  "lat": 37.48106,
-  "lng": 126.79522,
+  "lat": 37.4834656330828,
+  "lng": 126.772241617105,
   "gfa": 14149,
   "office_ratio": 0.0,
   "ratio_n": 2,
@@ -256883,7 +257505,7 @@
   "ji": "0002",
   "addr": "경기도 부천시 소사구 송내동 577-2번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-12",
   "start": "2022-10-13",
   "complete": "2024-11-25",
@@ -256931,8 +257553,8 @@
   "sgg_code": "11680",
   "dong": "삼성동",
   "zone": "GBD",
-  "lat": 37.49488,
-  "lng": 127.07376,
+  "lat": 37.5062889245185,
+  "lng": 127.051521957295,
   "gfa": 1947,
   "office_ratio": null,
   "ratio_n": 0,
@@ -256943,7 +257565,7 @@
   "ji": "0014",
   "addr": "서울특별시 강남구 삼성동 142-14번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-11",
   "start": "2022-10-14",
   "complete": "2024-06-21",
@@ -256961,8 +257583,8 @@
   "sgg_code": "11680",
   "dong": "삼성동",
   "zone": "GBD",
-  "lat": 37.49824,
-  "lng": 127.05928,
+  "lat": 37.5061797005761,
+  "lng": 127.051572663651,
   "gfa": 1969,
   "office_ratio": null,
   "ratio_n": 0,
@@ -256973,7 +257595,7 @@
   "ji": "0048",
   "addr": "서울특별시 강남구 삼성동 142-48번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-11",
   "start": "2022-10-14",
   "complete": "2024-06-21",
@@ -256991,8 +257613,8 @@
   "sgg_code": "11545",
   "dong": "독산동",
   "zone": "서울 기타",
-  "lat": 37.45665,
-  "lng": 126.90212,
+  "lat": 37.4747947167966,
+  "lng": 126.898062148902,
   "gfa": 2823,
   "office_ratio": null,
   "ratio_n": 0,
@@ -257003,7 +257625,7 @@
   "ji": "0005",
   "addr": "서울특별시 금천구 독산동 146-5번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-11",
   "start": "2022-06-08",
   "complete": "2023-06-16",
@@ -257021,8 +257643,8 @@
   "sgg_code": "11500",
   "dong": "화곡동",
   "zone": "서울 기타",
-  "lat": 37.56332,
-  "lng": 126.83696,
+  "lat": 37.5466153754132,
+  "lng": 126.846290059972,
   "gfa": 2761,
   "office_ratio": null,
   "ratio_n": 0,
@@ -257033,7 +257655,7 @@
   "ji": "0081",
   "addr": "서울특별시 강서구 화곡동 24-81번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-11",
   "start": "2022-06-07",
   "complete": "2023-08-10",
@@ -257051,8 +257673,8 @@
   "sgg_code": "41192",
   "dong": "중동",
   "zone": "수도권",
-  "lat": 37.49394,
-  "lng": 126.78932,
+  "lat": 37.5051966015489,
+  "lng": 126.763567560961,
   "gfa": 6545,
   "office_ratio": 0.18,
   "ratio_n": 2,
@@ -257063,7 +257685,7 @@
   "ji": "0000",
   "addr": "경기도 부천시 원미구 중동 1033번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-11",
   "start": null,
   "complete": null,
@@ -257081,8 +257703,8 @@
   "sgg_code": "48250",
   "dong": "외동",
   "zone": "지방",
-  "lat": 35.27226,
-  "lng": 128.8455,
+  "lat": 35.230604156311,
+  "lng": 128.870367356371,
   "gfa": 10964,
   "office_ratio": 0.0,
   "ratio_n": 2,
@@ -257093,7 +257715,7 @@
   "ji": "0002",
   "addr": "경상남도 김해시 외동 1263-2번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-11",
   "start": null,
   "complete": null,
@@ -257111,8 +257733,8 @@
   "sgg_code": "52111",
   "dong": "서신동",
   "zone": "지방",
-  "lat": 35.78785,
-  "lng": 127.11324,
+  "lat": 35.8333835894026,
+  "lng": 127.123951628463,
   "gfa": 2996,
   "office_ratio": null,
   "ratio_n": 0,
@@ -257123,7 +257745,7 @@
   "ji": "0000",
   "addr": "전북특별자치도 전주시 완산구 서신동 770번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-11",
   "start": "2022-05-03",
   "complete": "2023-02-15",
@@ -257141,8 +257763,8 @@
   "sgg_code": "41210",
   "dong": "철산동",
   "zone": "수도권",
-  "lat": 37.44656,
-  "lng": 126.86566,
+  "lat": 37.4741343284324,
+  "lng": 126.870512733369,
   "gfa": 15905,
   "office_ratio": 0.58,
   "ratio_n": 2,
@@ -257153,7 +257775,7 @@
   "ji": "0000",
   "addr": "경기도 광명시 철산동 447번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-11",
   "start": null,
   "complete": null,
@@ -257171,8 +257793,8 @@
   "sgg_code": "41465",
   "dong": "동천동",
   "zone": "수도권",
-  "lat": 37.32691,
-  "lng": 127.08066,
+  "lat": 37.3412311674038,
+  "lng": 127.10222481419,
   "gfa": 26275,
   "office_ratio": 1.0,
   "ratio_n": 2,
@@ -257183,7 +257805,7 @@
   "ji": "0003",
   "addr": "경기도 용인시 수지구 동천동 185-3번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-11",
   "start": null,
   "complete": null,
@@ -257201,8 +257823,8 @@
   "sgg_code": "47111",
   "dong": "상도동",
   "zone": "지방",
-  "lat": 35.96096,
-  "lng": 129.45334,
+  "lat": 36.0076618422143,
+  "lng": 129.347136435651,
   "gfa": 8632,
   "office_ratio": 0.42,
   "ratio_n": 2,
@@ -257213,7 +257835,7 @@
   "ji": "0000",
   "addr": "경상북도 포항시 남구 상도동 497번지",
   "public": true,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-11",
   "start": "2022-06-07",
   "complete": null,
@@ -257261,8 +257883,8 @@
   "sgg_code": "11680",
   "dong": "삼성동",
   "zone": "GBD",
-  "lat": 37.50057,
-  "lng": 127.06264,
+  "lat": 37.5068159102844,
+  "lng": 127.052773882853,
   "gfa": 1335,
   "office_ratio": null,
   "ratio_n": 0,
@@ -257273,7 +257895,7 @@
   "ji": "0016",
   "addr": "서울특별시 강남구 삼성동 143-16번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-08",
   "start": "2023-12-07",
   "complete": "2026-07-07",
@@ -257291,8 +257913,8 @@
   "sgg_code": "11260",
   "dong": "상봉동",
   "zone": "서울 기타",
-  "lat": 37.59751,
-  "lng": 127.08542,
+  "lat": 37.5958271211917,
+  "lng": 127.08837067518,
   "gfa": 3505,
   "office_ratio": 0.12,
   "ratio_n": 2,
@@ -257303,7 +257925,7 @@
   "ji": "0059",
   "addr": "서울특별시 중랑구 상봉동 90-59번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-08",
   "start": "2025-04-07",
   "complete": null,
@@ -257321,8 +257943,8 @@
   "sgg_code": "11200",
   "dong": "용답동",
   "zone": "서울 기타",
-  "lat": 37.54696,
-  "lng": 127.03312,
+  "lat": 37.5611015182583,
+  "lng": 127.059694400653,
   "gfa": 9211,
   "office_ratio": 0.43,
   "ratio_n": 2,
@@ -257333,7 +257955,7 @@
   "ji": "0001",
   "addr": "서울특별시 성동구 용답동 227-1번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-08",
   "start": null,
   "complete": null,
@@ -257351,8 +257973,8 @@
   "sgg_code": "41150",
   "dong": "호원동",
   "zone": "수도권",
-  "lat": 37.73761,
-  "lng": 127.06548,
+  "lat": 37.7269508350647,
+  "lng": 127.048786300337,
   "gfa": 2677,
   "office_ratio": null,
   "ratio_n": 0,
@@ -257363,7 +257985,7 @@
   "ji": "0002",
   "addr": "경기도 의정부시 호원동 416-2번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-08",
   "start": "2022-08-04",
   "complete": "2024-06-13",
@@ -257381,8 +258003,8 @@
   "sgg_code": "41410",
   "dong": "도마교동",
   "zone": "수도권",
-  "lat": 37.3486,
-  "lng": 126.91864,
+  "lat": 37.3157780065514,
+  "lng": 126.918690111895,
   "gfa": 2994,
   "office_ratio": null,
   "ratio_n": 0,
@@ -257393,7 +258015,7 @@
   "ji": "0001",
   "addr": "경기도 군포시 도마교동 488-1번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-08",
   "start": "2022-04-29",
   "complete": "2023-04-20",
@@ -257411,8 +258033,8 @@
   "sgg_code": "41480",
   "dong": "와동동",
   "zone": "수도권",
-  "lat": 37.8684,
-  "lng": 126.82008,
+  "lat": 37.7357700800233,
+  "lng": 126.766354916908,
   "gfa": 16007,
   "office_ratio": 0.0,
   "ratio_n": 2,
@@ -257423,7 +258045,7 @@
   "ji": "0003",
   "addr": "경기도 파주시 와동동 1498-3번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-08",
   "start": "2022-08-19",
   "complete": "2025-03-07",
@@ -257441,8 +258063,8 @@
   "sgg_code": "44131",
   "dong": "청당동",
   "zone": "지방",
-  "lat": 36.74864,
-  "lng": 127.21208,
+  "lat": 36.7855220787507,
+  "lng": 127.157409015036,
   "gfa": 23340,
   "office_ratio": 0.66,
   "ratio_n": 2,
@@ -257453,7 +258075,7 @@
   "ji": "0000",
   "addr": "충청남도 천안시 동남구 청당동 552번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-08",
   "start": null,
   "complete": null,
@@ -257471,8 +258093,8 @@
   "sgg_code": "47280",
   "dong": "모전동",
   "zone": "지방",
-  "lat": 36.67663,
-  "lng": 128.14786,
+  "lat": 36.5901992095359,
+  "lng": 128.180239109526,
   "gfa": 2157,
   "office_ratio": null,
   "ratio_n": 0,
@@ -257483,7 +258105,7 @@
   "ji": "0004",
   "addr": "경상북도 문경시 모전동 914-4번지",
   "public": true,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-08",
   "start": "2022-05-31",
   "complete": "2022-09-08",
@@ -257531,8 +258153,8 @@
   "sgg_code": "41285",
   "dong": "풍동",
   "zone": "수도권",
-  "lat": 37.67663,
-  "lng": 126.79208,
+  "lat": 37.6654814934132,
+  "lng": 126.807700731601,
   "gfa": 1933,
   "office_ratio": null,
   "ratio_n": 0,
@@ -257543,7 +258165,7 @@
   "ji": "0002",
   "addr": "경기도 고양시 일산동구 풍동 162-2번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-08",
   "start": "2022-06-07",
   "complete": null,
@@ -257561,8 +258183,8 @@
   "sgg_code": "41192",
   "dong": "심곡동",
   "zone": "수도권",
-  "lat": 37.499,
-  "lng": 126.78866,
+  "lat": 37.4865168643812,
+  "lng": 126.781725859469,
   "gfa": 4185,
   "office_ratio": 0.0,
   "ratio_n": 2,
@@ -257573,7 +258195,7 @@
   "ji": "0014",
   "addr": "경기도 부천시 원미구 심곡동 176-14번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-08",
   "start": "2022-08-19",
   "complete": null,
@@ -257651,8 +258273,8 @@
   "sgg_code": "11680",
   "dong": "역삼동",
   "zone": "GBD",
-  "lat": 37.50384,
-  "lng": 127.07246,
+  "lat": 37.5020942117804,
+  "lng": 127.036798241165,
   "gfa": 141551,
   "office_ratio": 0.21,
   "ratio_n": 2,
@@ -257663,7 +258285,7 @@
   "ji": "0000",
   "addr": "서울특별시 강남구 역삼동 679번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-07",
   "start": "2025-09-26",
   "complete": "2026-02-19",
@@ -257681,8 +258303,8 @@
   "sgg_code": "11590",
   "dong": "사당동",
   "zone": "서울 기타",
-  "lat": 37.49086,
-  "lng": 126.95136,
+  "lat": 37.4866530196642,
+  "lng": 126.972061205526,
   "gfa": 1810,
   "office_ratio": null,
   "ratio_n": 0,
@@ -257693,7 +258315,7 @@
   "ji": "0012",
   "addr": "서울특별시 동작구 사당동 169-12번지",
   "public": true,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-07",
   "start": "2024-03-25",
   "complete": "2024-05-14",
@@ -257711,8 +258333,8 @@
   "sgg_code": "11500",
   "dong": "등촌동",
   "zone": "서울 기타",
-  "lat": 37.55798,
-  "lng": 126.83736,
+  "lat": 37.5602471218146,
+  "lng": 126.845753087431,
   "gfa": 14206,
   "office_ratio": 0.32,
   "ratio_n": 2,
@@ -257723,7 +258345,7 @@
   "ji": "0000",
   "addr": "서울특별시 강서구 등촌동 696번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-07",
   "start": null,
   "complete": null,
@@ -257741,8 +258363,8 @@
   "sgg_code": "41500",
   "dong": "중리동",
   "zone": "수도권",
-  "lat": 37.19982,
-  "lng": 127.48536,
+  "lat": 37.2759138557638,
+  "lng": 127.43610339297,
   "gfa": 6190,
   "office_ratio": 0.07,
   "ratio_n": 2,
@@ -257753,7 +258375,7 @@
   "ji": "0005",
   "addr": "경기도 이천시 중리동 313-5번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-07",
   "start": null,
   "complete": null,
@@ -257771,8 +258393,8 @@
   "sgg_code": "48220",
   "dong": "무전동",
   "zone": "지방",
-  "lat": 34.82076,
-  "lng": 128.35456,
+  "lat": 34.8589617046207,
+  "lng": 128.429046031904,
   "gfa": 2469,
   "office_ratio": null,
   "ratio_n": 0,
@@ -257783,7 +258405,7 @@
   "ji": "0005",
   "addr": "경상남도 통영시 무전동 988-5번지",
   "public": true,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-07",
   "start": "2022-06-15",
   "complete": "2024-06-11",
@@ -257801,8 +258423,8 @@
   "sgg_code": "52111",
   "dong": "효자동2가",
   "zone": "지방",
-  "lat": 35.7927,
-  "lng": 127.11012,
+  "lat": 35.816993939584,
+  "lng": 127.103962686047,
   "gfa": 1988,
   "office_ratio": null,
   "ratio_n": 0,
@@ -257813,7 +258435,7 @@
   "ji": "0011",
   "addr": "전북특별자치도 전주시 완산구 효자동2가 1236-11번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-07",
   "start": "2022-07-29",
   "complete": null,
@@ -257861,8 +258483,8 @@
   "sgg_code": "11530",
   "dong": "구로동",
   "zone": "서울 기타",
-  "lat": 37.48686,
-  "lng": 126.86164,
+  "lat": 37.4856097979158,
+  "lng": 126.899114703816,
   "gfa": 24365,
   "office_ratio": 0.01,
   "ratio_n": 2,
@@ -257873,7 +258495,7 @@
   "ji": "0003",
   "addr": "서울특별시 구로구 구로동 187-3번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-07",
   "start": null,
   "complete": "2022-04-28",
@@ -257921,8 +258543,8 @@
   "sgg_code": "11470",
   "dong": "신정동",
   "zone": "서울 기타",
-  "lat": 37.52968,
-  "lng": 126.85236,
+  "lat": 37.5174942406627,
+  "lng": 126.865497622785,
   "gfa": 47663,
   "office_ratio": 0.0,
   "ratio_n": 2,
@@ -257933,7 +258555,7 @@
   "ji": "0006",
   "addr": "서울특별시 양천구 신정동 321-6번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-06",
   "start": null,
   "complete": "2022-04-11",
@@ -257951,8 +258573,8 @@
   "sgg_code": "11140",
   "dong": "충무로3가",
   "zone": "CBD",
-  "lat": 37.55524,
-  "lng": 126.99736,
+  "lat": 37.5616417359598,
+  "lng": 126.991114589938,
   "gfa": 75252,
   "office_ratio": 0.64,
   "ratio_n": 2,
@@ -257963,7 +258585,7 @@
   "ji": "0001",
   "addr": "서울특별시 중구 충무로3가 60-1번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-06",
   "start": "2022-05-04",
   "complete": "2022-07-18",
@@ -257981,8 +258603,8 @@
   "sgg_code": "41111",
   "dong": "파장동",
   "zone": "수도권",
-  "lat": 37.3119,
-  "lng": 127.00484,
+  "lat": 37.3135904756181,
+  "lng": 126.999357209848,
   "gfa": 5872,
   "office_ratio": 0.98,
   "ratio_n": 2,
@@ -257993,7 +258615,7 @@
   "ji": "0001",
   "addr": "경기도 수원시 장안구 파장동 324-1번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-06",
   "start": null,
   "complete": null,
@@ -258011,8 +258633,8 @@
   "sgg_code": "41133",
   "dong": "여수동",
   "zone": "수도권",
-  "lat": 37.43294,
-  "lng": 127.17398,
+  "lat": 37.4179941682842,
+  "lng": 127.12688789671,
   "gfa": 7623,
   "office_ratio": 0.13,
   "ratio_n": 2,
@@ -258023,7 +258645,7 @@
   "ji": "0000",
   "addr": "경기도 성남시 중원구 여수동 203번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-06",
   "start": null,
   "complete": null,
@@ -258041,8 +258663,8 @@
   "sgg_code": "41410",
   "dong": "당동",
   "zone": "수도권",
-  "lat": 37.34689,
-  "lng": 126.92196,
+  "lat": 37.3571754375754,
+  "lng": 126.946565436839,
   "gfa": 1120,
   "office_ratio": null,
   "ratio_n": 0,
@@ -258053,7 +258675,7 @@
   "ji": "0029",
   "addr": "경기도 군포시 당동 732-29번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-06",
   "start": "2022-11-23",
   "complete": null,
@@ -258071,8 +258693,8 @@
   "sgg_code": "41135",
   "dong": "수내동",
   "zone": "BBD",
-  "lat": 37.37851,
-  "lng": 127.12554,
+  "lat": 37.3789403878897,
+  "lng": 127.113138921271,
   "gfa": 47564,
   "office_ratio": 0.0,
   "ratio_n": 2,
@@ -258083,7 +258705,7 @@
   "ji": "0001",
   "addr": "경기도 성남시 분당구 수내동 11-1번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-06",
   "start": null,
   "complete": "2022-07-15",
@@ -258101,8 +258723,8 @@
   "sgg_code": "41360",
   "dong": "다산동",
   "zone": "수도권",
-  "lat": 37.66836,
-  "lng": 127.23586,
+  "lat": 37.6109259772243,
+  "lng": 127.168776303111,
   "gfa": 20181,
   "office_ratio": 0.5,
   "ratio_n": 2,
@@ -258113,7 +258735,7 @@
   "ji": "0001",
   "addr": "경기도 남양주시 다산동 6193-1번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-06",
   "start": null,
   "complete": null,
@@ -258131,8 +258753,8 @@
   "sgg_code": "41360",
   "dong": "다산동",
   "zone": "수도권",
-  "lat": 37.667,
-  "lng": 127.24136,
+  "lat": 37.6109259772243,
+  "lng": 127.168776303111,
   "gfa": 20181,
   "office_ratio": 0.5,
   "ratio_n": 2,
@@ -258143,7 +258765,7 @@
   "ji": "0001",
   "addr": "경기도 남양주시 다산동 6193-1번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-06",
   "start": null,
   "complete": null,
@@ -258161,8 +258783,8 @@
   "sgg_code": "41360",
   "dong": "다산동",
   "zone": "수도권",
-  "lat": 37.65963,
-  "lng": 127.23232,
+  "lat": 37.6109259772243,
+  "lng": 127.168776303111,
   "gfa": 20181,
   "office_ratio": 0.5,
   "ratio_n": 2,
@@ -258173,7 +258795,7 @@
   "ji": "0001",
   "addr": "경기도 남양주시 다산동 6193-1번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-06",
   "start": null,
   "complete": null,
@@ -258191,8 +258813,8 @@
   "sgg_code": "52111",
   "dong": "중화산동2가",
   "zone": "지방",
-  "lat": 35.80153,
-  "lng": 127.12812,
+  "lat": 35.8244017945553,
+  "lng": 127.121865026746,
   "gfa": 1260,
   "office_ratio": null,
   "ratio_n": 0,
@@ -258203,7 +258825,7 @@
   "ji": "0000",
   "addr": "전북특별자치도 전주시 완산구 중화산동2가 687번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-06",
   "start": "2022-09-07",
   "complete": null,
@@ -258221,8 +258843,8 @@
   "sgg_code": "28200",
   "dong": "간석동",
   "zone": "수도권",
-  "lat": 37.44467,
-  "lng": 126.73432,
+  "lat": 37.4659932090835,
+  "lng": 126.709469654228,
   "gfa": 15469,
   "office_ratio": 0.0,
   "ratio_n": 2,
@@ -258233,7 +258855,7 @@
   "ji": "0007",
   "addr": "인천광역시 남동구 간석동 173-7번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-06",
   "start": "2022-06-30",
   "complete": "2023-12-22",
@@ -258251,8 +258873,8 @@
   "sgg_code": "41192",
   "dong": "상동",
   "zone": "수도권",
-  "lat": 37.49252,
-  "lng": 126.79242,
+  "lat": 37.5048755057745,
+  "lng": 126.749756751127,
   "gfa": 18059,
   "office_ratio": 0.47,
   "ratio_n": 2,
@@ -258263,7 +258885,7 @@
   "ji": "0002",
   "addr": "경기도 부천시 원미구 상동 545-2번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-06",
   "start": null,
   "complete": null,
@@ -258311,8 +258933,8 @@
   "sgg_code": "11560",
   "dong": "영등포동3가",
   "zone": "YBD",
-  "lat": 37.52598,
-  "lng": 126.90358,
+  "lat": 37.5186415845875,
+  "lng": 126.907973405341,
   "gfa": 1257,
   "office_ratio": null,
   "ratio_n": 0,
@@ -258323,7 +258945,7 @@
   "ji": "0009",
   "addr": "서울특별시 영등포구 영등포동3가 15-9번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-05",
   "start": "2023-12-22",
   "complete": "2025-03-11",
@@ -258341,8 +258963,8 @@
   "sgg_code": "11380",
   "dong": "진관동",
   "zone": "서울 기타",
-  "lat": 37.61241,
-  "lng": 126.93906,
+  "lat": 37.6357576411454,
+  "lng": 126.918234626782,
   "gfa": 75149,
   "office_ratio": 0.66,
   "ratio_n": 2,
@@ -258353,7 +258975,7 @@
   "ji": "0001",
   "addr": "서울특별시 은평구 진관동 63-1번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-05",
   "start": "2022-08-04",
   "complete": "2026-01-27",
@@ -258371,8 +258993,8 @@
   "sgg_code": "41171",
   "dong": "안양동",
   "zone": "수도권",
-  "lat": 37.39894,
-  "lng": 126.91096,
+  "lat": 37.3937442854348,
+  "lng": 126.928978005614,
   "gfa": 8258,
   "office_ratio": 0.39,
   "ratio_n": 2,
@@ -258383,7 +259005,7 @@
   "ji": "0027",
   "addr": "경기도 안양시 만안구 안양동 391-27번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-05",
   "start": "2025-09-01",
   "complete": null,
@@ -258401,8 +259023,8 @@
   "sgg_code": "41390",
   "dong": "조남동",
   "zone": "수도권",
-  "lat": 37.39242,
-  "lng": 126.78936,
+  "lat": 37.3722090184991,
+  "lng": 126.8515823891,
   "gfa": 7165,
   "office_ratio": 0.65,
   "ratio_n": 2,
@@ -258413,7 +259035,7 @@
   "ji": "0000",
   "addr": "경기도 시흥시 조남동 674번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-05",
   "start": "2023-01-12",
   "complete": "2025-10-14",
@@ -258431,8 +259053,8 @@
   "sgg_code": "47280",
   "dong": "모전동",
   "zone": "지방",
-  "lat": 36.67465,
-  "lng": 128.1318,
+  "lat": 36.5861553694317,
+  "lng": 128.18689248233,
   "gfa": 10420,
   "office_ratio": 1.0,
   "ratio_n": 2,
@@ -258443,7 +259065,7 @@
   "ji": "0000",
   "addr": "경상북도 문경시 모전동 220번지",
   "public": true,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-05",
   "start": "2022-05-31",
   "complete": "2022-09-05",
@@ -258491,8 +259113,8 @@
   "sgg_code": "11680",
   "dong": "역삼동",
   "zone": "GBD",
-  "lat": 37.5003,
-  "lng": 127.06024,
+  "lat": 37.5057615902023,
+  "lng": 127.029699616366,
   "gfa": 8280,
   "office_ratio": 0.0,
   "ratio_n": 2,
@@ -258503,7 +259125,7 @@
   "ji": "0005",
   "addr": "서울특별시 강남구 역삼동 603-5번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-04",
   "start": null,
   "complete": "2022-05-20",
@@ -258521,8 +259143,8 @@
   "sgg_code": "11140",
   "dong": "태평로2가",
   "zone": "CBD",
-  "lat": 37.55167,
-  "lng": 126.9996,
+  "lat": 37.56268000013,
+  "lng": 126.976844077208,
   "gfa": 6385,
   "office_ratio": 0.91,
   "ratio_n": 2,
@@ -258533,7 +259155,7 @@
   "ji": "0005",
   "addr": "서울특별시 중구 태평로2가 69-5번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-04",
   "start": null,
   "complete": null,
@@ -258690,8 +259312,8 @@
   "sgg_code": "11650",
   "dong": "서초동",
   "zone": "GBD",
-  "lat": 37.46912,
-  "lng": 127.03122,
+  "lat": 37.4943586796886,
+  "lng": 127.028800968022,
   "gfa": 17164,
   "office_ratio": 0.76,
   "ratio_n": 2,
@@ -258702,7 +259324,7 @@
   "ji": "0000",
   "addr": "서울특별시 서초구 서초동 1329번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-01",
   "start": null,
   "complete": null,
@@ -258720,8 +259342,8 @@
   "sgg_code": "11560",
   "dong": "여의도동",
   "zone": "YBD",
-  "lat": 37.52523,
-  "lng": 126.91864,
+  "lat": 37.5216716916864,
+  "lng": 126.928451606171,
   "gfa": 20425,
   "office_ratio": 0.93,
   "ratio_n": 2,
@@ -258732,7 +259354,7 @@
   "ji": "0004",
   "addr": "서울특별시 영등포구 여의도동 34-4번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-01",
   "start": null,
   "complete": "2022-04-28",
@@ -258750,8 +259372,8 @@
   "sgg_code": "11440",
   "dong": "상암동",
   "zone": "YBD",
-  "lat": 37.55206,
-  "lng": 126.90838,
+  "lat": 37.5781205627016,
+  "lng": 126.89483382867,
   "gfa": 4417,
   "office_ratio": 0.81,
   "ratio_n": 2,
@@ -258762,7 +259384,7 @@
   "ji": "0001",
   "addr": "서울특별시 마포구 상암동 6-1번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-01",
   "start": "2022-09-30",
   "complete": "2024-09-24",
@@ -258780,8 +259402,8 @@
   "sgg_code": "41113",
   "dong": "권선동",
   "zone": "수도권",
-  "lat": 37.25752,
-  "lng": 126.98048,
+  "lat": 37.2471641600835,
+  "lng": 127.018223627639,
   "gfa": 57516,
   "office_ratio": 0.0,
   "ratio_n": 2,
@@ -258792,7 +259414,7 @@
   "ji": "0000",
   "addr": "경기도 수원시 권선구 권선동 1335번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-01",
   "start": "2022-06-09",
   "complete": "2025-05-26",
@@ -258810,8 +259432,8 @@
   "sgg_code": "41113",
   "dong": "권선동",
   "zone": "수도권",
-  "lat": 37.26676,
-  "lng": 126.98636,
+  "lat": 37.2451987150199,
+  "lng": 127.018196780754,
   "gfa": 64179,
   "office_ratio": 0.0,
   "ratio_n": 2,
@@ -258822,7 +259444,7 @@
   "ji": "0000",
   "addr": "경기도 수원시 권선구 권선동 1336번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-01",
   "start": "2022-06-09",
   "complete": "2025-05-26",
@@ -258840,8 +259462,8 @@
   "sgg_code": "41133",
   "dong": "성남동",
   "zone": "수도권",
-  "lat": 37.44409,
-  "lng": 127.16238,
+  "lat": 37.4362505865922,
+  "lng": 127.139733988013,
   "gfa": 7834,
   "office_ratio": 0.0,
   "ratio_n": 2,
@@ -258852,7 +259474,7 @@
   "ji": "0000",
   "addr": "경기도 성남시 중원구 성남동 2197번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-01",
   "start": null,
   "complete": null,
@@ -258870,8 +259492,8 @@
   "sgg_code": "41135",
   "dong": "백현동",
   "zone": "BBD",
-  "lat": 37.37328,
-  "lng": 127.12326,
+  "lat": 37.3952612751433,
+  "lng": 127.110343648845,
   "gfa": 162731,
   "office_ratio": 0.99,
   "ratio_n": 2,
@@ -258882,7 +259504,7 @@
   "ji": "0000",
   "addr": "경기도 성남시 분당구 백현동 532번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-01",
   "start": null,
   "complete": null,
@@ -258900,8 +259522,8 @@
   "sgg_code": "12210",
   "dong": "학동",
   "zone": "지방",
-  "lat": null,
-  "lng": null,
+  "lat": 35.1404746687388,
+  "lng": 126.920182608488,
   "gfa": 9439,
   "office_ratio": 0.19,
   "ratio_n": 2,
@@ -258912,7 +259534,7 @@
   "ji": "0003",
   "addr": "전남광주통합특별시 동구 학동 71-3번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-01",
   "start": null,
   "complete": null,
@@ -258930,8 +259552,8 @@
   "sgg_code": "51130",
   "dong": "반곡동",
   "zone": "지방",
-  "lat": 37.30404,
-  "lng": 127.9576,
+  "lat": 37.3324632284312,
+  "lng": 127.968596729116,
   "gfa": 2886,
   "office_ratio": null,
   "ratio_n": 0,
@@ -258942,7 +259564,7 @@
   "ji": "0007",
   "addr": "강원특별자치도 원주시 반곡동 1567-7번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-01",
   "start": "2022-04-15",
   "complete": "2023-06-19",
@@ -258960,8 +259582,8 @@
   "sgg_code": "41285",
   "dong": "장항동",
   "zone": "수도권",
-  "lat": 37.67471,
-  "lng": 126.7955,
+  "lat": 37.6529419396848,
+  "lng": 126.776716104202,
   "gfa": 5621,
   "office_ratio": 0.45,
   "ratio_n": 2,
@@ -258972,7 +259594,7 @@
   "ji": "0005",
   "addr": "경기도 고양시 일산동구 장항동 890-5번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-01",
   "start": null,
   "complete": "2022-04-26",
@@ -258990,8 +259612,8 @@
   "sgg_code": "44200",
   "dong": "온천동",
   "zone": "지방",
-  "lat": 36.7952,
-  "lng": 126.9799,
+  "lat": 36.7825663806749,
+  "lng": 127.002083807479,
   "gfa": 1310,
   "office_ratio": null,
   "ratio_n": 0,
@@ -259002,7 +259624,7 @@
   "ji": "0004",
   "addr": "충청남도 아산시 온천동 216-4번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-01",
   "start": "2022-10-19",
   "complete": "2023-08-23",
@@ -259020,8 +259642,8 @@
   "sgg_code": "12240",
   "dong": "농성동",
   "zone": "지방",
-  "lat": null,
-  "lng": null,
+  "lat": 35.150581031226,
+  "lng": 126.887020435669,
   "gfa": 4420,
   "office_ratio": 0.89,
   "ratio_n": 2,
@@ -259032,7 +259654,7 @@
   "ji": "0012",
   "addr": "전남광주통합특별시 서구 농성동 644-12번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-04-01",
   "start": null,
   "complete": null,
@@ -259050,8 +259672,8 @@
   "sgg_code": "11710",
   "dong": "삼전동",
   "zone": "서울 기타",
-  "lat": 37.50615,
-  "lng": 127.11888,
+  "lat": 37.5031552287074,
+  "lng": 127.09131261874,
   "gfa": 2638,
   "office_ratio": null,
   "ratio_n": 0,
@@ -259062,7 +259684,7 @@
   "ji": "0001",
   "addr": "서울특별시 송파구 삼전동 49-1번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-31",
   "start": null,
   "complete": null,
@@ -259080,8 +259702,8 @@
   "sgg_code": "11680",
   "dong": "역삼동",
   "zone": "GBD",
-  "lat": 37.49648,
-  "lng": 127.07264,
+  "lat": 37.5020942117804,
+  "lng": 127.036798241165,
   "gfa": 14551,
   "office_ratio": 0.21,
   "ratio_n": 2,
@@ -259092,7 +259714,7 @@
   "ji": "0000",
   "addr": "서울특별시 강남구 역삼동 679번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-31",
   "start": "2022-04-11",
   "complete": "2022-05-10",
@@ -259140,8 +259762,8 @@
   "sgg_code": "11140",
   "dong": "저동1가",
   "zone": "CBD",
-  "lat": 37.56316,
-  "lng": 126.99354,
+  "lat": 37.5651273105875,
+  "lng": 126.987007375723,
   "gfa": 53369,
   "office_ratio": 0.76,
   "ratio_n": 2,
@@ -259152,7 +259774,7 @@
   "ji": "0000",
   "addr": "서울특별시 중구 저동1가 114번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-31",
   "start": null,
   "complete": null,
@@ -259170,8 +259792,8 @@
   "sgg_code": "41410",
   "dong": "금정동",
   "zone": "수도권",
-  "lat": 37.34772,
-  "lng": 126.9202,
+  "lat": 37.3623409637066,
+  "lng": 126.94221251674,
   "gfa": 14086,
   "office_ratio": 0.0,
   "ratio_n": 2,
@@ -259182,7 +259804,7 @@
   "ji": "0022",
   "addr": "경기도 군포시 금정동 743-22번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-31",
   "start": "2026-01-23",
   "complete": null,
@@ -259230,8 +259852,8 @@
   "sgg_code": "28200",
   "dong": "논현동",
   "zone": "수도권",
-  "lat": 37.43176,
-  "lng": 126.74068,
+  "lat": 37.4008278151937,
+  "lng": 126.735833163714,
   "gfa": 13129,
   "office_ratio": 0.0,
   "ratio_n": 2,
@@ -259242,7 +259864,7 @@
   "ji": "0009",
   "addr": "인천광역시 남동구 논현동 676-9번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-31",
   "start": null,
   "complete": null,
@@ -259260,8 +259882,8 @@
   "sgg_code": "11530",
   "dong": "가리봉동",
   "zone": "서울 기타",
-  "lat": 37.48701,
-  "lng": 126.86022,
+  "lat": 37.4795726175583,
+  "lng": 126.891419447682,
   "gfa": 1675,
   "office_ratio": null,
   "ratio_n": 0,
@@ -259272,7 +259894,7 @@
   "ji": "0051",
   "addr": "서울특별시 구로구 가리봉동 135-51번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-31",
   "start": "2022-07-22",
   "complete": "2023-08-03",
@@ -259290,8 +259912,8 @@
   "sgg_code": "41281",
   "dong": "향동동",
   "zone": "수도권",
-  "lat": 37.65915,
-  "lng": 126.90052,
+  "lat": 37.6007896284563,
+  "lng": 126.892352843947,
   "gfa": 13822,
   "office_ratio": 0.58,
   "ratio_n": 2,
@@ -259302,7 +259924,7 @@
   "ji": "0000",
   "addr": "경기도 고양시 덕양구 향동동 477번지",
   "public": true,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-31",
   "start": "2022-06-22",
   "complete": "2025-03-14",
@@ -259320,8 +259942,8 @@
   "sgg_code": "41111",
   "dong": "연무동",
   "zone": "수도권",
-  "lat": 37.31979,
-  "lng": 127.00636,
+  "lat": 37.2971738690227,
+  "lng": 127.027345463589,
   "gfa": 1157,
   "office_ratio": null,
   "ratio_n": 0,
@@ -259332,7 +259954,7 @@
   "ji": "0005",
   "addr": "경기도 수원시 장안구 연무동 216-5번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-31",
   "start": "2022-05-04",
   "complete": "2022-12-16",
@@ -259350,8 +259972,8 @@
   "sgg_code": "41463",
   "dong": "중동",
   "zone": "수도권",
-  "lat": 37.27407,
-  "lng": 127.12354,
+  "lat": 37.2761101379426,
+  "lng": 127.145964978035,
   "gfa": 3072,
   "office_ratio": 0.09,
   "ratio_n": 2,
@@ -259362,7 +259984,7 @@
   "ji": "0007",
   "addr": "경기도 용인시 기흥구 중동 676-7번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-31",
   "start": "2024-02-06",
   "complete": null,
@@ -259410,8 +260032,8 @@
   "sgg_code": "11200",
   "dong": "성수동2가",
   "zone": "서울 기타",
-  "lat": 37.55874,
-  "lng": 127.0389,
+  "lat": 37.5442303221543,
+  "lng": 127.064509668123,
   "gfa": 1745,
   "office_ratio": null,
   "ratio_n": 0,
@@ -259422,7 +260044,7 @@
   "ji": "0011",
   "addr": "서울특별시 성동구 성수동2가 19-11번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-30",
   "start": "2022-05-20",
   "complete": "2024-12-18",
@@ -259440,8 +260062,8 @@
   "sgg_code": "11200",
   "dong": "성수동2가",
   "zone": "서울 기타",
-  "lat": 37.54885,
-  "lng": 127.03528,
+  "lat": 37.5415718445477,
+  "lng": 127.054276253722,
   "gfa": 2636,
   "office_ratio": null,
   "ratio_n": 0,
@@ -259452,7 +260074,7 @@
   "ji": "0059",
   "addr": "서울특별시 성동구 성수동2가 309-59번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-30",
   "start": null,
   "complete": null,
@@ -259470,8 +260092,8 @@
   "sgg_code": "41450",
   "dong": "망월동",
   "zone": "수도권",
-  "lat": 37.51694,
-  "lng": 127.21088,
+  "lat": 37.5658272659072,
+  "lng": 127.189909534221,
   "gfa": 16163,
   "office_ratio": 0.01,
   "ratio_n": 2,
@@ -259482,7 +260104,7 @@
   "ji": "0000",
   "addr": "경기도 하남시 망월동 1085번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-30",
   "start": null,
   "complete": null,
@@ -259500,8 +260122,8 @@
   "sgg_code": "41480",
   "dong": "금촌동",
   "zone": "수도권",
-  "lat": 37.87183,
-  "lng": 126.82356,
+  "lat": 37.7551360352367,
+  "lng": 126.77678698464,
   "gfa": 1894,
   "office_ratio": null,
   "ratio_n": 0,
@@ -259512,7 +260134,7 @@
   "ji": "0001",
   "addr": "경기도 파주시 금촌동 800-1번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-30",
   "start": "2022-04-15",
   "complete": "2022-11-30",
@@ -259530,8 +260152,8 @@
   "sgg_code": "28125",
   "dong": "인현동",
   "zone": "수도권",
-  "lat": null,
-  "lng": null,
+  "lat": 37.4739056414221,
+  "lng": 126.633639588428,
   "gfa": 14527,
   "office_ratio": 0.0,
   "ratio_n": 2,
@@ -259542,7 +260164,7 @@
   "ji": "0197",
   "addr": "인천광역시 제물포구 인현동 1-197번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-30",
   "start": "2022-09-30",
   "complete": null,
@@ -259560,8 +260182,8 @@
   "sgg_code": "52113",
   "dong": "만성동",
   "zone": "지방",
-  "lat": 35.85557,
-  "lng": 127.11236,
+  "lat": 35.8445451729948,
+  "lng": 127.074424688256,
   "gfa": 3770,
   "office_ratio": 0.58,
   "ratio_n": 2,
@@ -259572,7 +260194,7 @@
   "ji": "0006",
   "addr": "전북특별자치도 전주시 덕진구 만성동 1365-6번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-30",
   "start": null,
   "complete": null,
@@ -259590,8 +260212,8 @@
   "sgg_code": "12300",
   "dong": "문흥동",
   "zone": "지방",
-  "lat": null,
-  "lng": null,
+  "lat": 35.1780484979597,
+  "lng": 126.91596168443,
   "gfa": 1154,
   "office_ratio": null,
   "ratio_n": 0,
@@ -259602,7 +260224,7 @@
   "ji": "0013",
   "addr": "전남광주통합특별시 북구 문흥동 733-13번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-30",
   "start": null,
   "complete": null,
@@ -259650,8 +260272,8 @@
   "sgg_code": "30140",
   "dong": "대흥동",
   "zone": "지방",
-  "lat": 36.27005,
-  "lng": 127.41154,
+  "lat": 36.3235407258525,
+  "lng": 127.426976078428,
   "gfa": 2997,
   "office_ratio": null,
   "ratio_n": 0,
@@ -259662,7 +260284,7 @@
   "ji": "0001",
   "addr": "대전광역시 중구 대흥동 443-1번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-30",
   "start": null,
   "complete": null,
@@ -259680,8 +260302,8 @@
   "sgg_code": "41113",
   "dong": "고색동",
   "zone": "수도권",
-  "lat": 37.27144,
-  "lng": 126.97958,
+  "lat": 37.2545866464163,
+  "lng": 126.971877277438,
   "gfa": 10369,
   "office_ratio": 0.0,
   "ratio_n": 2,
@@ -259692,7 +260314,7 @@
   "ji": "0000",
   "addr": "경기도 수원시 권선구 고색동 1183번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-30",
   "start": "2025-03-28",
   "complete": null,
@@ -259770,8 +260392,8 @@
   "sgg_code": "11680",
   "dong": "개포동",
   "zone": "GBD",
-  "lat": 37.49315,
-  "lng": 127.05826,
+  "lat": 37.4933307049778,
+  "lng": 127.076949959324,
   "gfa": 11624,
   "office_ratio": 0.97,
   "ratio_n": 2,
@@ -259782,7 +260404,7 @@
   "ji": "0000",
   "addr": "서울특별시 강남구 개포동 14번지",
   "public": true,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-29",
   "start": "2022-07-08",
   "complete": null,
@@ -259800,8 +260422,8 @@
   "sgg_code": "11380",
   "dong": "불광동",
   "zone": "서울 기타",
-  "lat": 37.6184,
-  "lng": 126.93062,
+  "lat": 37.6181044406777,
+  "lng": 126.92265624561,
   "gfa": 98705,
   "office_ratio": 0.05,
   "ratio_n": 2,
@@ -259812,7 +260434,7 @@
   "ji": "0003",
   "addr": "서울특별시 은평구 불광동 305-3번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-29",
   "start": null,
   "complete": null,
@@ -259830,8 +260452,8 @@
   "sgg_code": "11305",
   "dong": "수유동",
   "zone": "서울 기타",
-  "lat": 37.64845,
-  "lng": 127.02054,
+  "lat": 37.6344211076684,
+  "lng": 127.022862985412,
   "gfa": 11882,
   "office_ratio": 0.16,
   "ratio_n": 2,
@@ -259842,7 +260464,7 @@
   "ji": "0001",
   "addr": "서울특별시 강북구 수유동 48-1번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-29",
   "start": "2022-04-04",
   "complete": "2022-05-03",
@@ -259860,8 +260482,8 @@
   "sgg_code": "11110",
   "dong": "청진동",
   "zone": "CBD",
-  "lat": 37.60386,
-  "lng": 126.97714,
+  "lat": 37.571069743454,
+  "lng": 126.978928832522,
   "gfa": 105450,
   "office_ratio": 0.51,
   "ratio_n": 2,
@@ -259872,7 +260494,7 @@
   "ji": "0000",
   "addr": "서울특별시 종로구 청진동 246번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-29",
   "start": "2022-05-02",
   "complete": "2022-08-23",
@@ -259890,8 +260512,8 @@
   "sgg_code": "41113",
   "dong": "권선동",
   "zone": "수도권",
-  "lat": 37.26427,
-  "lng": 126.9789,
+  "lat": 37.2589479320763,
+  "lng": 127.029736808637,
   "gfa": 4044,
   "office_ratio": 0.08,
   "ratio_n": 2,
@@ -259902,7 +260524,7 @@
   "ji": "0000",
   "addr": "경기도 수원시 권선구 권선동 1022번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-29",
   "start": "2022-06-22",
   "complete": "2022-11-29",
@@ -259920,8 +260542,8 @@
   "sgg_code": "11110",
   "dong": "공평동",
   "zone": "CBD",
-  "lat": 37.59871,
-  "lng": 126.98898,
+  "lat": 37.5718537959692,
+  "lng": 126.984157122315,
   "gfa": 27530,
   "office_ratio": 0.61,
   "ratio_n": 2,
@@ -259932,7 +260554,7 @@
   "ji": "0000",
   "addr": "서울특별시 종로구 공평동 1번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-29",
   "start": null,
   "complete": "2022-08-03",
@@ -259950,8 +260572,8 @@
   "sgg_code": "41597",
   "dong": "송동",
   "zone": "수도권",
-  "lat": 37.15407,
-  "lng": 126.87972,
+  "lat": 37.165637422176,
+  "lng": 127.092846366361,
   "gfa": 58219,
   "office_ratio": 0.99,
   "ratio_n": 2,
@@ -259962,7 +260584,7 @@
   "ji": "0000",
   "addr": "경기도 화성시 동탄구 송동 718번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-29",
   "start": "2022-06-08",
   "complete": "2024-09-30",
@@ -260010,8 +260632,8 @@
   "sgg_code": "48123",
   "dong": "상남동",
   "zone": "지방",
-  "lat": 35.20158,
-  "lng": 128.68248,
+  "lat": 35.2235420162874,
+  "lng": 128.685696963484,
   "gfa": 2238,
   "office_ratio": null,
   "ratio_n": 0,
@@ -260022,7 +260644,7 @@
   "ji": "0001",
   "addr": "경상남도 창원시 성산구 상남동 4-1번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-29",
   "start": null,
   "complete": null,
@@ -260040,8 +260662,8 @@
   "sgg_code": "11500",
   "dong": "내발산동",
   "zone": "서울 기타",
-  "lat": 37.5592,
-  "lng": 126.82456,
+  "lat": 37.5540312994782,
+  "lng": 126.837144185139,
   "gfa": 5029,
   "office_ratio": 0.44,
   "ratio_n": 2,
@@ -260052,7 +260674,7 @@
   "ji": "0000",
   "addr": "서울특별시 강서구 내발산동 677번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-29",
   "start": "2022-03-30",
   "complete": "2022-04-07",
@@ -260070,8 +260692,8 @@
   "sgg_code": "41570",
   "dong": "풍무동",
   "zone": "수도권",
-  "lat": 37.66229,
-  "lng": 126.626,
+  "lat": 37.6128465269373,
+  "lng": 126.72806367287,
   "gfa": 51931,
   "office_ratio": 0.0,
   "ratio_n": 2,
@@ -260082,7 +260704,7 @@
   "ji": "0000",
   "addr": "경기도 김포시 풍무동 880번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-29",
   "start": "2022-08-17",
   "complete": "2025-03-24",
@@ -260130,8 +260752,8 @@
   "sgg_code": "11650",
   "dong": "반포동",
   "zone": "GBD",
-  "lat": 37.47022,
-  "lng": 127.03114,
+  "lat": 37.5042127771612,
+  "lng": 127.021772558495,
   "gfa": 4997,
   "office_ratio": 0.29,
   "ratio_n": 2,
@@ -260142,7 +260764,7 @@
   "ji": "0005",
   "addr": "서울특별시 서초구 반포동 746-5번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-29",
   "start": null,
   "complete": null,
@@ -260160,8 +260782,8 @@
   "sgg_code": "11680",
   "dong": "논현동",
   "zone": "GBD",
-  "lat": 37.49534,
-  "lng": 127.07156,
+  "lat": 37.511703242535,
+  "lng": 127.021492418367,
   "gfa": 18606,
   "office_ratio": 0.57,
   "ratio_n": 2,
@@ -260172,7 +260794,7 @@
   "ji": "0001",
   "addr": "서울특별시 강남구 논현동 50-1번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-28",
   "start": null,
   "complete": "2022-07-28",
@@ -260190,8 +260812,8 @@
   "sgg_code": "11560",
   "dong": "여의도동",
   "zone": "YBD",
-  "lat": 37.51824,
-  "lng": 126.91132,
+  "lat": 37.5197804119542,
+  "lng": 126.928031702792,
   "gfa": 47362,
   "office_ratio": 0.79,
   "ratio_n": 2,
@@ -260202,7 +260824,7 @@
   "ji": "0001",
   "addr": "서울특별시 영등포구 여의도동 45-1번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-28",
   "start": null,
   "complete": "2022-05-17",
@@ -260220,8 +260842,8 @@
   "sgg_code": "11560",
   "dong": "여의도동",
   "zone": "YBD",
-  "lat": 37.51686,
-  "lng": 126.90062,
+  "lat": 37.5193316365195,
+  "lng": 126.93279658322,
   "gfa": 5647,
   "office_ratio": 0.72,
   "ratio_n": 2,
@@ -260232,7 +260854,7 @@
   "ji": "0000",
   "addr": "서울특별시 영등포구 여의도동 53번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-28",
   "start": null,
   "complete": null,
@@ -260250,8 +260872,8 @@
   "sgg_code": "11545",
   "dong": "가산동",
   "zone": "서울 기타",
-  "lat": 37.46857,
-  "lng": 126.91304,
+  "lat": 37.4795084133545,
+  "lng": 126.888748077071,
   "gfa": 6681,
   "office_ratio": 0.04,
   "ratio_n": 2,
@@ -260262,7 +260884,7 @@
   "ji": "0008",
   "addr": "서울특별시 금천구 가산동 139-8번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-28",
   "start": "2022-05-03",
   "complete": "2022-12-30",
@@ -260280,8 +260902,8 @@
   "sgg_code": "11110",
   "dong": "평창동",
   "zone": "CBD",
-  "lat": 37.60713,
-  "lng": 126.98296,
+  "lat": 37.6061519606906,
+  "lng": 126.967105705784,
   "gfa": 4040,
   "office_ratio": 0.3,
   "ratio_n": 2,
@@ -260292,7 +260914,7 @@
   "ji": "0011",
   "addr": "서울특별시 종로구 평창동 182-11번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-28",
   "start": null,
   "complete": null,
@@ -260310,8 +260932,8 @@
   "sgg_code": "11110",
   "dong": "연지동",
   "zone": "CBD",
-  "lat": 37.60492,
-  "lng": 126.98466,
+  "lat": 37.5729127139758,
+  "lng": 127.000887825899,
   "gfa": 31981,
   "office_ratio": 0.79,
   "ratio_n": 2,
@@ -260322,7 +260944,7 @@
   "ji": "0056",
   "addr": "서울특별시 종로구 연지동 136-56번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-28",
   "start": null,
   "complete": null,
@@ -260340,8 +260962,8 @@
   "sgg_code": "12210",
   "dong": "학동",
   "zone": "지방",
-  "lat": null,
-  "lng": null,
+  "lat": 35.1406808475654,
+  "lng": 126.920926934242,
   "gfa": 6242,
   "office_ratio": 0.99,
   "ratio_n": 2,
@@ -260352,7 +260974,7 @@
   "ji": "0000",
   "addr": "전남광주통합특별시 동구 학동 69번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-28",
   "start": "2022-06-21",
   "complete": "2022-07-19",
@@ -260370,8 +260992,8 @@
   "sgg_code": "41463",
   "dong": "서천동",
   "zone": "수도권",
-  "lat": 37.27166,
-  "lng": 127.11004,
+  "lat": 37.2427684484146,
+  "lng": 127.066808757645,
   "gfa": 1707,
   "office_ratio": null,
   "ratio_n": 0,
@@ -260382,7 +261004,7 @@
   "ji": "0001",
   "addr": "경기도 용인시 기흥구 서천동 373-1번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-28",
   "start": null,
   "complete": null,
@@ -260400,8 +261022,8 @@
   "sgg_code": "27290",
   "dong": "호산동",
   "zone": "지방",
-  "lat": 35.82156,
-  "lng": 128.54362,
+  "lat": 35.8433798764904,
+  "lng": 128.488369572827,
   "gfa": 1379,
   "office_ratio": null,
   "ratio_n": 0,
@@ -260412,7 +261034,7 @@
   "ji": "0013",
   "addr": "대구광역시 달서구 호산동 715-13번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-28",
   "start": "2022-04-07",
   "complete": "2023-06-30",
@@ -260460,8 +261082,8 @@
   "sgg_code": "11680",
   "dong": "청담동",
   "zone": "GBD",
-  "lat": 37.50395,
-  "lng": 127.0722,
+  "lat": 37.5252841419317,
+  "lng": 127.047238651481,
   "gfa": 11256,
   "office_ratio": 0.01,
   "ratio_n": 2,
@@ -260472,7 +261094,7 @@
   "ji": "0017",
   "addr": "서울특별시 강남구 청담동 118-17번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-28",
   "start": "2022-04-06",
   "complete": "2022-05-19",
@@ -260520,8 +261142,8 @@
   "sgg_code": "11560",
   "dong": "영등포동2가",
   "zone": "YBD",
-  "lat": 37.52283,
-  "lng": 126.90248,
+  "lat": 37.5205458077288,
+  "lng": 126.91229396992,
   "gfa": 17352,
   "office_ratio": 0.81,
   "ratio_n": 2,
@@ -260532,7 +261154,7 @@
   "ji": "0155",
   "addr": "서울특별시 영등포구 영등포동2가 94-155번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-25",
   "start": null,
   "complete": null,
@@ -260550,8 +261172,8 @@
   "sgg_code": "11290",
   "dong": "정릉동",
   "zone": "서울 기타",
-  "lat": 37.61108,
-  "lng": 127.02456,
+  "lat": 37.6014656949573,
+  "lng": 127.014041796169,
   "gfa": 1035,
   "office_ratio": null,
   "ratio_n": 0,
@@ -260562,7 +261184,7 @@
   "ji": "0024",
   "addr": "서울특별시 성북구 정릉동 109-24번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-25",
   "start": "2022-09-23",
   "complete": "2023-08-28",
@@ -260580,8 +261202,8 @@
   "sgg_code": "11500",
   "dong": "화곡동",
   "zone": "서울 기타",
-  "lat": 37.55049,
-  "lng": 126.82188,
+  "lat": 37.5466234915337,
+  "lng": 126.847825962803,
   "gfa": 698,
   "office_ratio": null,
   "ratio_n": 0,
@@ -260592,7 +261214,7 @@
   "ji": "0044",
   "addr": "서울특별시 강서구 화곡동 29-44번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-25",
   "start": null,
   "complete": null,
@@ -260640,8 +261262,8 @@
   "sgg_code": "48123",
   "dong": "상남동",
   "zone": "지방",
-  "lat": 35.19361,
-  "lng": 128.67684,
+  "lat": 35.2223891304679,
+  "lng": 128.681106583363,
   "gfa": 29473,
   "office_ratio": 0.27,
   "ratio_n": 2,
@@ -260652,7 +261274,7 @@
   "ji": "0001",
   "addr": "경상남도 창원시 성산구 상남동 76-1번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-25",
   "start": null,
   "complete": null,
@@ -260670,8 +261292,8 @@
   "sgg_code": "41310",
   "dong": "인창동",
   "zone": "수도권",
-  "lat": 37.60077,
-  "lng": 127.12364,
+  "lat": 37.6013864555278,
+  "lng": 127.140617423945,
   "gfa": 17727,
   "office_ratio": 0.38,
   "ratio_n": 2,
@@ -260682,7 +261304,7 @@
   "ji": "0008",
   "addr": "경기도 구리시 인창동 266-8번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-25",
   "start": null,
   "complete": null,
@@ -260700,8 +261322,8 @@
   "sgg_code": "11470",
   "dong": "목동",
   "zone": "서울 기타",
-  "lat": 37.53436,
-  "lng": 126.85322,
+  "lat": 37.5499740607704,
+  "lng": 126.866149503293,
   "gfa": 1462,
   "office_ratio": null,
   "ratio_n": 0,
@@ -260712,7 +261334,7 @@
   "ji": "0005",
   "addr": "서울특별시 양천구 목동 604-5번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-25",
   "start": "2024-10-07",
   "complete": null,
@@ -260730,8 +261352,8 @@
   "sgg_code": "12170",
   "dong": "빛가람동",
   "zone": "지방",
-  "lat": 34.95872,
-  "lng": 126.71684,
+  "lat": 35.0105527962842,
+  "lng": 126.769344438448,
   "gfa": 20684,
   "office_ratio": 0.0,
   "ratio_n": 2,
@@ -260742,7 +261364,7 @@
   "ji": "0007",
   "addr": "전남광주통합특별시 나주시 빛가람동 943-7번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-25",
   "start": "2022-04-27",
   "complete": null,
@@ -260760,8 +261382,8 @@
   "sgg_code": "12170",
   "dong": "빛가람동",
   "zone": "지방",
-  "lat": 34.96405,
-  "lng": 126.71698,
+  "lat": 35.0084104640674,
+  "lng": 126.770902724615,
   "gfa": 17652,
   "office_ratio": 0.0,
   "ratio_n": 2,
@@ -260772,7 +261394,7 @@
   "ji": "0003",
   "addr": "전남광주통합특별시 나주시 빛가람동 953-3번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-25",
   "start": null,
   "complete": null,
@@ -260880,8 +261502,8 @@
   "sgg_code": "11680",
   "dong": "도곡동",
   "zone": "GBD",
-  "lat": 37.49147,
-  "lng": 127.076,
+  "lat": 37.482798157038,
+  "lng": 127.046264529844,
   "gfa": 3280,
   "office_ratio": 0.91,
   "ratio_n": 2,
@@ -260892,7 +261514,7 @@
   "ji": "0005",
   "addr": "서울특별시 강남구 도곡동 454-5번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-24",
   "start": null,
   "complete": null,
@@ -260910,8 +261532,8 @@
   "sgg_code": "11560",
   "dong": "영등포동3가",
   "zone": "YBD",
-  "lat": 37.52005,
-  "lng": 126.90832,
+  "lat": 37.5182142996397,
+  "lng": 126.911111571274,
   "gfa": 5360,
   "office_ratio": 0.0,
   "ratio_n": 2,
@@ -260922,7 +261544,7 @@
   "ji": "0001",
   "addr": "서울특별시 영등포구 영등포동3가 1-1번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-24",
   "start": "2022-08-30",
   "complete": "2025-02-27",
@@ -260940,8 +261562,8 @@
   "sgg_code": "11140",
   "dong": "명동1가",
   "zone": "CBD",
-  "lat": 37.55359,
-  "lng": 126.9988,
+  "lat": 37.5640039477834,
+  "lng": 126.984742373379,
   "gfa": 9130,
   "office_ratio": 0.12,
   "ratio_n": 2,
@@ -260952,7 +261574,7 @@
   "ji": "0001",
   "addr": "서울특별시 중구 명동1가 53-1번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-24",
   "start": "2022-04-20",
   "complete": "2022-06-24",
@@ -260970,8 +261592,8 @@
   "sgg_code": "41463",
   "dong": "서천동",
   "zone": "수도권",
-  "lat": 37.26518,
-  "lng": 127.11378,
+  "lat": 37.2411062091906,
+  "lng": 127.069608489911,
   "gfa": 1372,
   "office_ratio": null,
   "ratio_n": 0,
@@ -260982,7 +261604,7 @@
   "ji": "0001",
   "addr": "경기도 용인시 기흥구 서천동 399-1번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-24",
   "start": "2022-05-06",
   "complete": "2023-03-28",
@@ -261000,8 +261622,8 @@
   "sgg_code": "51210",
   "dong": "교동",
   "zone": "지방",
-  "lat": 38.17851,
-  "lng": 128.52672,
+  "lat": 38.1967503225075,
+  "lng": 128.576286847438,
   "gfa": 5497,
   "office_ratio": 0.36,
   "ratio_n": 2,
@@ -261012,7 +261634,7 @@
   "ji": "0000",
   "addr": "강원특별자치도 속초시 교동 979번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-24",
   "start": null,
   "complete": null,
@@ -261030,8 +261652,8 @@
   "sgg_code": "12240",
   "dong": "치평동",
   "zone": "지방",
-  "lat": null,
-  "lng": null,
+  "lat": 35.1507957267528,
+  "lng": 126.842305376347,
   "gfa": 10124,
   "office_ratio": 0.99,
   "ratio_n": 2,
@@ -261042,7 +261664,7 @@
   "ji": "0004",
   "addr": "전남광주통합특별시 서구 치평동 1161-4번지",
   "public": true,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-24",
   "start": "2022-06-15",
   "complete": null,
@@ -261060,8 +261682,8 @@
   "sgg_code": "11440",
   "dong": "상암동",
   "zone": "YBD",
-  "lat": 37.56772,
-  "lng": 126.92036,
+  "lat": 37.5761715316813,
+  "lng": 126.889217882668,
   "gfa": 70144,
   "office_ratio": 0.41,
   "ratio_n": 2,
@@ -261072,7 +261694,7 @@
   "ji": "0000",
   "addr": "서울특별시 마포구 상암동 1647번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-23",
   "start": null,
   "complete": null,
@@ -261090,8 +261712,8 @@
   "sgg_code": "11140",
   "dong": "필동1가",
   "zone": "CBD",
-  "lat": 37.5641,
-  "lng": 126.9968,
+  "lat": 37.561471961783,
+  "lng": 126.993470616417,
   "gfa": 7442,
   "office_ratio": 0.46,
   "ratio_n": 2,
@@ -261102,7 +261724,7 @@
   "ji": "0009",
   "addr": "서울특별시 중구 필동1가 51-9번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-23",
   "start": null,
   "complete": null,
@@ -261120,8 +261742,8 @@
   "sgg_code": "41131",
   "dong": "창곡동",
   "zone": "수도권",
-  "lat": 37.43412,
-  "lng": 127.11642,
+  "lat": 37.4646744952672,
+  "lng": 127.141314894809,
   "gfa": 69237,
   "office_ratio": 0.0,
   "ratio_n": 2,
@@ -261132,7 +261754,7 @@
   "ji": "0001",
   "addr": "경기도 성남시 수정구 창곡동 560-1번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-23",
   "start": null,
   "complete": null,
@@ -261150,8 +261772,8 @@
   "sgg_code": "11650",
   "dong": "반포동",
   "zone": "GBD",
-  "lat": 37.47091,
-  "lng": 127.03756,
+  "lat": 37.5039143102981,
+  "lng": 127.009072749221,
   "gfa": 3525,
   "office_ratio": 0.04,
   "ratio_n": 2,
@@ -261162,7 +261784,7 @@
   "ji": "0006",
   "addr": "서울특별시 서초구 반포동 59-6번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-23",
   "start": null,
   "complete": null,
@@ -261180,8 +261802,8 @@
   "sgg_code": "12240",
   "dong": "농성동",
   "zone": "지방",
-  "lat": null,
-  "lng": null,
+  "lat": 35.150581031226,
+  "lng": 126.887020435669,
   "gfa": 4420,
   "office_ratio": 0.89,
   "ratio_n": 2,
@@ -261192,7 +261814,7 @@
   "ji": "0012",
   "addr": "전남광주통합특별시 서구 농성동 644-12번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-23",
   "start": null,
   "complete": null,
@@ -261210,8 +261832,8 @@
   "sgg_code": "11110",
   "dong": "창신동",
   "zone": "CBD",
-  "lat": 37.59505,
-  "lng": 126.98218,
+  "lat": 37.5758188679983,
+  "lng": 127.015357732134,
   "gfa": 1897,
   "office_ratio": null,
   "ratio_n": 0,
@@ -261222,7 +261844,7 @@
   "ji": "0001",
   "addr": "서울특별시 종로구 창신동 25-1번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-23",
   "start": "2022-10-25",
   "complete": null,
@@ -261330,8 +261952,8 @@
   "sgg_code": "11590",
   "dong": "신대방동",
   "zone": "서울 기타",
-  "lat": 37.49115,
-  "lng": 126.94798,
+  "lat": 37.490782226725,
+  "lng": 126.923219894058,
   "gfa": 60190,
   "office_ratio": 0.42,
   "ratio_n": 2,
@@ -261342,7 +261964,7 @@
   "ji": "0067",
   "addr": "서울특별시 동작구 신대방동 395-67번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-22",
   "start": null,
   "complete": null,
@@ -261360,8 +261982,8 @@
   "sgg_code": "11140",
   "dong": "충무로3가",
   "zone": "CBD",
-  "lat": 37.55213,
-  "lng": 127.00018,
+  "lat": 37.5616417359598,
+  "lng": 126.991114589938,
   "gfa": 97806,
   "office_ratio": 0.64,
   "ratio_n": 2,
@@ -261372,7 +261994,7 @@
   "ji": "0001",
   "addr": "서울특별시 중구 충무로3가 60-1번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-22",
   "start": null,
   "complete": null,
@@ -261390,8 +262012,8 @@
   "sgg_code": "11110",
   "dong": "종로2가",
   "zone": "CBD",
-  "lat": 37.59775,
-  "lng": 126.97712,
+  "lat": 37.5699262629474,
+  "lng": 126.986029893434,
   "gfa": 6599,
   "office_ratio": 0.43,
   "ratio_n": 2,
@@ -261402,7 +262024,7 @@
   "ji": "0009",
   "addr": "서울특별시 종로구 종로2가 75-9번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-22",
   "start": null,
   "complete": null,
@@ -261420,8 +262042,8 @@
   "sgg_code": "41115",
   "dong": "매교동",
   "zone": "수도권",
-  "lat": 37.27755,
-  "lng": 127.02506,
+  "lat": 37.2681015640653,
+  "lng": 127.016045312746,
   "gfa": 3860,
   "office_ratio": 0.07,
   "ratio_n": 2,
@@ -261432,7 +262054,7 @@
   "ji": "0020",
   "addr": "경기도 수원시 팔달구 매교동 159-20번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-22",
   "start": "2022-12-29",
   "complete": "2024-12-10",
@@ -261450,8 +262072,8 @@
   "sgg_code": "41390",
   "dong": "배곧동",
   "zone": "수도권",
-  "lat": 37.39466,
-  "lng": 126.78658,
+  "lat": 37.3677382224319,
+  "lng": 126.728416943092,
   "gfa": 19351,
   "office_ratio": 0.31,
   "ratio_n": 2,
@@ -261462,7 +262084,7 @@
   "ji": "0000",
   "addr": "경기도 시흥시 배곧동 218번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-22",
   "start": null,
   "complete": null,
@@ -261480,8 +262102,8 @@
   "sgg_code": "43113",
   "dong": "봉명동",
   "zone": "지방",
-  "lat": 36.62682,
-  "lng": 127.43242,
+  "lat": 36.6565060347246,
+  "lng": 127.45514544074,
   "gfa": 11687,
   "office_ratio": 0.98,
   "ratio_n": 2,
@@ -261492,7 +262114,7 @@
   "ji": "0000",
   "addr": "충청북도 청주시 흥덕구 봉명동 2342번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-22",
   "start": "2022-05-11",
   "complete": "2023-05-22",
@@ -261630,8 +262252,8 @@
   "sgg_code": "11140",
   "dong": "회현동2가",
   "zone": "CBD",
-  "lat": 37.55426,
-  "lng": 126.98916,
+  "lat": 37.560143920116,
+  "lng": 126.982929217287,
   "gfa": 66799,
   "office_ratio": 0.94,
   "ratio_n": 2,
@@ -261642,7 +262264,7 @@
   "ji": "0000",
   "addr": "서울특별시 중구 회현동2가 88번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-21",
   "start": "2022-03-29",
   "complete": "2022-05-19",
@@ -261660,8 +262282,8 @@
   "sgg_code": "48121",
   "dong": "팔용동",
   "zone": "지방",
-  "lat": 35.30011,
-  "lng": 128.65244,
+  "lat": 35.2333981347666,
+  "lng": 128.636413022333,
   "gfa": 991,
   "office_ratio": null,
   "ratio_n": 0,
@@ -261672,7 +262294,7 @@
   "ji": "0022",
   "addr": "경상남도 창원시 의창구 팔용동 11-22번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-21",
   "start": "2022-08-31",
   "complete": "2023-10-11",
@@ -261690,8 +262312,8 @@
   "sgg_code": "41595",
   "dong": "병점동",
   "zone": "수도권",
-  "lat": 37.16064,
-  "lng": 126.89138,
+  "lat": 37.2050819000139,
+  "lng": 127.029735374986,
   "gfa": 28237,
   "office_ratio": 0.0,
   "ratio_n": 2,
@@ -261702,7 +262324,7 @@
   "ji": "0005",
   "addr": "경기도 화성시 병점구 병점동 884-5번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-21",
   "start": "2022-07-28",
   "complete": "2025-04-15",
@@ -261780,8 +262402,8 @@
   "sgg_code": "11650",
   "dong": "서초동",
   "zone": "GBD",
-  "lat": 37.46468,
-  "lng": 127.03638,
+  "lat": 37.4927946814035,
+  "lng": 127.028554195016,
   "gfa": 3822,
   "office_ratio": 0.51,
   "ratio_n": 2,
@@ -261792,7 +262414,7 @@
   "ji": "0009",
   "addr": "서울특별시 서초구 서초동 1330-9번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-18",
   "start": null,
   "complete": null,
@@ -261810,8 +262432,8 @@
   "sgg_code": "11680",
   "dong": "삼성동",
   "zone": "GBD",
-  "lat": 37.49009,
-  "lng": 127.07048,
+  "lat": 37.5061488030394,
+  "lng": 127.052172405778,
   "gfa": 1999,
   "office_ratio": null,
   "ratio_n": 0,
@@ -261822,7 +262444,7 @@
   "ji": "0027",
   "addr": "서울특별시 강남구 삼성동 142-27번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-18",
   "start": "2022-07-28",
   "complete": "2024-06-14",
@@ -261840,8 +262462,8 @@
   "sgg_code": "11530",
   "dong": "신도림동",
   "zone": "서울 기타",
-  "lat": 37.49123,
-  "lng": 126.85368,
+  "lat": 37.5094208797108,
+  "lng": 126.887743559932,
   "gfa": 187744,
   "office_ratio": 0.55,
   "ratio_n": 2,
@@ -261852,7 +262474,7 @@
   "ji": "0000",
   "addr": "서울특별시 구로구 신도림동 337번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-18",
   "start": null,
   "complete": null,
@@ -261870,8 +262492,8 @@
   "sgg_code": "11110",
   "dong": "연지동",
   "zone": "CBD",
-  "lat": 37.60446,
-  "lng": 126.97562,
+  "lat": 37.5754186530319,
+  "lng": 126.999497828935,
   "gfa": 18090,
   "office_ratio": 0.47,
   "ratio_n": 2,
@@ -261882,7 +262504,7 @@
   "ji": "0001",
   "addr": "서울특별시 종로구 연지동 1-1번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-18",
   "start": null,
   "complete": null,
@@ -261900,8 +262522,8 @@
   "sgg_code": "41281",
   "dong": "행신동",
   "zone": "수도권",
-  "lat": 37.67106,
-  "lng": 126.90092,
+  "lat": 37.6138351234462,
+  "lng": 126.835008443105,
   "gfa": 7047,
   "office_ratio": 0.0,
   "ratio_n": 2,
@@ -261912,7 +262534,7 @@
   "ji": "0001",
   "addr": "경기도 고양시 덕양구 행신동 763-1번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-18",
   "start": null,
   "complete": null,
@@ -261930,8 +262552,8 @@
   "sgg_code": "28125",
   "dong": "금곡동",
   "zone": "수도권",
-  "lat": null,
-  "lng": null,
+  "lat": 37.4734546043705,
+  "lng": 126.642406254529,
   "gfa": 19071,
   "office_ratio": 0.0,
   "ratio_n": 2,
@@ -261942,7 +262564,7 @@
   "ji": "0022",
   "addr": "인천광역시 제물포구 금곡동 54-22번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-18",
   "start": null,
   "complete": null,
@@ -262020,8 +262642,8 @@
   "sgg_code": "41281",
   "dong": "삼송동",
   "zone": "수도권",
-  "lat": 37.66936,
-  "lng": 126.8904,
+  "lat": 37.6523759521336,
+  "lng": 126.90055295361,
   "gfa": 79165,
   "office_ratio": 0.0,
   "ratio_n": 2,
@@ -262032,7 +262654,7 @@
   "ji": "0000",
   "addr": "경기도 고양시 덕양구 삼송동 295번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-18",
   "start": "2022-05-18",
   "complete": "2022-06-10",
@@ -262050,8 +262672,8 @@
   "sgg_code": "41370",
   "dong": "세교동",
   "zone": "수도권",
-  "lat": 37.16181,
-  "lng": 127.0588,
+  "lat": 37.1882796393456,
+  "lng": 127.043382423335,
   "gfa": 28726,
   "office_ratio": 0.0,
   "ratio_n": 2,
@@ -262062,7 +262684,7 @@
   "ji": "0001",
   "addr": "경기도 오산시 세교동 590-1번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-18",
   "start": "2022-08-01",
   "complete": "2025-08-12",
@@ -262080,8 +262702,8 @@
   "sgg_code": "11680",
   "dong": "논현동",
   "zone": "GBD",
-  "lat": 37.49539,
-  "lng": 127.059,
+  "lat": 37.5210548135018,
+  "lng": 127.036060723481,
   "gfa": 8328,
   "office_ratio": 0.0,
   "ratio_n": 2,
@@ -262092,7 +262714,7 @@
   "ji": "0007",
   "addr": "서울특별시 강남구 논현동 97-7번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-17",
   "start": null,
   "complete": "2022-07-12",
@@ -262110,8 +262732,8 @@
   "sgg_code": "11560",
   "dong": "영등포동2가",
   "zone": "YBD",
-  "lat": 37.52267,
-  "lng": 126.90458,
+  "lat": 37.5221326406335,
+  "lng": 126.911913489825,
   "gfa": 1953,
   "office_ratio": null,
   "ratio_n": 0,
@@ -262122,7 +262744,7 @@
   "ji": "0380",
   "addr": "서울특별시 영등포구 영등포동2가 94-380번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-17",
   "start": null,
   "complete": null,
@@ -262140,8 +262762,8 @@
   "sgg_code": "11380",
   "dong": "불광동",
   "zone": "서울 기타",
-  "lat": 37.61364,
-  "lng": 126.92884,
+  "lat": 37.6263729620063,
+  "lng": 126.92730363225,
   "gfa": 3546,
   "office_ratio": 0.7,
   "ratio_n": 2,
@@ -262152,7 +262774,7 @@
   "ji": "0002",
   "addr": "서울특별시 은평구 불광동 81-2번지",
   "public": true,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-17",
   "start": null,
   "complete": null,
@@ -262170,8 +262792,8 @@
   "sgg_code": "11140",
   "dong": "서소문동",
   "zone": "CBD",
-  "lat": 37.56128,
-  "lng": 126.9879,
+  "lat": 37.5628744895173,
+  "lng": 126.971716755082,
   "gfa": 15755,
   "office_ratio": 0.82,
   "ratio_n": 2,
@@ -262182,7 +262804,7 @@
   "ji": "0010",
   "addr": "서울특별시 중구 서소문동 57-10번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-17",
   "start": null,
   "complete": null,
@@ -262200,8 +262822,8 @@
   "sgg_code": "41115",
   "dong": "인계동",
   "zone": "수도권",
-  "lat": 37.27325,
-  "lng": 127.01578,
+  "lat": 37.2655862058637,
+  "lng": 127.027396381989,
   "gfa": 9971,
   "office_ratio": 0.05,
   "ratio_n": 2,
@@ -262212,7 +262834,7 @@
   "ji": "0001",
   "addr": "경기도 수원시 팔달구 인계동 1025-1번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-17",
   "start": "2022-07-12",
   "complete": "2024-08-14",
@@ -262230,8 +262852,8 @@
   "sgg_code": "41450",
   "dong": "망월동",
   "zone": "수도권",
-  "lat": 37.51684,
-  "lng": 127.20494,
+  "lat": 37.5656807841403,
+  "lng": 127.197422173594,
   "gfa": 14844,
   "office_ratio": 0.0,
   "ratio_n": 2,
@@ -262242,7 +262864,7 @@
   "ji": "0000",
   "addr": "경기도 하남시 망월동 1146번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-17",
   "start": "2022-07-27",
   "complete": "2025-01-03",
@@ -262260,8 +262882,8 @@
   "sgg_code": "28177",
   "dong": "주안동",
   "zone": "수도권",
-  "lat": null,
-  "lng": null,
+  "lat": 37.4595657630426,
+  "lng": 126.686955664459,
   "gfa": 18595,
   "office_ratio": 0.0,
   "ratio_n": 2,
@@ -262272,7 +262894,7 @@
   "ji": "0007",
   "addr": "인천광역시 미추홀구 주안동 66-7번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-17",
   "start": null,
   "complete": null,
@@ -262350,8 +262972,8 @@
   "sgg_code": "11215",
   "dong": "화양동",
   "zone": "서울 기타",
-  "lat": 37.55585,
-  "lng": 127.0886,
+  "lat": 37.5452848067374,
+  "lng": 127.073959946419,
   "gfa": 1016,
   "office_ratio": null,
   "ratio_n": 0,
@@ -262362,7 +262984,7 @@
   "ji": "0041",
   "addr": "서울특별시 광진구 화양동 111-41번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-17",
   "start": null,
   "complete": null,
@@ -262380,8 +263002,8 @@
   "sgg_code": "11650",
   "dong": "서초동",
   "zone": "GBD",
-  "lat": 37.47334,
-  "lng": 127.02992,
+  "lat": 37.486293355868,
+  "lng": 127.021865500875,
   "gfa": 7981,
   "office_ratio": 0.62,
   "ratio_n": 2,
@@ -262392,7 +263014,7 @@
   "ji": "0002",
   "addr": "서울특별시 서초구 서초동 1439-2번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-16",
   "start": "2022-03-28",
   "complete": "2022-07-15",
@@ -262410,8 +263032,8 @@
   "sgg_code": "11440",
   "dong": "연남동",
   "zone": "YBD",
-  "lat": 37.55593,
-  "lng": 126.92234,
+  "lat": 37.5585164569158,
+  "lng": 126.918315369672,
   "gfa": 2907,
   "office_ratio": null,
   "ratio_n": 0,
@@ -262422,7 +263044,7 @@
   "ji": "0002",
   "addr": "서울특별시 마포구 연남동 571-2번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-16",
   "start": "2022-04-07",
   "complete": "2023-06-13",
@@ -262440,8 +263062,8 @@
   "sgg_code": "11140",
   "dong": "충무로2가",
   "zone": "CBD",
-  "lat": 37.5552,
-  "lng": 126.98528,
+  "lat": 37.5622284437265,
+  "lng": 126.989741150272,
   "gfa": 10319,
   "office_ratio": 0.13,
   "ratio_n": 2,
@@ -262452,7 +263074,7 @@
   "ji": "0006",
   "addr": "서울특별시 중구 충무로2가 50-6번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-16",
   "start": "2022-09-06",
   "complete": "2025-08-05",
@@ -262470,8 +263092,8 @@
   "sgg_code": "11110",
   "dong": "중학동",
   "zone": "CBD",
-  "lat": 37.60303,
-  "lng": 126.9832,
+  "lat": 37.5754326779033,
+  "lng": 126.979710406102,
   "gfa": 30781,
   "office_ratio": 0.91,
   "ratio_n": 2,
@@ -262482,7 +263104,7 @@
   "ji": "0000",
   "addr": "서울특별시 종로구 중학동 14번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-16",
   "start": null,
   "complete": "2022-05-02",
@@ -262500,8 +263122,8 @@
   "sgg_code": "11110",
   "dong": "중학동",
   "zone": "CBD",
-  "lat": 37.59276,
-  "lng": 126.98256,
+  "lat": 37.5747620856206,
+  "lng": 126.979295247775,
   "gfa": 83899,
   "office_ratio": 0.79,
   "ratio_n": 2,
@@ -262512,7 +263134,7 @@
   "ji": "0000",
   "addr": "서울특별시 종로구 중학동 19번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-16",
   "start": null,
   "complete": null,
@@ -262530,8 +263152,8 @@
   "sgg_code": "41135",
   "dong": "삼평동",
   "zone": "BBD",
-  "lat": 37.37158,
-  "lng": 127.12496,
+  "lat": 37.4013113603788,
+  "lng": 127.110442307435,
   "gfa": 48842,
   "office_ratio": 0.45,
   "ratio_n": 2,
@@ -262542,7 +263164,7 @@
   "ji": "0000",
   "addr": "경기도 성남시 분당구 삼평동 679번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-16",
   "start": null,
   "complete": "2022-04-27",
@@ -262560,8 +263182,8 @@
   "sgg_code": "41135",
   "dong": "구미동",
   "zone": "BBD",
-  "lat": 37.38043,
-  "lng": 127.10862,
+  "lat": 37.3376775432976,
+  "lng": 127.10972536858,
   "gfa": 46125,
   "office_ratio": 0.82,
   "ratio_n": 2,
@@ -262572,7 +263194,7 @@
   "ji": "0000",
   "addr": "경기도 성남시 분당구 구미동 188번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-16",
   "start": "2022-03-25",
   "complete": "2022-04-21",
@@ -262590,8 +263212,8 @@
   "sgg_code": "41595",
   "dong": "병점동",
   "zone": "수도권",
-  "lat": 37.16788,
-  "lng": 126.88528,
+  "lat": 37.2057886568422,
+  "lng": 127.030200780504,
   "gfa": 17168,
   "office_ratio": 0.01,
   "ratio_n": 2,
@@ -262602,7 +263224,7 @@
   "ji": "0001",
   "addr": "경기도 화성시 병점구 병점동 887-1번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-16",
   "start": "2022-06-17",
   "complete": "2024-07-25",
@@ -262620,8 +263242,8 @@
   "sgg_code": "41595",
   "dong": "병점동",
   "zone": "수도권",
-  "lat": 37.15656,
-  "lng": 126.89048,
+  "lat": 37.2053532066791,
+  "lng": 127.030444152999,
   "gfa": 17039,
   "office_ratio": 0.01,
   "ratio_n": 2,
@@ -262632,7 +263254,7 @@
   "ji": "0011",
   "addr": "경기도 화성시 병점구 병점동 887-11번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-16",
   "start": "2022-06-17",
   "complete": "2024-07-25",
@@ -262650,8 +263272,8 @@
   "sgg_code": "41192",
   "dong": "상동",
   "zone": "수도권",
-  "lat": 37.50616,
-  "lng": 126.7818,
+  "lat": 37.5044313628825,
+  "lng": 126.750889533109,
   "gfa": 4559,
   "office_ratio": 0.0,
   "ratio_n": 2,
@@ -262662,7 +263284,7 @@
   "ji": "0014",
   "addr": "경기도 부천시 원미구 상동 545-14번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-16",
   "start": null,
   "complete": null,
@@ -262680,8 +263302,8 @@
   "sgg_code": "28275",
   "dong": "청라동",
   "zone": "수도권",
-  "lat": null,
-  "lng": null,
+  "lat": 37.533665184667,
+  "lng": 126.648655735126,
   "gfa": 91210,
   "office_ratio": 0.0,
   "ratio_n": 2,
@@ -262692,7 +263314,7 @@
   "ji": "0011",
   "addr": "인천광역시 서해구 청라동 157-11번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-16",
   "start": "2022-06-14",
   "complete": "2025-09-12",
@@ -262710,8 +263332,8 @@
   "sgg_code": "11740",
   "dong": "암사동",
   "zone": "서울 기타",
-  "lat": 37.54689,
-  "lng": 127.13096,
+  "lat": 37.5520267880356,
+  "lng": 127.128512180234,
   "gfa": 2406,
   "office_ratio": null,
   "ratio_n": 0,
@@ -262722,7 +263344,7 @@
   "ji": "0001",
   "addr": "서울특별시 강동구 암사동 500-1번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-15",
   "start": null,
   "complete": null,
@@ -262740,8 +263362,8 @@
   "sgg_code": "11590",
   "dong": "사당동",
   "zone": "서울 기타",
-  "lat": 37.50062,
-  "lng": 126.9506,
+  "lat": 37.4849428739126,
+  "lng": 126.981532553647,
   "gfa": 3233,
   "office_ratio": 0.67,
   "ratio_n": 2,
@@ -262752,7 +263374,7 @@
   "ji": "0048",
   "addr": "서울특별시 동작구 사당동 147-48번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-15",
   "start": "2024-03-06",
   "complete": "2026-07-09",
@@ -262770,8 +263392,8 @@
   "sgg_code": "11560",
   "dong": "여의도동",
   "zone": "YBD",
-  "lat": 37.52262,
-  "lng": 126.91158,
+  "lat": 37.5208745916255,
+  "lng": 126.927886988072,
   "gfa": 39649,
   "office_ratio": null,
   "ratio_n": 0,
@@ -262782,7 +263404,7 @@
   "ji": "0003",
   "addr": "서울특별시 영등포구 여의도동 36-3번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-15",
   "start": null,
   "complete": null,
@@ -262800,8 +263422,8 @@
   "sgg_code": "11560",
   "dong": "여의도동",
   "zone": "YBD",
-  "lat": 37.52669,
-  "lng": 126.91964,
+  "lat": 37.5194004613798,
+  "lng": 126.927299962379,
   "gfa": 67677,
   "office_ratio": 0.98,
   "ratio_n": 2,
@@ -262812,7 +263434,7 @@
   "ji": "0000",
   "addr": "서울특별시 영등포구 여의도동 45번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-15",
   "start": null,
   "complete": null,
@@ -262830,8 +263452,8 @@
   "sgg_code": "11170",
   "dong": "이태원동",
   "zone": "서울 기타",
-  "lat": 37.52893,
-  "lng": 126.99178,
+  "lat": 37.5344651825842,
+  "lng": 126.996184637474,
   "gfa": 4239,
   "office_ratio": 0.36,
   "ratio_n": 2,
@@ -262842,7 +263464,7 @@
   "ji": "0003",
   "addr": "서울특별시 용산구 이태원동 126-3번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-15",
   "start": "2022-04-13",
   "complete": "2022-06-30",
@@ -262860,8 +263482,8 @@
   "sgg_code": "11140",
   "dong": "을지로1가",
   "zone": "CBD",
-  "lat": 37.55336,
-  "lng": 126.99822,
+  "lat": 37.5663150098466,
+  "lng": 126.979966198103,
   "gfa": 12434,
   "office_ratio": 0.95,
   "ratio_n": 2,
@@ -262872,7 +263494,7 @@
   "ji": "0000",
   "addr": "서울특별시 중구 을지로1가 50번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-15",
   "start": null,
   "complete": null,
@@ -262920,8 +263542,8 @@
   "sgg_code": "41135",
   "dong": "백현동",
   "zone": "BBD",
-  "lat": 37.3845,
-  "lng": 127.1166,
+  "lat": 37.3954596217643,
+  "lng": 127.112129738248,
   "gfa": 197171,
   "office_ratio": 0.97,
   "ratio_n": 2,
@@ -262932,7 +263554,7 @@
   "ji": "0000",
   "addr": "경기도 성남시 분당구 백현동 534번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-15",
   "start": "2022-03-29",
   "complete": "2022-07-19",
@@ -262950,8 +263572,8 @@
   "sgg_code": "30140",
   "dong": "오류동",
   "zone": "지방",
-  "lat": 36.28054,
-  "lng": 127.415,
+  "lat": 36.3274306203298,
+  "lng": 127.403110396847,
   "gfa": 1906,
   "office_ratio": null,
   "ratio_n": 0,
@@ -262962,7 +263584,7 @@
   "ji": "0019",
   "addr": "대전광역시 중구 오류동 184-19번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-15",
   "start": "2022-07-15",
   "complete": null,
@@ -262980,8 +263602,8 @@
   "sgg_code": "11560",
   "dong": "영등포동8가",
   "zone": "YBD",
-  "lat": 37.5255,
-  "lng": 126.91154,
+  "lat": 37.5281237796972,
+  "lng": 126.905410517377,
   "gfa": 3357,
   "office_ratio": 0.0,
   "ratio_n": 2,
@@ -262992,7 +263614,7 @@
   "ji": "0001",
   "addr": "서울특별시 영등포구 영등포동8가 65-1번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-14",
   "start": "2022-08-02",
   "complete": "2024-02-23",
@@ -263010,8 +263632,8 @@
   "sgg_code": "11140",
   "dong": "태평로2가",
   "zone": "CBD",
-  "lat": 37.5525,
-  "lng": 126.98876,
+  "lat": 37.563096663083,
+  "lng": 126.977060131457,
   "gfa": 1431,
   "office_ratio": null,
   "ratio_n": 0,
@@ -263022,7 +263644,7 @@
   "ji": "0007",
   "addr": "서울특별시 중구 태평로2가 68-7번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-14",
   "start": "2022-03-25",
   "complete": "2022-04-27",
@@ -263070,8 +263692,8 @@
   "sgg_code": "41591",
   "dong": "새솔동",
   "zone": "수도권",
-  "lat": 37.15952,
-  "lng": 126.88374,
+  "lat": 37.2846571236659,
+  "lng": 126.817067203581,
   "gfa": 9370,
   "office_ratio": 0.0,
   "ratio_n": 2,
@@ -263082,7 +263704,7 @@
   "ji": "0005",
   "addr": "경기도 화성시 만세구 새솔동 78-5번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-14",
   "start": "2022-08-24",
   "complete": "2024-07-25",
@@ -263100,8 +263722,8 @@
   "sgg_code": "41113",
   "dong": "고색동",
   "zone": "수도권",
-  "lat": 37.26278,
-  "lng": 126.97844,
+  "lat": 37.254796369388,
+  "lng": 126.973662491382,
   "gfa": 7383,
   "office_ratio": 0.06,
   "ratio_n": 2,
@@ -263112,7 +263734,7 @@
   "ji": "0003",
   "addr": "경기도 수원시 권선구 고색동 1181-3번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-14",
   "start": "2022-06-14",
   "complete": "2024-10-10",
@@ -263130,8 +263752,8 @@
   "sgg_code": "41370",
   "dong": "오산동",
   "zone": "수도권",
-  "lat": 37.16056,
-  "lng": 127.05342,
+  "lat": 37.149017360336,
+  "lng": 127.07595313852,
   "gfa": 4631,
   "office_ratio": 0.0,
   "ratio_n": 2,
@@ -263142,7 +263764,7 @@
   "ji": "0008",
   "addr": "경기도 오산시 오산동 925-8번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-14",
   "start": null,
   "complete": null,
@@ -263160,8 +263782,8 @@
   "sgg_code": "11560",
   "dong": "여의도동",
   "zone": "YBD",
-  "lat": 37.51574,
-  "lng": 126.91954,
+  "lat": 37.5214296371215,
+  "lng": 126.930641425487,
   "gfa": 36106,
   "office_ratio": 0.0,
   "ratio_n": 2,
@@ -263172,7 +263794,7 @@
   "ji": "0000",
   "addr": "서울특별시 영등포구 여의도동 43번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-12",
   "start": null,
   "complete": null,
@@ -263190,8 +263812,8 @@
   "sgg_code": "41310",
   "dong": "수택동",
   "zone": "수도권",
-  "lat": 37.59995,
-  "lng": 127.12098,
+  "lat": 37.6006381692314,
+  "lng": 127.142058714693,
   "gfa": 5429,
   "office_ratio": 0.29,
   "ratio_n": 2,
@@ -263202,7 +263824,7 @@
   "ji": "0003",
   "addr": "경기도 구리시 수택동 526-3번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-11",
   "start": null,
   "complete": null,
@@ -263220,8 +263842,8 @@
   "sgg_code": "41390",
   "dong": "대야동",
   "zone": "수도권",
-  "lat": 37.38714,
-  "lng": 126.78808,
+  "lat": 37.4437696587057,
+  "lng": 126.79065813942,
   "gfa": 16784,
   "office_ratio": 0.21,
   "ratio_n": 2,
@@ -263232,7 +263854,7 @@
   "ji": "0002",
   "addr": "경기도 시흥시 대야동 532-2번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-11",
   "start": null,
   "complete": null,
@@ -263280,8 +263902,8 @@
   "sgg_code": "47170",
   "dong": "옥동",
   "zone": "지방",
-  "lat": 36.57518,
-  "lng": 128.75196,
+  "lat": 36.5622841662631,
+  "lng": 128.701545246344,
   "gfa": 4790,
   "office_ratio": 0.41,
   "ratio_n": 2,
@@ -263292,7 +263914,7 @@
   "ji": "0001",
   "addr": "경상북도 안동시 옥동 791-1번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-11",
   "start": null,
   "complete": "2022-03-31",
@@ -263310,8 +263932,8 @@
   "sgg_code": "41173",
   "dong": "비산동",
   "zone": "수도권",
-  "lat": 37.40732,
-  "lng": 126.9571,
+  "lat": 37.39115245087,
+  "lng": 126.950027013424,
   "gfa": 34429,
   "office_ratio": 0.12,
   "ratio_n": 2,
@@ -263322,7 +263944,7 @@
   "ji": "0000",
   "addr": "경기도 안양시 동안구 비산동 1108번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-11",
   "start": null,
   "complete": null,
@@ -263340,8 +263962,8 @@
   "sgg_code": "11650",
   "dong": "반포동",
   "zone": "GBD",
-  "lat": 37.4746,
-  "lng": 127.03256,
+  "lat": 37.5073825383849,
+  "lng": 127.02259968008,
   "gfa": 6341,
   "office_ratio": 0.26,
   "ratio_n": 2,
@@ -263352,7 +263974,7 @@
   "ji": "0002",
   "addr": "서울특별시 서초구 반포동 736-2번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-11",
   "start": null,
   "complete": "2022-03-24",
@@ -263400,8 +264022,8 @@
   "sgg_code": "11560",
   "dong": "영등포동2가",
   "zone": "YBD",
-  "lat": 37.51594,
-  "lng": 126.91208,
+  "lat": 37.5221345971669,
+  "lng": 126.91175839591,
   "gfa": 1999,
   "office_ratio": null,
   "ratio_n": 0,
@@ -263412,7 +264034,7 @@
   "ji": "0142",
   "addr": "서울특별시 영등포구 영등포동2가 94-142번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-10",
   "start": null,
   "complete": null,
@@ -263430,8 +264052,8 @@
   "sgg_code": "11440",
   "dong": "신수동",
   "zone": "YBD",
-  "lat": 37.56548,
-  "lng": 126.9213,
+  "lat": 37.5466924581676,
+  "lng": 126.934627514457,
   "gfa": 6645,
   "office_ratio": 0.11,
   "ratio_n": 2,
@@ -263442,7 +264064,7 @@
   "ji": "0016",
   "addr": "서울특별시 마포구 신수동 371-16번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-10",
   "start": null,
   "complete": null,
@@ -263460,8 +264082,8 @@
   "sgg_code": "11200",
   "dong": "성수동2가",
   "zone": "서울 기타",
-  "lat": 37.54898,
-  "lng": 127.04742,
+  "lat": 37.5422362260048,
+  "lng": 127.062507398404,
   "gfa": 4824,
   "office_ratio": 0.94,
   "ratio_n": 2,
@@ -263472,7 +264094,7 @@
   "ji": "0002",
   "addr": "서울특별시 성동구 성수동2가 276-2번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-10",
   "start": "2022-04-28",
   "complete": "2022-07-14",
@@ -263490,8 +264112,8 @@
   "sgg_code": "28125",
   "dong": "신흥동3가",
   "zone": "수도권",
-  "lat": null,
-  "lng": null,
+  "lat": 37.4643352376506,
+  "lng": 126.637287935171,
   "gfa": 6135,
   "office_ratio": 0.0,
   "ratio_n": 2,
@@ -263502,7 +264124,7 @@
   "ji": "0009",
   "addr": "인천광역시 제물포구 신흥동3가 13-9번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-10",
   "start": "2022-07-29",
   "complete": null,
@@ -263520,8 +264142,8 @@
   "sgg_code": "28245",
   "dong": "계산동",
   "zone": "수도권",
-  "lat": 37.56818,
-  "lng": 126.7335,
+  "lat": 37.5382835470128,
+  "lng": 126.723391061317,
   "gfa": 4980,
   "office_ratio": 0.0,
   "ratio_n": 2,
@@ -263532,7 +264154,7 @@
   "ji": "0019",
   "addr": "인천광역시 계양구 계산동 968-19번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-10",
   "start": null,
   "complete": null,
@@ -263550,8 +264172,8 @@
   "sgg_code": "26230",
   "dong": "개금동",
   "zone": "지방",
-  "lat": 35.16163,
-  "lng": 129.0362,
+  "lat": 35.1518446737109,
+  "lng": 129.023888972537,
   "gfa": 1970,
   "office_ratio": null,
   "ratio_n": 0,
@@ -263562,7 +264184,7 @@
   "ji": "0144",
   "addr": "부산광역시 부산진구 개금동 171-144번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-10",
   "start": null,
   "complete": null,
@@ -263580,8 +264202,8 @@
   "sgg_code": "26230",
   "dong": "개금동",
   "zone": "지방",
-  "lat": 35.16584,
-  "lng": 129.0405,
+  "lat": 35.1516488718942,
+  "lng": 129.02388763321,
   "gfa": 1970,
   "office_ratio": null,
   "ratio_n": 0,
@@ -263592,7 +264214,7 @@
   "ji": "0146",
   "addr": "부산광역시 부산진구 개금동 171-146번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-10",
   "start": null,
   "complete": null,
@@ -263610,8 +264232,8 @@
   "sgg_code": "11650",
   "dong": "반포동",
   "zone": "GBD",
-  "lat": 37.47715,
-  "lng": 127.03752,
+  "lat": 37.5055237785032,
+  "lng": 127.023453914065,
   "gfa": 2191,
   "office_ratio": null,
   "ratio_n": 0,
@@ -263622,7 +264244,7 @@
   "ji": "0019",
   "addr": "서울특별시 서초구 반포동 737-19번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-10",
   "start": null,
   "complete": null,
@@ -263640,8 +264262,8 @@
   "sgg_code": "11560",
   "dong": "여의도동",
   "zone": "YBD",
-  "lat": 37.51312,
-  "lng": 126.90808,
+  "lat": 37.5214296371215,
+  "lng": 126.930641425487,
   "gfa": 36106,
   "office_ratio": 0.0,
   "ratio_n": 2,
@@ -263652,7 +264274,7 @@
   "ji": "0000",
   "addr": "서울특별시 영등포구 여의도동 43번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-08",
   "start": null,
   "complete": null,
@@ -263670,8 +264292,8 @@
   "sgg_code": "11110",
   "dong": "세종로",
   "zone": "CBD",
-  "lat": 37.60116,
-  "lng": 126.9792,
+  "lat": 37.5696757646142,
+  "lng": 126.976295180327,
   "gfa": 49933,
   "office_ratio": 0.33,
   "ratio_n": 2,
@@ -263682,7 +264304,7 @@
   "ji": "0000",
   "addr": "서울특별시 종로구 세종로 211번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-08",
   "start": null,
   "complete": null,
@@ -263700,8 +264322,8 @@
   "sgg_code": "41465",
   "dong": "죽전동",
   "zone": "수도권",
-  "lat": 37.3394,
-  "lng": 127.07274,
+  "lat": 37.3313070550583,
+  "lng": 127.12720300666,
   "gfa": 5996,
   "office_ratio": 0.67,
   "ratio_n": 2,
@@ -263712,7 +264334,7 @@
   "ji": "0004",
   "addr": "경기도 용인시 수지구 죽전동 1190-4번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-08",
   "start": null,
   "complete": "2022-04-18",
@@ -263730,8 +264352,8 @@
   "sgg_code": "12150",
   "dong": "가곡동",
   "zone": "지방",
-  "lat": 34.98881,
-  "lng": 127.39768,
+  "lat": 34.9717710866574,
+  "lng": 127.481981238797,
   "gfa": 15313,
   "office_ratio": 0.93,
   "ratio_n": 2,
@@ -263742,7 +264364,7 @@
   "ji": "0000",
   "addr": "전남광주통합특별시 순천시 가곡동 425번지",
   "public": true,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-08",
   "start": "2022-06-10",
   "complete": "2023-06-21",
@@ -263790,8 +264412,8 @@
   "sgg_code": "27140",
   "dong": "신천동",
   "zone": "지방",
-  "lat": 35.9333,
-  "lng": 128.68686,
+  "lat": 35.867837230217,
+  "lng": 128.629520309987,
   "gfa": 19011,
   "office_ratio": 0.44,
   "ratio_n": 2,
@@ -263802,7 +264424,7 @@
   "ji": "0002",
   "addr": "대구광역시 동구 신천동 305-2번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-08",
   "start": "2022-06-02",
   "complete": "2024-10-15",
@@ -263820,8 +264442,8 @@
   "sgg_code": "41131",
   "dong": "시흥동",
   "zone": "수도권",
-  "lat": 37.43806,
-  "lng": 127.1058,
+  "lat": 37.4080415910633,
+  "lng": 127.098115204221,
   "gfa": 156912,
   "office_ratio": 0.69,
   "ratio_n": 2,
@@ -263832,7 +264454,7 @@
   "ji": "0002",
   "addr": "경기도 성남시 수정구 시흥동 288-2번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-08",
   "start": "2022-03-16",
   "complete": "2022-05-12",
@@ -263850,8 +264472,8 @@
   "sgg_code": "41281",
   "dong": "화정동",
   "zone": "수도권",
-  "lat": 37.66014,
-  "lng": 126.90468,
+  "lat": 37.6283894209907,
+  "lng": 126.829640157809,
   "gfa": 9549,
   "office_ratio": 0.78,
   "ratio_n": 2,
@@ -263862,7 +264484,7 @@
   "ji": "0000",
   "addr": "경기도 고양시 덕양구 화정동 1008번지",
   "public": true,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-08",
   "start": "2022-05-16",
   "complete": null,
@@ -263880,8 +264502,8 @@
   "sgg_code": "41461",
   "dong": "고림동",
   "zone": "수도권",
-  "lat": 37.20134,
-  "lng": 127.27216,
+  "lat": 37.2369138254768,
+  "lng": 127.217959010523,
   "gfa": 2231,
   "office_ratio": null,
   "ratio_n": 0,
@@ -263892,7 +264514,7 @@
   "ji": "0005",
   "addr": "경기도 용인시 처인구 고림동 770-5번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-08",
   "start": "2022-06-02",
   "complete": "2023-07-06",
@@ -263940,8 +264562,8 @@
   "sgg_code": "11560",
   "dong": "여의도동",
   "zone": "YBD",
-  "lat": 37.51125,
-  "lng": 126.9127,
+  "lat": 37.5250147784477,
+  "lng": 126.925263086873,
   "gfa": 506318,
   "office_ratio": 0.48,
   "ratio_n": 2,
@@ -263952,7 +264574,7 @@
   "ji": "0000",
   "addr": "서울특별시 영등포구 여의도동 23번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-07",
   "start": null,
   "complete": null,
@@ -263970,8 +264592,8 @@
   "sgg_code": "11560",
   "dong": "당산동6가",
   "zone": "YBD",
-  "lat": 37.52555,
-  "lng": 126.90924,
+  "lat": 37.5342628155285,
+  "lng": 126.903156570164,
   "gfa": 1999,
   "office_ratio": null,
   "ratio_n": 0,
@@ -263982,7 +264604,7 @@
   "ji": "0034",
   "addr": "서울특별시 영등포구 당산동6가 237-34번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-07",
   "start": "2022-10-17",
   "complete": "2024-03-21",
@@ -264000,8 +264622,8 @@
   "sgg_code": "11140",
   "dong": "태평로2가",
   "zone": "CBD",
-  "lat": 37.56261,
-  "lng": 126.98972,
+  "lat": 37.5623633650155,
+  "lng": 126.975384783068,
   "gfa": 83639,
   "office_ratio": 0.87,
   "ratio_n": 2,
@@ -264012,7 +264634,7 @@
   "ji": "0000",
   "addr": "서울특별시 중구 태평로2가 250번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-07",
   "start": null,
   "complete": null,
@@ -264030,8 +264652,8 @@
   "sgg_code": "11110",
   "dong": "당주동",
   "zone": "CBD",
-  "lat": 37.60031,
-  "lng": 126.9835,
+  "lat": 37.5717416924361,
+  "lng": 126.972319351115,
   "gfa": 12136,
   "office_ratio": 0.04,
   "ratio_n": 2,
@@ -264042,7 +264664,7 @@
   "ji": "0027",
   "addr": "서울특별시 종로구 당주동 128-27번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-07",
   "start": null,
   "complete": null,
@@ -264090,8 +264712,8 @@
   "sgg_code": "28125",
   "dong": "북성동1가",
   "zone": "수도권",
-  "lat": null,
-  "lng": null,
+  "lat": 37.4774755682989,
+  "lng": 126.601263782915,
   "gfa": 2398,
   "office_ratio": null,
   "ratio_n": 0,
@@ -264102,7 +264724,7 @@
   "ji": "0022",
   "addr": "인천광역시 제물포구 북성동1가 98-22번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-07",
   "start": null,
   "complete": null,
@@ -264120,8 +264742,8 @@
   "sgg_code": "28125",
   "dong": "북성동1가",
   "zone": "수도권",
-  "lat": null,
-  "lng": null,
+  "lat": 37.4774755682989,
+  "lng": 126.601263782915,
   "gfa": 2398,
   "office_ratio": null,
   "ratio_n": 0,
@@ -264132,7 +264754,7 @@
   "ji": "0022",
   "addr": "인천광역시 제물포구 북성동1가 98-22번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-07",
   "start": null,
   "complete": null,
@@ -264150,8 +264772,8 @@
   "sgg_code": "28125",
   "dong": "북성동1가",
   "zone": "수도권",
-  "lat": null,
-  "lng": null,
+  "lat": 37.4774755682989,
+  "lng": 126.601263782915,
   "gfa": 2398,
   "office_ratio": null,
   "ratio_n": 0,
@@ -264162,7 +264784,7 @@
   "ji": "0022",
   "addr": "인천광역시 제물포구 북성동1가 98-22번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-07",
   "start": null,
   "complete": null,
@@ -264180,8 +264802,8 @@
   "sgg_code": "28125",
   "dong": "북성동1가",
   "zone": "수도권",
-  "lat": null,
-  "lng": null,
+  "lat": 37.4774755682989,
+  "lng": 126.601263782915,
   "gfa": 2398,
   "office_ratio": null,
   "ratio_n": 0,
@@ -264192,7 +264814,7 @@
   "ji": "0022",
   "addr": "인천광역시 제물포구 북성동1가 98-22번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-07",
   "start": null,
   "complete": null,
@@ -264210,8 +264832,8 @@
   "sgg_code": "50110",
   "dong": "용담삼동",
   "zone": "지방",
-  "lat": 33.43549,
-  "lng": 126.58434,
+  "lat": 33.5137437727479,
+  "lng": 126.503315389812,
   "gfa": 5801,
   "office_ratio": 0.98,
   "ratio_n": 2,
@@ -264222,7 +264844,7 @@
   "ji": "0000",
   "addr": "제주특별자치도 제주시 용담삼동 953번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-07",
   "start": "2022-12-19",
   "complete": "2024-11-01",
@@ -264240,8 +264862,8 @@
   "sgg_code": "28185",
   "dong": "연수동",
   "zone": "수도권",
-  "lat": 37.39971,
-  "lng": 126.66004,
+  "lat": 37.4134296419965,
+  "lng": 126.676525002873,
   "gfa": 14924,
   "office_ratio": 0.0,
   "ratio_n": 2,
@@ -264252,7 +264874,7 @@
   "ji": "0001",
   "addr": "인천광역시 연수구 연수동 599-1번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-07",
   "start": null,
   "complete": null,
@@ -264270,8 +264892,8 @@
   "sgg_code": "11200",
   "dong": "용답동",
   "zone": "서울 기타",
-  "lat": 37.54664,
-  "lng": 127.04002,
+  "lat": 37.5652297239149,
+  "lng": 127.054236366787,
   "gfa": 8109,
   "office_ratio": 0.0,
   "ratio_n": 2,
@@ -264282,7 +264904,7 @@
   "ji": "0002",
   "addr": "서울특별시 성동구 용답동 62-2번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-04",
   "start": null,
   "complete": null,
@@ -264300,8 +264922,8 @@
   "sgg_code": "11140",
   "dong": "남창동",
   "zone": "CBD",
-  "lat": 37.55367,
-  "lng": 127.00108,
+  "lat": 37.5594426541254,
+  "lng": 126.978404804406,
   "gfa": 3303,
   "office_ratio": 0.65,
   "ratio_n": 2,
@@ -264312,7 +264934,7 @@
   "ji": "0011",
   "addr": "서울특별시 중구 남창동 46-11번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-04",
   "start": null,
   "complete": null,
@@ -264330,8 +264952,8 @@
   "sgg_code": "41390",
   "dong": "대야동",
   "zone": "수도권",
-  "lat": 37.3889,
-  "lng": 126.78312,
+  "lat": 37.451076733236,
+  "lng": 126.794740587862,
   "gfa": 17264,
   "office_ratio": 0.04,
   "ratio_n": 2,
@@ -264342,7 +264964,7 @@
   "ji": "0001",
   "addr": "경기도 시흥시 대야동 650-1번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-04",
   "start": null,
   "complete": "2022-04-26",
@@ -264360,8 +264982,8 @@
   "sgg_code": "44230",
   "dong": "내동",
   "zone": "지방",
-  "lat": 36.18495,
-  "lng": 127.14904,
+  "lat": 36.1868749580303,
+  "lng": 127.098823908315,
   "gfa": 17232,
   "office_ratio": 0.91,
   "ratio_n": 2,
@@ -264372,7 +264994,7 @@
   "ji": "0000",
   "addr": "충청남도 논산시 내동 824번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-04",
   "start": "2022-06-24",
   "complete": "2022-07-26",
@@ -264390,8 +265012,8 @@
   "sgg_code": "41450",
   "dong": "덕풍동",
   "zone": "수도권",
-  "lat": 37.52065,
-  "lng": 127.20754,
+  "lat": 37.5518186262116,
+  "lng": 127.207703214249,
   "gfa": 19571,
   "office_ratio": 0.08,
   "ratio_n": 2,
@@ -264402,7 +265024,7 @@
   "ji": "0000",
   "addr": "경기도 하남시 덕풍동 744번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-04",
   "start": null,
   "complete": null,
@@ -264540,8 +265162,8 @@
   "sgg_code": "11710",
   "dong": "가락동",
   "zone": "서울 기타",
-  "lat": 37.50456,
-  "lng": 127.11656,
+  "lat": 37.4951096443466,
+  "lng": 127.122442831708,
   "gfa": 75025,
   "office_ratio": 0.3,
   "ratio_n": 2,
@@ -264552,7 +265174,7 @@
   "ji": "0000",
   "addr": "서울특별시 송파구 가락동 78번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-03",
   "start": null,
   "complete": null,
@@ -264570,8 +265192,8 @@
   "sgg_code": "11680",
   "dong": "역삼동",
   "zone": "GBD",
-  "lat": 37.49331,
-  "lng": 127.0598,
+  "lat": 37.5023662011258,
+  "lng": 127.040716940362,
   "gfa": 36531,
   "office_ratio": 0.47,
   "ratio_n": 2,
@@ -264582,7 +265204,7 @@
   "ji": "0025",
   "addr": "서울특별시 강남구 역삼동 677-25번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-03",
   "start": null,
   "complete": null,
@@ -264600,8 +265222,8 @@
   "sgg_code": "11215",
   "dong": "구의동",
   "zone": "서울 기타",
-  "lat": 37.54153,
-  "lng": 127.083,
+  "lat": 37.5492814106285,
+  "lng": 127.093355226301,
   "gfa": 855,
   "office_ratio": null,
   "ratio_n": 0,
@@ -264612,7 +265234,7 @@
   "ji": "0015",
   "addr": "서울특별시 광진구 구의동 58-15번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-03",
   "start": "2022-03-21",
   "complete": "2022-06-30",
@@ -264630,8 +265252,8 @@
   "sgg_code": "51190",
   "dong": "소도동",
   "zone": "지방",
-  "lat": 37.18517,
-  "lng": 128.97022,
+  "lat": 37.1185742303259,
+  "lng": 128.950186337185,
   "gfa": 176,
   "office_ratio": null,
   "ratio_n": 0,
@@ -264642,7 +265264,7 @@
   "ji": "0003",
   "addr": "강원특별자치도 태백시 소도동 327-3번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-03",
   "start": "2022-04-21",
   "complete": "2025-04-08",
@@ -264660,8 +265282,8 @@
   "sgg_code": "26500",
   "dong": "광안동",
   "zone": "지방",
-  "lat": 35.16684,
-  "lng": 129.121,
+  "lat": 35.1575284421126,
+  "lng": 129.119645425928,
   "gfa": 4897,
   "office_ratio": 0.06,
   "ratio_n": 2,
@@ -264672,7 +265294,7 @@
   "ji": "0009",
   "addr": "부산광역시 수영구 광안동 157-9번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-03",
   "start": "2022-06-28",
   "complete": "2024-11-29",
@@ -264960,8 +265582,8 @@
   "sgg_code": "11650",
   "dong": "양재동",
   "zone": "GBD",
-  "lat": 37.46806,
-  "lng": 127.04264,
+  "lat": 37.4662296842829,
+  "lng": 127.035235868255,
   "gfa": 1369,
   "office_ratio": null,
   "ratio_n": 0,
@@ -264972,7 +265594,7 @@
   "ji": "0006",
   "addr": "서울특별시 서초구 양재동 204-6번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-02",
   "start": "2022-03-24",
   "complete": "2022-07-11",
@@ -264990,8 +265612,8 @@
   "sgg_code": "11110",
   "dong": "경운동",
   "zone": "CBD",
-  "lat": 37.59942,
-  "lng": 126.98144,
+  "lat": 37.5756858121897,
+  "lng": 126.984805195719,
   "gfa": 17570,
   "office_ratio": 1.0,
   "ratio_n": 2,
@@ -265002,7 +265624,7 @@
   "ji": "0018",
   "addr": "서울특별시 종로구 경운동 90-18번지",
   "public": true,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-02",
   "start": "2024-12-09",
   "complete": null,
@@ -265050,8 +265672,8 @@
   "sgg_code": "41131",
   "dong": "신흥동",
   "zone": "수도권",
-  "lat": 37.43489,
-  "lng": 127.11618,
+  "lat": 37.442936095246,
+  "lng": 127.15074878778,
   "gfa": 1999,
   "office_ratio": null,
   "ratio_n": 0,
@@ -265062,7 +265684,7 @@
   "ji": "0000",
   "addr": "경기도 성남시 수정구 신흥동 2546번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-02",
   "start": "2022-11-18",
   "complete": "2024-06-26",
@@ -265080,8 +265702,8 @@
   "sgg_code": "41285",
   "dong": "정발산동",
   "zone": "수도권",
-  "lat": 37.67672,
-  "lng": 126.79546,
+  "lat": 37.6639617837256,
+  "lng": 126.770496788598,
   "gfa": 92373,
   "office_ratio": 0.0,
   "ratio_n": 2,
@@ -265092,7 +265714,7 @@
   "ji": "0000",
   "addr": "경기도 고양시 일산동구 정발산동 785번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-02",
   "start": null,
   "complete": null,
@@ -265110,8 +265732,8 @@
   "sgg_code": "44133",
   "dong": "불당동",
   "zone": "지방",
-  "lat": 36.89385,
-  "lng": 127.17174,
+  "lat": 36.8219624499621,
+  "lng": 127.110182956853,
   "gfa": 15115,
   "office_ratio": 0.07,
   "ratio_n": 2,
@@ -265122,7 +265744,7 @@
   "ji": "0002",
   "addr": "충청남도 천안시 서북구 불당동 1479-2번지",
   "public": false,
-  "geocoded": false,
+  "geocoded": true,
   "permit": "2022-03-02",
   "start": null,
   "complete": "2022-04-01",
