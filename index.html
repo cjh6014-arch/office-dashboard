@@ -200,7 +200,7 @@ footer p{max-width:90ch}
   <h2>오피스 거래 규모</h2>
   <p class="sub">연간 업무시설 거래액(조원) · 국토교통부 상업 · 업무용 실거래가 중 건물용도가 '업무'인 신고 건 집계 · 최근 달부터 거슬러 매일 조금씩 모으는 중이라 지난 연도는 수집된 개월만큼만 반영</p>
   <div class="panel"><div id="dealChart"></div></div>
-  <h3>오피스 거래 목록 <span class="small">10억원 이상 · 최근 거래순</span></h3>
+  <h3>오피스 거래 목록 <span class="small">10억원 이상 · 최근 거래순 · 평당가 = 거래금액 ÷ 건물면적(1평 = 3.3058㎡), 건물 묶음은 호실 합계 기준</span></h3>
   <div class="row">
     <select id="dlSido"><option value="">지역 전체</option></select>
     <label class="small" style="display:inline-flex;align-items:center;gap:4px"><input type="checkbox" id="dlgroup" checked> 건물 단위로 묶기</label>
@@ -210,7 +210,7 @@ footer p{max-width:90ch}
   </div>
   <div class="tablewrap"><table id="dlTbl" style="min-width:860px"><thead><tr>
     <th data-k="d">거래일<span class="s">↕</span></th><th data-k="sigungu">지역<span class="s">↕</span></th><th>지번</th><th>용도 · 유형</th>
-    <th class="n" data-k="a">거래금액(억원)<span class="s">↕</span></th><th class="n" data-k="bar">건물면적(㎡)<span class="s">↕</span></th><th class="n" data-k="par">대지면적(㎡)</th><th>층</th><th>건축년도</th><th>거래 · 매수자</th>
+    <th class="n" data-k="a">거래금액(억원)<span class="s">↕</span></th><th class="n" data-k="bar">건물면적(㎡)<span class="s">↕</span></th><th class="n" data-k="ppy">평당가(만원)<span class="s">↕</span></th><th class="n" data-k="par">대지면적(㎡)</th><th>층</th><th>건축년도</th><th>거래 · 매수자</th>
   </tr></thead><tbody></tbody></table></div>
   <div class="pager" id="dlPager"></div>
 </section>
@@ -434,11 +434,14 @@ function dealRows(){
       const o=g.get(key);o.units.push(r);o.a+=r.a;o.bar+=r.bar||0;if(r.fl)o.fls.add(r.fl);}
     rows=[...g.values()].map(o=>{o.n=o.units.length;o.bar=o.bar||null;if(o.n>1){o.fl=o.fls.size?`${o.fls.size}개 층`:'';o.share=o.units.some(u=>u.share)?'지분':''}return o});
   }
+  rows.forEach(r=>{r.ppy=ppy(r);if(r.units)r.units.forEach(u=>u.ppy=ppy(u))});
   const k=state.dk,d=state.dd;
   return rows.sort((a,b)=>{const x=a[k]??'',y=b[k]??'';return (x>y?1:x<y?-1:0)*d||(b.d>a.d?1:-1)});
 }
+const PY=3.305785;  // 1평 = 3.3058㎡
+const ppy=r=>r.bar>0?r.a/(r.bar/PY):null;   // 만원/평 (건물면적 기준)
 const unitRow=(r,sub)=>`<tr${sub?' style="background:var(--bg)"':''}><td>${sub?'':r.d}</td><td>${sub?'':r.sido+' '+r.sigungu}</td><td>${sub?'<span class="small">└ 호실</span>':(r.jibun||'–')}</td><td>${r.use}${r.bt?' · '+r.bt:''}${r.share?' · 지분':''}</td>
-    <td class="n">${fmt1(r.a/10000)}</td><td class="n">${r.bar!=null?fmt1(r.bar):'–'}</td><td class="n">${r.par!=null?fmt1(r.par):'–'}</td><td>${r.fl||'–'}</td><td>${r.by||'–'}</td><td>${[r.dg,r.buyer?'매수 '+r.buyer:''].filter(Boolean).join(' · ')||'–'}</td></tr>`;
+    <td class="n">${fmt1(r.a/10000)}</td><td class="n">${r.bar!=null?fmt1(r.bar):'–'}</td><td class="n">${r.ppy!=null?fmt(r.ppy):'–'}</td><td class="n">${r.par!=null?fmt1(r.par):'–'}</td><td>${r.fl||'–'}</td><td>${r.by||'–'}</td><td>${[r.dg,r.buyer?'매수 '+r.buyer:''].filter(Boolean).join(' · ')||'–'}</td></tr>`;
 function renderDealList(){
   const all=D.deal_list||[];
   const sel=$('#dlSido'); if(sel.options.length<=1){[...new Set(all.map(r=>r.sido))].sort().forEach(s=>{const o=document.createElement('option');o.textContent=s;sel.appendChild(o)})}
@@ -449,16 +452,16 @@ function renderDealList(){
     if(!r.n||r.n<2)return unitRow(r,false);
     const open=state.dopen.has(r.key);
     return `<tr><td>${r.d}</td><td>${r.sido} ${r.sigungu}</td><td>${r.jibun||'–'}</td><td>${r.use}${r.bt?' · '+r.bt:''} · <a href="#deals" class="dlx" data-key="${r.key}">${r.n}호실 ${open?'접기':'펼치기'}</a>${r.share?' · 지분 포함':''}</td>
-    <td class="n">${fmt1(r.a/10000)}</td><td class="n">${r.bar!=null?fmt1(r.bar):'–'}</td><td class="n">${r.par!=null?fmt1(r.par):'–'}</td><td>${r.fl||'–'}</td><td>${r.by||'–'}</td><td>${[r.dg,r.buyer?'매수 '+r.buyer:''].filter(Boolean).join(' · ')||'–'}</td></tr>`+(open?r.units.map(u=>unitRow(u,true)).join(''):'');
+    <td class="n">${fmt1(r.a/10000)}</td><td class="n">${r.bar!=null?fmt1(r.bar):'–'}</td><td class="n">${r.ppy!=null?fmt(r.ppy):'–'}</td><td class="n">${r.par!=null?fmt1(r.par):'–'}</td><td>${r.fl||'–'}</td><td>${r.by||'–'}</td><td>${[r.dg,r.buyer?'매수 '+r.buyer:''].filter(Boolean).join(' · ')||'–'}</td></tr>`+(open?r.units.map(u=>unitRow(u,true)).join(''):'');
   }).join('')
-    :`<tr><td colspan="10" class="empty">${all.length?'조건에 맞는 거래가 없습니다':'거래 목록은 다음 자동 갱신부터 채워집니다'}</td></tr>`;
+    :`<tr><td colspan="11" class="empty">${all.length?'조건에 맞는 거래가 없습니다':'거래 목록은 다음 자동 갱신부터 채워집니다'}</td></tr>`;
   $$('#dlTbl .dlx').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();const k=a.dataset.key;state.dopen.has(k)?state.dopen.delete(k):state.dopen.add(k);renderDealList()}));
   const tot=rows.reduce((s,r)=>s+r.a,0), units=rows.reduce((s,r)=>s+(r.n||1),0);
   $('#dlcount').textContent=`${state.dgroup?`건물 ${rows.length}건(호실 ${units}건)`:rows.length+'건'} · 합계 ${tot>=1e8?fmt1(tot/1e8)+'조원':fmt(tot/1e4)+'억원'}`;
   renderPager('#dlPager',state.dpage,rows.length,pages,p=>{state.dpage=p;renderDealList();$('#dlTbl').scrollIntoView({behavior:'smooth',block:'start'})});
 }
 function exportDeals(){
-  const rows=(state.dgroup?dealRows().flatMap(r=>r.units||[r]):dealRows()).map(r=>({'거래일':r.d,'시도':r.sido,'시군구':r.sigungu,'지번':r.jibun,'건물용도':r.use,'건물유형':r.bt,'거래금액(만원)':r.a,'건물면적(㎡)':r.bar,'대지면적(㎡)':r.par,'층':r.fl,'건축년도':r.by,'거래유형':r.dg,'매수자':r.buyer,'매도자':r.seller,'지분거래':r.share}));
+  const rows=(state.dgroup?dealRows().flatMap(r=>r.units||[r]):dealRows()).map(r=>({'거래일':r.d,'시도':r.sido,'시군구':r.sigungu,'지번':r.jibun,'건물용도':r.use,'건물유형':r.bt,'거래금액(만원)':r.a,'건물면적(㎡)':r.bar,'평당가(만원/평)':r.ppy!=null?Math.round(r.ppy):null,'대지면적(㎡)':r.par,'층':r.fl,'건축년도':r.by,'거래유형':r.dg,'매수자':r.buyer,'매도자':r.seller,'지분거래':r.share}));
   if(!window.XLSX){alert_('엑셀 라이브러리를 불러오지 못했습니다');return}
   const wb=XLSX.utils.book_new();XLSX.utils.book_append_sheet(wb,XLSX.utils.json_to_sheet(rows),'거래');
   try{XLSX.writeFile(wb,`오피스_거래_${D.updated.slice(0,10)}.xlsx`)}catch(e){alert_('이 화면에서는 다운로드가 막혀 있습니다. 배포된 사이트에서 받아 주세요')}
