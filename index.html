@@ -193,8 +193,6 @@ footer p{max-width:90ch}
     <div class="panel"><h3 style="margin-top:0">공실률(%)</h3><div id="vacChart"></div></div>
     <div class="panel"><h3 style="margin-top:0">임대료(천원/㎡ · 월)</h3><div id="rentChart"></div></div>
   </div>
-  <div class="panel" style="margin-top:14px"><h3 style="margin-top:0">실거래 평당가(만원/평 · 분기 중위값)</h3><div id="ppyChart"></div>
-    <p class="sub" style="margin:8px 0 0">국토교통부 실거래가(상업 · 업무용 중 업무시설) 거래금액 ÷ 건물면적으로 계산한 분기별 중위값 · 10건 미만인 분기는 비움 · 집합건물(전용면적 기준)과 일반건물(연면적 기준)이 섞여 있고 건수가 적은 권역은 분기마다 출렁이므로 추세만 참고 · 거래 자료가 거슬러 채워지는 동안 과거 분기 값은 바뀔 수 있음</p></div>
   <div class="tablewrap" style="margin-top:12px"><table id="mkTbl" style="min-width:560px"><thead></thead><tbody></tbody></table></div>
 </section>
 
@@ -202,6 +200,9 @@ footer p{max-width:90ch}
   <h2>오피스 거래 규모</h2>
   <p class="sub">연간 업무시설 거래액(조원) · 국토교통부 상업 · 업무용 실거래가 중 건물용도가 '업무'인 신고 건 집계 · 최근 달부터 거슬러 매일 조금씩 모으는 중이라 지난 연도는 수집된 개월만큼만 반영</p>
   <div class="panel"><div id="dealChart"></div></div>
+  <h3>실거래 평당가 <span class="small">만원/평 · 분기 중위값 · 권역은 위 공실률 차트의 칩으로 선택</span></h3>
+  <div class="panel"><div id="ppyChart"></div>
+    <p class="sub" style="margin:8px 0 0">국토교통부 실거래가(상업 · 업무용 중 업무시설) 거래금액 ÷ 건물면적으로 계산한 분기별 중위값 · 10건 미만인 분기는 비움 · 집합건물(전용면적 기준)과 일반건물(연면적 기준)이 섞여 있고 건수가 적은 권역은 분기마다 출렁이므로 추세만 참고 · 거래 자료가 거슬러 채워지는 동안 과거 분기 값은 바뀔 수 있음</p></div>
   <h3>오피스 거래 목록 <span class="small">10억원 이상 · 최근 거래순 · 평당가 = 거래금액 ÷ 건물면적(1평 = 3.3058㎡), 건물 묶음은 호실 합계 기준</span></h3>
   <div class="row">
     <select id="dlSido"><option value="">지역 전체</option></select>
