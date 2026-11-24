@@ -119,6 +119,34 @@ def main():
                 sd, sg = names.get(r["sgg"], ("", r["sgg"]))
                 deals.append(dict(r, sido=sd, sigungu=sg))
     deals.sort(key=lambda r: (r["d"], r["a"]), reverse=True)
+    # 분기별 실거래 평당가(만원/평, 건물면적 기준 중위값) — 권역별. 건수 10건 미만인 칸은 비움
+    import statistics
+    ZONE_SGG = {"11110": "CBD", "11140": "CBD", "11680": "GBD", "11650": "GBD", "11560": "YBD", "11440": "YBD", "41135": "BBD"}
+    by = {}
+    for key, rows in raw.items():
+        for r in rows:
+            if not isinstance(r, dict) or r.get("cancel") or not r.get("bar") or r["bar"] <= 0 or not r.get("d"):
+                continue
+            ppy = r["a"] / (r["bar"] / 3.305785)
+            qtr = f"{r['d'][:4]}Q{(int(r['d'][5:7]) + 2) // 3}"
+            zones = ["전국"]
+            if r["sgg"].startswith("11"):
+                zones.append("서울"); zones.append(ZONE_SGG.get(r["sgg"], "서울 기타"))
+            elif r["sgg"].startswith("41"):
+                zones.append("경기")
+                if r["sgg"] in ZONE_SGG:
+                    zones.append(ZONE_SGG[r["sgg"]])
+            for z in zones:
+                by.setdefault(qtr, {}).setdefault(z, []).append(ppy)
+    ppy_rows = []
+    for qtr in sorted(by):
+        row = {"quarter": qtr}
+        for z, vals in by[qtr].items():
+            if len(vals) >= 10:
+                row[z] = round(statistics.median(vals)); row[z + "_n"] = len(vals)
+        if len(row) > 1:
+            ppy_rows.append(row)
+    json.dump(ppy_rows, open(CACHE / "deal_ppy.json", "w", encoding="utf-8"), ensure_ascii=False)
     json.dump(deals[:3000], open(CACHE / "deal_list.json", "w", encoding="utf-8"), ensure_ascii=False)
     out = [{"year": y, "amount": round(a["amount"] / 1e8, 1), "count": a["count"], "months": len(a["months"])}
            for y, a in sorted(agg.items())]  # 만원 → 조원
