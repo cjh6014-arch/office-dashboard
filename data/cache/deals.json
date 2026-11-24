@@ -1,14 +1,14 @@
 [
  {
   "year": 2021,
-  "amount": 0.9,
-  "count": 367,
-  "months": 1
+  "amount": 1.9,
+  "count": 956,
+  "months": 3
  },
  {
   "year": 2022,
   "amount": 10.9,
-  "count": 4501,
+  "count": 4510,
   "months": 12
  },
  {
@@ -31,8 +31,8 @@
  },
  {
   "year": 2026,
-  "amount": 12.2,
-  "count": 3219,
+  "amount": 12.3,
+  "count": 3226,
   "months": 11
  }
 ]
