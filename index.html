@@ -193,6 +193,8 @@ footer p{max-width:90ch}
     <div class="panel"><h3 style="margin-top:0">공실률(%)</h3><div id="vacChart"></div></div>
     <div class="panel"><h3 style="margin-top:0">임대료(천원/㎡ · 월)</h3><div id="rentChart"></div></div>
   </div>
+  <div class="panel" style="margin-top:14px"><h3 style="margin-top:0">실거래 평당가(만원/평 · 분기 중위값)</h3><div id="ppyChart"></div>
+    <p class="sub" style="margin:8px 0 0">국토교통부 실거래가(상업 · 업무용 중 업무시설) 거래금액 ÷ 건물면적으로 계산한 분기별 중위값 · 10건 미만인 분기는 비움 · 집합건물(전용면적 기준)과 일반건물(연면적 기준)이 섞여 있고 건수가 적은 권역은 분기마다 출렁이므로 추세만 참고 · 거래 자료가 거슬러 채워지는 동안 과거 분기 값은 바뀔 수 있음</p></div>
   <div class="tablewrap" style="margin-top:12px"><table id="mkTbl" style="min-width:560px"><thead></thead><tbody></tbody></table></div>
 </section>
 
@@ -387,20 +389,20 @@ function alert_(m){$('#count').innerHTML=`<span class="up">${m}</span>`}
 
 /* ---------- 공실률 · 임대료(선) ---------- */
 function lineChart(el,data,keys,unit,dec){
-  const W=540,H=240,L=38,R=46,T=12,B=28,pw=W-L-R,ph=H-T-B;
+  const F=dec===0?fmt:fmt1, W=540,H=240,L=dec===0?52:38,R=dec===0?84:46,T=12,B=28,pw=W-L-R,ph=H-T-B;
   const vals=keys.flatMap(k=>data.map(d=>d[k])).filter(v=>v!=null);
   let lo=Math.min(...vals),hi=Math.max(...vals);const pad=(hi-lo)*.12||1;lo=Math.max(0,lo-pad);hi+=pad;
   const X=i=>L+pw*i/(data.length-1), Y=v=>T+ph-(v-lo)/(hi-lo)*ph;
   let g=svgEl(W,H)+'<g class="grid">';
-  for(let i=0;i<=4;i++){const v=lo+(hi-lo)*i/4,y=Y(v);g+=`<line x1="${L}" x2="${W-R}" y1="${y}" y2="${y}"/><text x="${L-6}" y="${y+4}" text-anchor="end" class="lbl">${fmt1(v)}</text>`}
+  for(let i=0;i<=4;i++){const v=lo+(hi-lo)*i/4,y=Y(v);g+=`<line x1="${L}" x2="${W-R}" y1="${y}" y2="${y}"/><text x="${L-6}" y="${y+4}" text-anchor="end" class="lbl">${F(v)}</text>`}
   g+='</g>';
   data.forEach((d,i)=>{if(d.quarter.endsWith('Q1')&&(+d.quarter.slice(0,4))%1===0)g+=`<text x="${X(i)}" y="${H-8}" text-anchor="middle" class="lbl">${d.quarter.slice(0,4)}</text>`});
   keys.forEach(k=>{const col=ZC[k]||'var(--z5)';const pts=data.map((d,i)=>d[k]==null?null:[X(i),Y(d[k]),d[k]]).filter(Boolean); if(!pts.length)return;
     g+=`<path d="M${pts.map(p=>p.slice(0,2).map(n=>n.toFixed(1)).join(',')).join('L')}" fill="none" stroke="${col}" stroke-width="2" stroke-linejoin="round"/>`;
-    const [lx,ly,lv]=pts[pts.length-1];g+=`<circle cx="${lx}" cy="${ly}" r="3.5" fill="${col}" stroke="var(--panel)" stroke-width="1.5"/><text x="${lx+7}" y="${ly+4}" style="font-size:11px;font-weight:600">${k} ${fmt1(lv)}</text>`});
+    const [lx,ly,lv]=pts[pts.length-1];g+=`<circle cx="${lx}" cy="${ly}" r="3.5" fill="${col}" stroke="var(--panel)" stroke-width="1.5"/><text x="${lx+7}" y="${ly+4}" style="font-size:11px;font-weight:600">${k} ${F(lv)}</text>`});
   // hover columns
   data.forEach((d,i)=>{const x0=i?(X(i-1)+X(i))/2:L,x1=i<data.length-1?(X(i)+X(i+1))/2:W-R;
-    g+=`<rect x="${x0}" y="${T}" width="${x1-x0}" height="${ph}" fill="transparent" data-tip="<b>${d.quarter}</b><br>${keys.map(k=>`<span style='color:${ZC[k]||'var(--z5)'}'>●</span> ${k} ${fmt1(d[k])}${unit}`).join('<br>')}"/>`});
+    g+=`<rect x="${x0}" y="${T}" width="${x1-x0}" height="${ph}" fill="transparent" data-tip="<b>${d.quarter}</b><br>${keys.map(k=>`<span style='color:${ZC[k]||'var(--z5)'}'>●</span> ${k} ${F(d[k])}${unit}`).join('<br>')}"/>`});
   g+='</svg>';el.innerHTML=g;bindTips(el);
 }
 function renderMarket(){
@@ -409,6 +411,7 @@ function renderMarket(){
   $$('#mkSeries .chip').forEach(b=>b.addEventListener('click',()=>{const k=b.dataset.v;if(state.mk.has(k)){if(state.mk.size>1)state.mk.delete(k)}else if(state.mk.size<6)state.mk.add(k);renderMarket()}));
   if(!keys.length)return;
   lineChart($('#vacChart'),D.vacancy,keys,'%');lineChart($('#rentChart'),D.rent,keys,'천원');
+  const pp=(D.deal_ppy||[]).filter(r=>keys.some(k=>r[k]!=null)); if(pp.length>1)lineChart($('#ppyChart'),pp,keys,'만원/평',0); else $('#ppyChart').innerHTML='<div class="empty">실거래 평당가는 다음 자동 갱신부터 표시됩니다</div>';
   const last=D.vacancy.slice(-5).reverse(), rl=Object.fromEntries(D.rent.map(r=>[r.quarter,r]));
   $('#mkTbl thead').innerHTML=`<tr><th>분기</th>${keys.map(k=>`<th class="n">${k} 공실률</th>`).join('')}${keys.map(k=>`<th class="n">${k} 임대료</th>`).join('')}</tr>`;
   $('#mkTbl tbody').innerHTML=last.map(v=>`<tr><td>${v.quarter}</td>${keys.map(k=>`<td class="n">${fmt1(v[k])}%</td>`).join('')}${keys.map(k=>`<td class="n">${fmt1(rl[v.quarter]?.[k])}</td>`).join('')}</tr>`).join('');
